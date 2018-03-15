@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		</head>
+		<body>
+			<h1>  Cadastro do Aluno </h1>
+			<div class="pic1">&nbsp;</div>
+			<form  action="" method="post"  name="cadastro_aluno">
+				<label for="Obrigatorio">Obrigatório</label>
+				<fieldset id="Obrigatorio">
+					<table>
+						<tr>
+							<td>Nome:</td>
+							<td>
+								<input type="text" name="Username" placeholder="Digite Nome Completo" maxlength="100" required>
+								</td>
+							</tr>
+							<tr>
+								<td>Idade:</td>
+								<td>
+									<input type="number" name="idade" placeholder="Selecione Idade" required >
+									</td>
+								</tr>
+								<tr>
+									<td>Sexo:</td>
+									<td>
+										<input type="radio" name="option" id="option1" required>
+											<label for="option1">Masculino</label>
+											<input type="radio" name="option" id="option2" required>
+												<label for="option2">Feminino</label>
+											</td>
+										</tr>
+										<tr>
+											<td>Curso:</td>
+											<td>
+												<input type="radio" name="opção" id="opção1"required>
+													<label for="opção1">ADS</label>
+													<input type="radio" name="opção" id="opção2"required>
+														<label for="opção2">GTI</label>
+														<input type="radio" name="opção" id="opção3"required>
+															<label for="opção3">BD</label>
+														</td>
+													</tr>
+													<tr>
+														<td>Email:</td>
+														<td>
+															<input type="email" name="Email" placeholder="Digite seu email aqui..."required>
+															</td>
+														</tr>
+													</table>
+												</fieldset>
+												<label for="non_obrig">Não Obrigatório</label>
+												<fieldset id=non_obrig>
+													<table>
+														<tr>
+															<td>Telefone:</td>
+															<td>
+																<select>
+																	<option value="011">011</option>
+																	<option value="013">013</option>
+																	<option value="015">015</option>
+																</select>
+																<input type="phone" name="Telefone" placeholder="9999xxxx">
+																</td>
+															</tr>
+															<tr>
+																<td>Cor do
+																	<br>Crachá:
+																	</td>
+																	<td>
+																		<input type="color" name="color" value="tag-color">
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>Github:</td>
+																		<td>
+																			<input type="href" name="Link do Github" placeholder="Digite seu Github aqui..." >
+																			</td>
+																		</tr>
+																		<tr>
+																			<td>Data de
+
+																				<br> ingresso
+
+																					<br>no curso:
+
+																					</td>
+																					<td>
+																						<input type="date" name="Data de Ingresso no Curso" placeholder="Data de inicio do curso">
+																						</td>
+																					</tr>
+																				</table>
+																			</fieldset>
+																			<input  type="Submit" name="submit button" value="Submit" id="ass">
+																			</form>
+																		</body>
+																	</html>
