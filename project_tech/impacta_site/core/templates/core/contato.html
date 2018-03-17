@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Contato</title>
-		</head>
-		<body>
-			<header>
+{% extends "core/base.html" %}
+{% block content %}
+      <header>
 				<strong>Formulário de Contato</strong>
 			</header>
 			<label for="titulo" >Informações Pessoais</label>
@@ -25,4 +21,4 @@
 													<input type="Submit" name="submit button" value="Submit">
 													</form>
 												</body>
-											</html>
+{% endblock %}

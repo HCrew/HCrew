@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Index</title>
+        <link rel="favicon" href="favicon.ico">
+    </head>
+    <body>
+      <header>
+          <strong>Faculdade Impacta de Tecnologia</strong> <br>
+          A TECNOLOGIA MUDA O SEU FUTURO
+          <div class="links">
+            <ul>
+              <li><a href="{% url 'core:index' %}">Index</a></li>
+              <li><a href="{% url 'core:contato' %}">Contato</a></li>
+              <li><a href="{% url 'core:login' %}">Login</a></li>
+            </ul>
+          </div>
+      </header>
+      {% block content %}{% endblock %}
+      <footer>  <strong>11 3254-8300 - Impacta 2018 - Todos os Direitos Resevados</strong>  </footer>
+    </body>
+</html>

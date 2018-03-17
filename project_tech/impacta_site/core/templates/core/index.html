@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Index</title>
-        <link rel="favicon" href="favicon.ico">
-    </head>
-    <body>
-        <header>
-            <strong>Faculdade Impacta de Tecnologia</strong> <br>
-            A TECNOLOGIA MUDA O SEU FUTURO
-        </header>
+{% extends "core/base.html" %}
+
+{% block content %}
         <h1>Analise e Desenvolvimento de Sistemas</h1>
         <h2>Navegue</h2>
         <ul>
@@ -18,7 +10,7 @@
             <li> <a href="#info">Informações Técnicas</a></li>
             <!-- <li> <a href="#depoimentos">Depoimentos</a></li> -->
         </ul>
-        <img src="ADS.png" alt="">
+
 
         <h2 id="sobre">Sobre o curso</h2>
         <p>Entender as necessidades das empresas é fundamental para fazê-las crescer e gerar bons resultados. Desta maneira, um dos caminhos para alavancar os negócios e se destacar no mercado de trabalho é o da Tecnologia. Para isso, a Faculdade Impacta oferece a graduação em <i> Análise e Desenvolvimento de Sistemas</i>, que prepara você para atuar em todas as etapas de projetos de tecnologia da informação - concepção, gerência e manutenção, aplicação e mensuração de resultados.</p>
@@ -180,6 +172,4 @@
                 </ol>
             </li>
         </ol>
-        <footer>  <strong>11 3254-8300 - Impacta 2018 - Todos os Direitos Resevados</strong>  </footer>
-    </body>
-</html>
+{% endblock %}
