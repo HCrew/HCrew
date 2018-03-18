@@ -76,12 +76,8 @@ WSGI_APPLICATION = 'impacta_site.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'impacta_site',
-        'USER': 'petterson',
-        'PASSWORD': 'honda0616',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
 
