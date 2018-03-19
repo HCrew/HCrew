@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from django.template import loader
 
 
-
 # Create your views here.
 
 # Função para retornar view de index.html
@@ -22,9 +21,13 @@ def contato(request):
 
 # Função para retornar view de login.html
 def login(request):
-    
     if request.method == 'GET':
         return render(request, 'core/login.html')
     elif request.method == 'POST':
-        print (request.POST)
-        return redirect('/')
+        email = request.POST.get('email', None)
+        password = request.POST.get('password', None)
+        print(request.POST)
+        if email == 'herbalist@gmail.com' and password == '1234':
+            return redirect('/')
+        else:
+            return render(request, 'core/login.html')
