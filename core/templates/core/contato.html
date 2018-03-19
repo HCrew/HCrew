@@ -4,7 +4,7 @@
 				<strong>Formulário de Contato</strong>
 			</header>
 			<label for="titulo" >Informações Pessoais</label>
-			<form action="" method="post" id="titulo" name="titulo">
+			<form action="" method="post" id="titulo" name="titulo">{% csrf_token %}
 				<input type="text" name="Username" placeholder="NOME COMPLETO" maxlength="100" >
 					<br>
 						<input type="email" name="email" placeholder="E-MAIL" maxlength="100" >
