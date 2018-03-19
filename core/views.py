@@ -24,10 +24,9 @@ def login(request):
     if request.method == 'GET':
         return render(request, 'core/login.html')
     elif request.method == 'POST':
-        email = request.POST.get('email', None)
-        password = request.POST.get('password', None)
-        print(request.POST)
-        if email == 'herbalist@gmail.com' and password == '1234':
+        if request.POST.get('password') == 'teste123':
+            print('Usuário {} entrou com sucesso!'.format(request.POST.get('email')))
             return redirect('/')
         else:
-            return render(request, 'core/login.html')
+            print('Usuário {} digitou senha incorreta!'.format(request.POST.get('email')))
+            return redirect('/')
