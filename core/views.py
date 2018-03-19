@@ -29,4 +29,4 @@ def login(request):
             return redirect('/')
         else:
             print('Usuário {} digitou senha incorreta!'.format(request.POST.get('email')))
-            return redirect('/')
+            return render(request, 'core/login.html', {'email': request.POST.get('email')})

@@ -10,7 +10,7 @@
 	<form action="" method="post"  id="login_tech" name="login_tech"  >{% csrf_token %}
 
 		<strong>Email:
-			<input type="email" name="email"  placeholder="Digite email aqui...">
+			<input type="email" name="email"  placeholder="Digite email aqui..." value="{{ email }}">
 				<br>
 					<strong>Senha:</strong>
 					<input type="password" name="password"  placeholder="Digite senha aqui..." >
@@ -23,6 +23,9 @@
 										<br>
 											<br>
 												<br>
+								{% if email %}
+								<script>alert('Senha incorreta!');</script>
+								{% endif %}
 												</body>
 
 {% endblock %}
