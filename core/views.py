@@ -15,7 +15,10 @@ def contato(request):
     if request.method == 'GET':
         return render(request, 'core/contato.html')
     elif request.method == 'POST':
-        print(request.POST)
+        print(('Nome completo: {0[Username]}\n'
+               'E-mail:        {0[email]}\n'
+               'Assunto:       {0[option]}\n'
+               'Mensagem:      {0[message]}').format(request.POST))
         return redirect('/contato')
 
 
