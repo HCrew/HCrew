@@ -29,7 +29,7 @@ def login(request):
     elif request.method == 'POST':
         if request.POST.get('password') == 'teste123':
             print('Usuário {} entrou com sucesso!'.format(request.POST.get('email')))
-            return redirect('/')
+            return redirect('/index')
         else:
             print('Usuário {} digitou senha incorreta!'.format(request.POST.get('email')))
             return render(request, 'core/login.html', {'email': request.POST.get('email')})
