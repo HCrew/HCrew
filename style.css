@@ -20,3 +20,13 @@ div#text {
     border-radius: 5px;
     display: none;
 }
+
+#conteudo {
+    width: 70%;
+    margin: 20% auto;
+}
+
+#botoes {
+    width: 30%;
+    margin: 0 auto;
+}
