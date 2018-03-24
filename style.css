@@ -1,0 +1,22 @@
+body {
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+button {
+    padding: 10px 20px;
+    background: #BA3525;
+    color: #FFF;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+div#text {
+    padding: 10px 20px;
+    background: #584b4f;
+    color: #FFF;
+    border-radius: 5px;
+    display: none;
+}
