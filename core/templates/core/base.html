@@ -1,22 +1,29 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
     <head>
         <link rel="favicon" href="favicon.ico">
         <meta name="author" content="development team 2°B">
         <meta name="description" content="melhor faculdade de tecnologia">
+        <link rel="stylesheet" href="{% static 'css/global.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     </head>
     <body>
-      <header>
-          <strong>Faculdade Impacta de Tecnologia</strong> <br>
-          A TECNOLOGIA MUDA O SEU FUTURO
-          <div class="links">
-            <ul>
-              <li><a href="{% url 'core:index' %}">Index</a></li>
-              <li><a href="{% url 'core:contato' %}">Contato</a></li>
-            </ul>
-          </div>
-      </header>
-      {% block content %}{% endblock %}
-      <footer>  <strong>11 3254-8300 - Impacta 2018 - Todos os Direitos Resevados</strong>  </footer>
+        <header>
+            <strong>Faculdade Impacta de Tecnologia</strong> <br>
+            A TECNOLOGIA MUDA O SEU FUTURO
+            <div class="links">
+                <ul>
+                    <li><a href="{% url 'core:index' %}">Index</a></li>
+                    <li><a href="{% url 'core:contato' %}">Contato</a></li>
+                </ul>
+            </div>
+        </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <footer>  <strong>11 3254-8300 - Impacta 2018 - Todos os Direitos Resevados</strong>  </footer>
     </body>
 </html>
