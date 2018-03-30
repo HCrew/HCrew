@@ -1,24 +1,24 @@
 {% extends "core/base.html" %}
 {% block content %}
-      <header>
-				<strong>Formulário de Contato</strong>
-			</header>
-			<label for="titulo" >Informações Pessoais</label>
-			<form action="" method="post" id="titulo" name="titulo">{% csrf_token %}
-				<input type="text" name="Username" placeholder="NOME COMPLETO" maxlength="100" >
-					<br>
-						<input type="email" name="email" placeholder="E-MAIL" maxlength="100" >
-							<br>
-								<input type="radio" name="option" required value="Bugs" id="opção1">
-									<label for="opção1">Bugs</label>
-									<input type="radio" name="option" required value="Reclamações" id="opção2">
-										<label for="opção2">Reclamações</label>
-										<input type="radio" name="option" required value="Sugestões" id="opção3">
-											<label for="opção3">Sugestões</label>
-											<br>
-												<textarea name="message" rows="10" cols="30" placeholder="Escreva sua mensagem aqui."></textarea>
-												<br>
-													<input type="Submit" name="submit button" value="Submit">
-													</form>
-												</body>
+    <header>
+        <strong>Formulário de Contato</strong>
+    </header>
+    <label for="titulo">Informações Pessoais</label>
+    <form action="" method="post" id="titulo" name="titulo">{% csrf_token %}
+        <input type="text" name="Username" placeholder="NOME COMPLETO" maxlength="100">
+        <br>
+        <input type="email" name="email" placeholder="E-MAIL" maxlength="100">
+        <br>
+        <input type="radio" name="option" required value="Bugs" id="opção1">
+        <label for="opção1">Bugs</label>
+        <input type="radio" name="option" required value="Reclamações" id="opção2">
+        <label for="opção2">Reclamações</label>
+        <input type="radio" name="option" required value="Sugestões" id="opção3">
+        <label for="opção3">Sugestões</label>
+        <br>
+        <textarea name="message" rows="10" cols="30" placeholder="Escreva sua mensagem aqui."></textarea>
+        <br>
+        <input type="Submit" name="submit button" value="Submit">
+    </form>
+    </body>
 {% endblock %}
