@@ -1,3 +1,38 @@
+*, body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    background-color: rgb(231, 182, 165);
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 100vh;
+}
+
+header, main, footer {
+    margin: 0 auto;
+    width: 960px;
+    background-color: whitesmoke;
+}
+
+header {
+    height: 85px;
+    background-color: slateblue;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    margin-bottom: 0;
+    height: 85px;
+    background-color: teal;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
