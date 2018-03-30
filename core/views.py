@@ -33,3 +33,7 @@ def login(request):
         else:
             print('Usuário {} digitou senha incorreta!'.format(request.POST.get('email')))
             return render(request, 'core/login.html', {'email': request.POST.get('email')})
+
+
+def cursos(request):
+    return render(request, 'core/cursos.html')
