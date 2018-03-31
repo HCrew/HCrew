@@ -108,3 +108,7 @@ li a:hover{
   background-color:white;
 }
 /*END OF STYLES FOR FORM_NOVO_CURSO*/
+.Cursos img{
+    width: 450px;
+    height: 250px;
+}
