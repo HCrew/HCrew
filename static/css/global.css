@@ -56,3 +56,8 @@ li a {
 li a:hover{
     background-color: #111;
 }
+
+.Cursos img{
+    width: 450px;
+    height: 250px;
+}
