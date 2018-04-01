@@ -41,3 +41,7 @@ def cursos(request):
 
 def form_novo_curso(request):
     return render(request, 'core/form_novo_curso.html')
+
+
+def disciplina_cursos(request):
+    return render(request, 'core/disciplina_cursos.html')
