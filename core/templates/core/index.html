@@ -11,7 +11,7 @@
 
   </head>
   <body>
-    <div class="">
+    <div class="sobre">
       <header>
         <h1>Analise e desenvolvimento de sistemas</h1>
 
@@ -19,7 +19,7 @@
           <h2>a Impacta</h2>
         <ul>
             <li> <a href="#sobre">Sobre </a></li>
-            <li> <a href="#bolsaDeEstudo"></a></li>
+            <li> <a href="#bolsaDeEstudo"> bolsa de estudo</a></li>
             <li> <a href="#matriz">Matriz Curricular</a></li>
         <li> <a href="#info">Informações Técnicas</a></li>
             <!-- <li> <a href="#depoimentos">Depoimentos</a></li> -->
@@ -28,7 +28,7 @@
 
     </header>
 
-      <section id="">
+      <section >
         <h1 id="sobre">Sobre a Faculdade</h1>
 
         <p>Fundada em 1988, a Faculdade Impacta é considerada uma das melhores instituições de tecnologia da América Latina
@@ -78,10 +78,13 @@
                <li>Estacionamento integrado;</li>
                <li>Acesso total a deficientes físicos.</li>
              </ul>
+             </div>
+             <div class="bolsaDeEstudo">
 
-             <article class="bolsaEstudo">
+             <article>
                <h1 id="bolsaDeEstudo">BOLSA DE ESTUDOS </h1>
-               <h2>Plano Estendido Ipacta</h2>
+
+               <h2>Plano Estendido Impacta</h2>
               <p>Está começando a carreira e precisa de ajudar para se preparar entre os melhores? Nós te damos essa força
                  pra você se preocupar com o que mais importa, <strong>SUA CARREIRA!</strong></p>
                  <p>Desenvolvemos o Plano Estendido IMPACTA, um suporte financeiro para iniciar os estudos e realizar o sonho
@@ -104,16 +107,31 @@
                      <li>Sem burocracia: Basta ser aprovado no vestibular e informar da adesão sem burocracia ou complicação.</li>
                      <li>Não precisa conta no banco ou fiador: É tudo muito simples, a adesão é direto na faculdade. Não é um financiamento.</li>
                    </ul>
+                   <h2>Regras</h2>
+                   <ul>
+                     <li>O Plano Estendido Impacta é válido somente para alunos ingressantes em 2018-1.</li>
+                     <li>No caso de atraso nos pagamento das mensalidade superior a 30 dias, o Plano Estendido Impacta poderá ser suspenso.</li>
+                     <li>Vagas limitadas por curso e turma. Não reservamos vagas para os candidatos aprovados. Garanta sua vaga efetivando a matrícula.</li>
+                     <li>Valores para pagamento no dia 05 de cada mês.</li>
+                   </ul>
+                   <form action="" method="post">
+                     <fieldset>
+                       <legend>Para se inscrever no Plano Estendido Impacta é muito fácil! Preencha o formulário:</legend>
 
+                     <label for="Lnome">Nome:</label><br>
+                     <input type="text" class="campos"name="nome"  id="Lnome" required placeholder="nome"><br>
+                     <label for="email">Email:</label><br>
+                     <input type="email" class="campos"name="Email" id="email" required placeholder="email"><br>
+                     <label for="telefone">Telefone</label><br>
+                     <input type="tel" class="campos" name="Telefone" id="telefone"  required placeholder="celular/telefone"><br>
+                     <input type="submit" name="enviar" value="enviar dados">
+                   </fieldset><br>
+                    O formulário será enviado para análise. Sendo aprovado, você será chamado para formalizar a contratação
+                   </form>
 
-
-
-             </article>
+              </article>
       </section>
-
-
-
-    </div>
+  </div>
 
 {% endblock %}
   </body>
