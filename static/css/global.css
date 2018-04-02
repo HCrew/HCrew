@@ -91,7 +91,7 @@ fieldset{
   margin: 10px;
 }
 
-input{
+#form_in{
   width: 400px;
   border-width: thin;
   border-style: solid;
