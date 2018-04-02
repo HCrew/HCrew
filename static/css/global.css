@@ -116,6 +116,16 @@ border-color: black;
 margin: 20px;
 }
 
+#sub{
+  display:inline-block;
+  height:30px;
+  width: 180px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: black;
+  margin: 20px;
+
+}
 .btn_curso1{
   background:url('../images/analise-desenvolvimento-sistemas.jpg');
   background-repeat: no-repeat;
