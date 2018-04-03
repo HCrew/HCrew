@@ -1,5 +1,9 @@
 *, body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: /*'Franklin Gothic Medium', 'Arial Narrow',*/ Arial, sans-serif;
+}
+
+.menu ul{
+	border-radius: 15px;
 }
 
 body {
@@ -19,8 +23,19 @@ header, main, footer {
 }
 
 header {
-    height: 85px;
-    background-color: slateblue;
+    height: 130px;
+    /*background-color: slateblue;
+    background-color: black*/
+}
+
+header li{
+  padding: 30px;
+}
+
+header img{
+  width: 150px;
+  height: 100px;
+  float: left;
 }
 
 main {
@@ -29,8 +44,8 @@ main {
 
 footer {
     margin-bottom: 0;
-    height: 85px;
-    background-color: teal;
+    height: 35px;
+    /*background-color: teal;*/
 }
 
 ul {
@@ -38,7 +53,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #87CEEB;
+    /*background-color: #87CEEB;*/
 }
 
 li {
