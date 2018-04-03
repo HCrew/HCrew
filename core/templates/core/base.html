@@ -15,7 +15,11 @@
             <div class="menu">
                     <ul>
                     <a href="{% url 'core:index' %}"><img src="{% static "images/impactaLogo.png" %}"></a>
-                    <li><a href="{% url 'core:login' %}">Login</a></li>
+                    {% if not logged_in %}
+                        <li><a href="{% url 'core:login' %}">Login</a></li>
+                    {% else %}
+                        <li><a href="{% url 'core:logout' %}">Logout</a></li>
+                    {% endif %}
                     <li><a href="{% url 'core:form_novo_curso' %}">Novo Curso</a></li>
                     <li><a href="{% url 'core:cursos' %}">Cursos</a></li>
                     <li><a href="{% url 'core:aImpacta' %}">A Impacta</a></li>
