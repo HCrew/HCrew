@@ -1,9 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from django.template import loader
 
-
-# Create your views here.
 
 # Função para retornar view de index.html
 def index(request):
@@ -25,14 +21,28 @@ def contato(request):
 # Função para retornar view de login.html
 def login(request):
     if request.method == 'GET':
-        return render(request, 'core/login.html')
+        if not request.session.get('logged-in'):
+            return render(request, 'core/login.html')
+
+        else:
+            return redirect('core:index')
+
     elif request.method == 'POST':
         if request.POST.get('password') == 'teste123':
             print('Usuário {} entrou com sucesso!'.format(request.POST.get('email')))
-            return redirect('/index')
+            request.session.cycle_key()
+            request.session['logged-in'] = True
+            not request.POST.get('rememberme') and request.session.set_expiry(0)
+            return redirect('core:index')
+
         else:
             print('Usuário {} digitou senha incorreta!'.format(request.POST.get('email')))
             return render(request, 'core/login.html', {'email': request.POST.get('email')})
+
+
+def logout(request):
+    request.session.flush()
+    return redirect('core:index')
 
 
 def cursos(request):
@@ -49,6 +59,7 @@ def form_novo_curso(request):
 
 def disciplina_cursos(request):
     return render(request, 'core/disciplina_cursos.html')
+
 
 def aImpacta(request):
     return render(request, 'core/aImpacta.html')
