@@ -18,17 +18,19 @@ body {
 
 header, main, footer {
     margin: 0 auto;
-    width: 960px;
+    width: 80%;
     background-color: whitesmoke;
 }
 
 header {
     height: 130px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /*background-color: slateblue;
+    background-color: black*/
 }
 
-header li{
-  padding: 30px;
-}
 
 header img{
   width: 150px;
