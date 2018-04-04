@@ -17,13 +17,15 @@
                     <a href="{% url 'core:index' %}"><img src="{% static "images/impactaLogo.png" %}"></a>
                     {% if not logged_in %}
                         <li><a href="{% url 'core:login' %}">Login</a></li>
+                        <li><a href="{% url 'core:cursos' %}">Cursos</a></li>
+                        <li><a href="{% url 'core:aImpacta' %}">A Impacta</a></li>
+                        <li><a href="{% url 'core:contato' %}">Contato</a></li>
                     {% else %}
                         <li><a href="{% url 'core:logout' %}">Logout</a></li>
+                        <li><a href="{% url 'core:form_novo_curso' %}">Novo Curso</a></li>
+                        <li><a href="{% url 'core:form_nova_disciplina' %}">Nova Disciplina</a></li>
                     {% endif %}
-                    <li><a href="{% url 'core:form_novo_curso' %}">Novo Curso</a></li>
-                    <li><a href="{% url 'core:cursos' %}">Cursos</a></li>
-                    <li><a href="{% url 'core:aImpacta' %}">A Impacta</a></li>
-                    <li><a href="{% url 'core:contato' %}">Contato</a></li>
+
                 </ul>
                 </div>
         </header>
