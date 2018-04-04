@@ -27,9 +27,11 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /*background-color: slateblue;
-    background-color: black*/
 }
+
+header li{
+  padding: 30px;
+  }
 
 
 header img{
@@ -155,10 +157,12 @@ input[type=submit] {
 /*END OF STYLES FOR FORM_NOVO_CURSO & FORM_NOVA_DISCIPLINA*/
 
 
-.Cursos img{
+
+/*END OF STYLES FOR FORM_NOVO_CURSO*/
+.cursosImg img{
     width: 430px;
     height: 230px;
     border-radius: 25px;
-    float: left;
-    padding: 15px;
+    margin: 15px;
+>>>>>>> 821881929603b0c03f74f53bac7519f9a50c6412
 }
