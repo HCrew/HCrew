@@ -1,75 +1,78 @@
-{% extends "core/base.html" %} {% block content %}
+{% extends "core/base.html" %}
+{% load static %}
+
+
+{% block content %}
 
 <body>
-	<div class="wrapper">
-		<div>
-			<h1>Inscreva-se em Nossos Cursos</h1>
-			<p class="lead">Considerada uma das melhores faculdade com foco em tecnologia do País</p>
-			<p>A Faculdade Impacta oferece vários cursos de Graduação. Conheça quais são as áreas de conhecimento que a Impacta aborda
-				e saiba um pouco mais sobre cada curso:</p>
-			<br>
-			<br>
-		</div>
-		<div>
-			<button class="btn_curso1" id=b tn_cursoX type="button"></button>
-			
-			<button class="btn_curso2" id=b tn_cursoX type="button"></button>
+	<img id="goo" class="responsive"  src="{% static "images/novo_cursoo.jpeg" %}" alt="novo_curso">
+	<form>
+	<h2>Formulário para criaçao de Novos Cursos</h2>
+			<div class="container">
+					<div class="row">
+				      <div class="col-25">
+				        <label for="nome_curso">Nome do Curso</label>
+				      </div>
+				      <div class="col-75">
+				        <input type="text" id="nome_curso"  placeholder="Nome do Curso..">
+				      </div>
+				    </div>
 
-			<button class="btn_curso3" id=b tn_cursoX type="button "></button>
-			<br>
-			<br>
-			<button class="btn_curso4" id=b tn_cursoX type="button"></button>
+						<div class="row">
+				      <div class="col-25">
+				        <label for="tipo_curso">Tipo de Curso</label>
+				      </div>
+				      <div class="col-75">
+				        <select id="tipo_curso">
+				          <option >Graduação</option>
+				          <option >MBA & Pós</option>
+				          <option >Técnico</option>
+									<option>EAD</option>
+				        </select>
+				      </div>
+				    </div>
 
-			<button class="btn_curso5" id=b tn_cursoX type="button"></button>
+              <div class="row">
+				      <div class="col-25">
+				        <label for="carga">Carga Horária </label>
+				      </div>
+				      <div class="col-75">
+				        <select id="carga" >
+				          <option>40 Horas</option>
+				          <option>60 Horas</option>
+				          <option>80 Horas</option>
+				        </select>
+				      </div>
+				    </div>
 
-			<button class="btn_curso6" id=b tn_cursoX type="button "></button>
-		</div>
-		<div class="formX">
-			<label for="form_novo_curso">
-				<strong>Cadastro para Novo Curso</strong>
-			</label>
-			<form class="form_novo_curso" action="" method="post">
-				<fieldset>
-					<legend class="legend">|Informações Pessoais</legend>
-					Nome Completo:
-					<br>
-					<input id=form_in type="text" name="" value="" placeholder="  Digite Nome Completo aqui..." required>
-					<br> Telefone:
-					<br>
-					<input id=form_in type="text" name="" value="" placeholder="   Digite Telefone aqui..." required>
-					<br> Email:
-					<br>
-					<input id=form_in type="text" name="" value="" placeholder="   Digite Email aqui..." required>
-					<br> Sexo:
-					<br>
-					<select class="selection">
-						<option value="">Masculino</option>
-						<option value="">Feminino</option>
-					</select>
-				</fieldset>
-				<fieldset>
-					<legend class="legend">|Seleção de Curso</legend>
-					Escolha seu curso:
-					<br>
-					<select class="" name="">
-						<option value="">Análise e Desenvolvimento de Sistemas</option>
-						<option value="">Administração</option>
-						<option value="">Banco de Dados</option>
-						<option value="">Gestão de Tecnologia da Informação</option>
-						<option value="">Jogos Digitais</option>
-						<option value="">Redes de Computadores</option>
-					</select>
-					<br> Escolha o Período:
-					<br>
-					<select class="" name="">
-						<option value="">Matutino</option>
-						<option value="">Noturno</option>
-					</select>
-				</fieldset>
-				<button id=sub type="submit" name="button">Enviar Cadastro</button>
-			</form>
-		</div>
-	</div>
-</body>
+						<div class="row">
+							<div class="col-25">
+								<label for="carga">Número de Disciplinas </label>
+							</div>
+							<div class="col-75">
+								<select id="carga" >
+									<option>8 </option>
+									<option>6 </option>
+									<option>4 </option>
+								</select>
+							</div>
+						</div>
+
+						<div class="row">
+				      <div class="col-25">
+				        <label for="descript">Descrição do Curso</label>
+				      </div>
+				      <div class="col-75">
+				        <textarea id="descript"  placeholder="Descrição e detalhes do curso.." style="height:200px"></textarea>
+				      </div>
+				    </div>
+				    <div class="row">
+				      <input type="submit" value="Submit">
+				    </div>
+				  </form>
+				</div>
+	      
+        </body>
+
 
 {% endblock %}

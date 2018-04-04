@@ -71,115 +71,90 @@ li a:hover{
 }
 
 
-/*STYLES FOR FORM_NOVO_CURSO*/
-
-.wrapper{
-margin: 30px auto;
-display: grid;
-grid-template-columns: 1fr ;
-grid-gap: 1em;
+/*STYLES FOR FORM_NOVO_CURSO & FORM_NOVA_DISCIPLINA*/
+* {
+    box-sizing: border-box;
 }
 
-.wrapper > div{
-  text-align:center;
+#goo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.lead{
-  font-weight: bold;
-}
-
-.formX{
-text-align: left!important;
-border-style: solid;
-border-width: thin;
-border-radius: 5px;
-border-color: black;
-}
-
-fieldset{
-  border-width: thin;
-  border-style: solid;
-  border-color: black;
+.responsive{
+  width: 100%;
+  max-width: 600px;
+  height: auto;
   border-radius: 10px;
-  margin: 10px;
-}
-
-#form_in{
-  width: 400px;
+  border-style: solid;
+  border-color: black;
   border-width: thin;
-  border-style: solid;
-  border-color: black;
-  border-radius: 10px;
 }
 
-select{
-  border-width: thin;
-  border-style: solid;
-  border-color: black;
-  border-radius: 10px;
+h2{
+  text-align: center;
 }
 
-button{
-display:inline-block;
-height:150px;
-width: 200px;
-border-style: solid;
-border-radius: 5px;
-border-color: black;
-margin: 20px;
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+    resize: vertical;
 }
 
-#sub{
-  display:inline-block;
-  height:30px;
-  width: 180px;
-  border-style: solid;
-  border-radius: 5px;
-  border-color: black;
-  margin: 20px;
-
-}
-.btn_curso1{
-  background:url('../images/analise-desenvolvimento-sistemas.jpg');
-  background-repeat: no-repeat;
-  background-size:  200px 150px;
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
 }
 
-.btn_curso2{
-  background:url('../images/administracao.png');
-  background-repeat: no-repeat;
-  background-size:  200px 150px;
+input[type=submit] {
+    border-color: black;
+    border-width: thin;
+    border-style: solid;
+    background-color:lightgrey;
+    color:black;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
 }
 
-.btn_curso3{
-  background:url('../images/banco-de-dados.png');
-  background-repeat: no-repeat;
-  background-size: 200px 150px ;
+.container {
+    border-color: black;
+    border-width: thin;
+    border-style: solid;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
 }
 
-.btn_curso4{
-  background:url('../images/gti.jpg');
-  background-repeat: no-repeat;
-  background-size:  200px 150px;
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
 }
 
-.btn_curso5{
-  background:url('../images/jogos-digitais.jpg');
-  background-repeat: no-repeat;
-  background-size: 200px 150px ;
-}
-.btn_curso6{
-  background:url('../images/redes-computadores.jpg');
-  background-repeat: no-repeat;
-  background-size:  200px 150px;
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
 }
 
-#btn_cursoX:hover{
-  cursor: pointer;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-/*END OF STYLES FOR FORM_NOVO_CURSO*/
+.col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+}
+/*END OF STYLES FOR FORM_NOVO_CURSO & FORM_NOVA_DISCIPLINA*/
+
+
 .Cursos img{
     width: 430px;
     height: 230px;
