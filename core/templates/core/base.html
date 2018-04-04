@@ -1,22 +1,37 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Index</title>
-        <link rel="favicon" href="favicon.ico">
+        <link rel="icon" href="{% static 'images/favicon.ico' %}">
+        <meta name="author" content="development team 2°B">
+        <meta name="description" content="melhor faculdade de tecnologia">
+        <link rel="stylesheet" href="{% static 'css/global.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     </head>
     <body>
-      <header>
-          <strong>Faculdade Impacta de Tecnologia</strong> <br>
-          A TECNOLOGIA MUDA O SEU FUTURO
-          <div class="links">
-            <ul>
-              <li><a href="{% url 'core:index' %}">Index</a></li>
-              <li><a href="{% url 'core:contato' %}">Contato</a></li>
-              <li><a href="{% url 'core:login' %}">Login</a></li>
-            </ul>
-          </div>
-      </header>
-      {% block content %}{% endblock %}
-      <footer>  <strong>11 3254-8300 - Impacta 2018 - Todos os Direitos Resevados</strong>  </footer>
+        <header>
+            <div class="menu">
+                    <ul>
+                    <a href="{% url 'core:index' %}"><img src="{% static "images/impactaLogo.png" %}"></a>
+                    {% if not logged_in %}
+                        <li><a href="{% url 'core:login' %}">Login</a></li>
+                        <li><a href="{% url 'core:cursos' %}">Cursos</a></li>
+                        <li><a href="{% url 'core:aImpacta' %}">A Impacta</a></li>
+                        <li><a href="{% url 'core:contato' %}">Contato</a></li>
+                    {% else %}
+                        <li><a href="{% url 'core:logout' %}">Logout</a></li>
+                        <li><a href="{% url 'core:form_novo_curso' %}">Novo Curso</a></li>
+                        <li><a href="{% url 'core:form_nova_disciplina' %}">Nova Disciplina</a></li>
+                    {% endif %}
+
+                </ul>
+                </div>
+        </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <footer>  <strong>11 3254-8300 - Impacta 2018 - Todos os Direitos Resevados</strong>  </footer>
     </body>
 </html>

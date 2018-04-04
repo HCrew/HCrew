@@ -1,175 +1,179 @@
-{% extends "core/base.html" %}
+{% extends "core/base.html" %} {% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
 
-{% block content %}
-        <h1>Analise e Desenvolvimento de Sistemas</h1>
-        <h2>Navegue</h2>
-        <ul>
-            <li> <a href="#sobre">Sobre o Curso</a></li>
-            <li> <a href="#mercado">Mercado de Trabalho</a></li>
-            <li> <a href="#matriz">Matriz Curricular</a></li>
-            <li> <a href="#info">Informações Técnicas</a></li>
-            <!-- <li> <a href="#depoimentos">Depoimentos</a></li> -->
-        </ul>
+<head>
+  <meta charset="utf-8">
+  <title>Página Inicial</title>
+  <link rel="stylesheet" href="/css/global.css">
+
+</head>
+
+<body>
+  <div class="nossosCursos">
+    <section>
+      <h1>Conheça nossos Cursos</h1>
+      <div class="cursosImgHeader">
+        <a href="{% url 'core:detalhesCurso' %}"><img src="{% static "images/analise-desenvolvimento-sistemas.jpg" %}"title="Curso Analie e Desenvolvimento de Sistemas" alt="Curso Analie e Desenvolvimento de Sistemas"></a>
+    </div>
+    <div class="cursosImgHeader">
+      <a href="{% url 'core:detalhesCurso' %}"><img src="{% static "images/administracao.png" %}"title="Curso administração" alt="Curso administração"></a>
+    </div>
+    <div class="cursosImgHeader">
+        <a href="{% url 'core:detalhesCurso' %}"><img src="{% static "images/banco-de-dados.png" %}" title="Curso Banco de Dados" alt="Curso Banco de Dados"></a>
+    </div>
+      <br>
+  </div>
+  <div class="smartClass">
+    <h2>CONHEÇA O SISTEMA SMART CLASS</h2>
+    <p>O Smart Class é um sistema de ensino inédito da Faculdade Impacta Tecnologia, que permite assistir todas as disciplinas
+      dos cursos de Graduação no formato digital. O aluno matriculado em qualquer graduação da Faculdade Impacta tem acesso
+      a mais de 20 mil aulas, garantindo uma formação completa e interdisciplinar. E, o melhor, sem qualquer custo adicional!</p>
+    <p>
+      <strong>Como funciona o Smart Class?</strong>
+      <br> As salas de aula da Faculdade Impacta são equipadas com lousas eletrônicas, que capturam todos os pontos das aulas
+      presenciais, como voz, escrita dinâmica, vídeos e navegação do professor. Todo esse conteúdo é gravado e disponibilizado
+      em uma sala de ensino virtual para que o aluno assista a hora que desejar.</p>
+  </div>
+
+  <div class="noticias">
+    <h1>Notícias</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+      irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+      </p>
+      <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        </p>
+  </div>
+
+  <div class="depoimentos">
+      <h1>Depoimentos</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+      </p>
+      <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </p>
+    </div>
+
+    <div class="premios">
+        <h1>Prêmios</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </p>
+          <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+              cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+            </p>
+      </div>
 
 
-        <h2 id="sobre">Sobre o curso</h2>
-        <p>Entender as necessidades das empresas é fundamental para fazê-las crescer e gerar bons resultados. Desta maneira, um dos caminhos para alavancar os negócios e se destacar no mercado de trabalho é o da Tecnologia. Para isso, a Faculdade Impacta oferece a graduação em <i> Análise e Desenvolvimento de Sistemas</i>, que prepara você para atuar em todas as etapas de projetos de tecnologia da informação - concepção, gerência e manutenção, aplicação e mensuração de resultados.</p>
-        <p>O curso é voltado para a criação de <strong> programas</strong>, <strong>softwares</strong> e <strong>sistemas </strong>para as empresas. As etapas do projeto de sistemas de software, como análise, projeto, teste, gestão, implantação e manutenção de sistemas de informação também estão entre os aprendizados da graduação.</p>
-        <p>O curso tem disciplinas em <strong>EAD</strong>, o que flexibiliza o estudo e otimiza os deslocamentos.</p>
+  <div class="bolsaDeEstudo">
+    <article>
+      <h1 id="bolsaDeEstudo">BOLSA DE ESTUDOS </h1>
 
-        <h2 id="mercado">Mercado de Trabalho</h2>
-        <p>A área de Análise e Desenvolvimento de Sistemas está entre as que mais contratam no País. Empresas públicas ou privadas de TI, de telecomunicações, entre outros segmentos, são opções com oportunidades atraentes para este profissional.</p>
-        <p>Você pode atuar como Analista de Requisitos, Analista de Desenvolvimento, Analista de Sistemas, Analista de Negócio e Analista de Teste ou ainda desenvolver aplicativos para celular ou jogos para computador.</p>
+      <h2>Plano Estendido Impacta</h2>
+      <p>Está começando a carreira e precisa de ajudar para se preparar entre os melhores? Nós te damos essa força pra você
+        se preocupar com o que mais importa,
+        <strong>SUA CARREIRA!</strong>
+      </p>
+      <p>Desenvolvemos o Plano Estendido IMPACTA, um suporte financeiro para iniciar os estudos e realizar o sonho de concluir
+        a graduação.</p>
+      <h3>COMO FUNCIONA</h3>
+      <p>Não é um financiamento, com o Plano Estendido IMPACTA você pode estender o parcelamento para depois da conclusão do
+        curso,
+      </p>
+      <p>É a Impacta ajudando quem quer estudar em uma faculdade altamente renomada com um valor que cabe no bolso, sem depender
+        de burocracia, cobrança de juros ou fiador.</p>
 
-        <h2 id="matriz">Matriz Curricular</h2>
-        <p>Confira a grade curricular do curso:</p>
-        <table border="1">
-            <thead>
-                <!-- table head -->
-                <tr>
-                    <!-- table row -->
-                    <th>Semestre</th>
-                    <!-- table header -->
-                    <th>Disciplina</th>
-                    <th>Carga Horária</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td rowspan="6">1º Semestre</td>
-                    <!-- table data -->
-                    <td>Comunicação e Expressão</td>
-                    <td rowspan="6">80 horas</td>
-                </tr>
-                <tr>
-                    <!-- td fantasma aqui (1º semestre) -->
-                    <td>Fundamentos de Banco de Dados</td>
-                    <!-- td fantasma aqui (80 horas) -->
-                </tr>
-                <tr>
-                    <td>Introdução à Internet da Coisas - IoT</td>
-                </tr>
-                <tr>
-                    <td>Lógica de Programação</td>
-                </tr>
-                <tr>
-                    <td>Linguagem de Programação I</td>
-                </tr>
-                <tr>
-                    <td>Matemática Aplicada</td>
-                </tr>
-                <!-- semester break -->
-                <tr>
-                    <td rowspan="8">2º Semestre</td>
-                    <td>Linguagem de Programação II</td>
-                    <td rowspan="5">80 horas</td>
-                </tr>
-                <tr>
-                    <td>Linguagem SQL</td>
-                </tr>
-                <tr>
-                    <td>Tecnologia Web</td>
-                </tr>
-                <tr>
-                    <td>Engenharia de Software</td>
-                </tr>
-                <tr>
-                    <td>Ambiente de Desenvolvimento e Operação - DevOps</td>
-                </tr>
-                <tr>
-                    <td>Linguagem Brasileira de Sinais - LIBRAS</td>
-                    <td rowspan="3">40 horas</td>
-                </tr>
-                <tr>
-                    <td>Sociedade e Sustentabilidade - Optativa</td>
-                </tr>
-                <tr>
-                    <td>Gestão de Projetos</td>
-                </tr>
-                <!--semester break  -->
-                <tr>
-                    <td rowspan="6">3º Semestre</td>
-                    <!-- table data -->
-                    <td>Desenvolvimento de Aplicações Atribuidas</td>
-                    <td rowspan="4">80 horas</td>
-                </tr>
-                <tr>
-                    <!-- td fantasma aqui (1º semestre) -->
-                    <td>Estrutura de Dados</td>
-                    <!-- td fantasma aqui (80 horas) -->
-                </tr>
-                <tr>
-                    <td>Análise e modelagem de Sistemas</td>
-                </tr>
-                <tr>
-                    <td>Modelagem de Processos de Negócio</td>
-                </tr>
-                <tr>
-                    <td>Interface Homen-Computador</td>
-                    <td rowspan="1">40 horas</td>
-                </tr>
-                <tr>
-                    <td>OPE1-Oficina Projeto Emp</td>
-                    <td rowspan="1">120 horas</td>
-                </tr>
-                <!-- break -->
-                <tr>
-                    <td rowspan="6">4º Semestre</td>
-                    <td>Arquitetura de Projeto de Sistemas</td>
-                    <td rowspan="4">80 Horas</td>
-                </tr>
-                <tr>
-                    <td>Desenvolvimento para Dispositivos Móveis</td>
-                </tr>
-                <tr>
-                    <td>Desenvolvimento para Internet das Coisas</td>
-                </tr>
-                <tr>
-                    <td>Qualidade de Software</td>
-                </tr>
-                <tr>
-                    <td>OPE2 - Oficina Projeto Empresa 2</td>
-                    <td>120 Horas</td>
-                </tr>
-                <tr>
-                    <td>Legislação e Ética</td>
-                    <td>40 Horas</td>
-                </tr>
-            </tbody>
-        </table>
-        <h2 id="info">Informações Técnicas</h2>
-        <ol>
-            <li>
-                <p> <strong>Duração do Curso:</strong>  </p>
-                <ol type="a">
-                    <li>2020 horas</li>
-                </ol>
-            </li>
-            <li>
-                <p> <strong>Modalidade:</strong>  </p>
-                <ol type="a">
-                    <li>presencial</li>
-                </ol>
-            </li>
-            <li>
-                <p> <strong>Unidade:</strong>  </p>
-                <ol type="a">
-                    <li>Barra Funda</li>
-                </ol>
-            </li>
-            <li>
-                <p> <strong>Período:</strong>  </p>
-                <ol type="a">
-                    <li>Matutino - 08h00 às 11h40</li>
-                    <li>Noturno - 19h00 às 22h10</li>
-                </ol>
-            </li>
-            <li>
-                <p> <strong>Mensalidade:</strong>  </p>
-                <ol type="a">
-                    <li>Matutino <strong>R$582,00</strong>   </li>
-                    <li>Noturno <strong>R$657,00</strong>   </li>
-                </ol>
-            </li>
-        </ol>
-{% endblock %}
+      <h2>Quem pode se candidatar?</h2>
+      <p>Todos os alunos aprovados na análise do PEI (Plano Estendido Impacta) e matriculados conforme o prazo e vagas no curso
+        de interesse.</p>
+
+      <h2>Vantagens do Plano Estendido Impacta (PEI)</h2>
+
+      <ul>
+        <li>Válido para todo o curso: você poderá utilizar durante todo o seu curso de graduação.</li>
+        <li>Sem juros: totalmente sem juros ou correção monetária.</li>
+        <li>Sem burocracia: Basta ser aprovado no vestibular e informar da adesão sem burocracia ou complicação.</li>
+        <li>Não precisa conta no banco ou fiador: É tudo muito simples, a adesão é direto na faculdade. Não é um financiamento.</li>
+      </ul>
+      <h2>Regras</h2>
+      <ul>
+        <li>O Plano Estendido Impacta é válido somente para alunos ingressantes em 2018-1.</li>
+        <li>No caso de atraso nos pagamento das mensalidade superior a 30 dias, o Plano Estendido Impacta poderá ser suspenso.</li>
+        <li>Vagas limitadas por curso e turma. Não reservamos vagas para os candidatos aprovados. Garanta sua vaga efetivando
+          a matrícula.</li>
+        <li>Valores para pagamento no dia 05 de cada mês.</li>
+      </ul>
+      <form action="" method="post">
+        <fieldset>
+          <legend>Para se inscrever no Plano Estendido Impacta é muito fácil! Preencha o formulário:</legend>
+
+          <label for="Lnome">Nome:</label>
+          <br>
+          <input type="text" class="campos" name="nome" id="Lnome" required placeholder="nome">
+          <br>
+          <label for="email">Email:</label>
+          <br>
+          <input type="email" class="campos" name="Email" id="email" required placeholder="email">
+          <br>
+          <label for="telefone">Telefone</label>
+          <br>
+          <input type="tel" class="campos" name="Telefone" id="telefone" required placeholder="celular/telefone">
+          <br>
+          <input type="submit" name="enviar" value="enviar dados">
+        </fieldset>
+        <br> O formulário será enviado para análise. Sendo aprovado, você será chamado para formalizar a contratação
+      </form>
+      <br>
+    </article>
+    </section>
+  </div>
+
+
+  </section>
+
+
+
+
+  {% endblock %}
+</body>
+
+</html>

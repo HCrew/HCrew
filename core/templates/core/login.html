@@ -1,35 +1,34 @@
-<header>
-		<strong>Faculdade Impacta de Tecnologia</strong> <br>
-		A TECNOLOGIA MUDA O SEU FUTURO
-</header>
+{% extends 'core/base.html' %} {% block content %}
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/global.css">
+      
+</head>
 
-{% block content %}
-<body>
-	<label for="login_tech">
-		<h2>
-			<strong>Login Here</strong>
-		</h2>
-	</label>
-	<form action="" method="post"  id="login_tech" name="login_tech"  >{% csrf_token %}
+<label for="login_tech">
+    <h2>
+        <strong>Login</strong>
+    </h2>
+</label>
 
-		<strong>Email:
-			<input type="email" name="email"  placeholder="Digite email aqui..." value="{{ email }}">
-				<br>
-					<strong>Senha:</strong>
-					<input type="password" name="password"  placeholder="Digite senha aqui..." >
-						<br>
-							<br>
-								<input type="Submit" name="submit button" value="Submit">
-								</form>
-								<br>
-									<br>
-										<br>
-											<br>
-												<br>
-								{% if email %}
-								<script>alert('Senha incorreta!');</script>
-								{% endif %}
-								<footer>  <strong>11 3254-8300 - Impacta 2018 - Todos os Direitos Resevados</strong>  </footer>
-												</body>
+<form action="" method="post" id="login_tech" name="login_tech">
+    {% csrf_token %}
 
-{% endblock %}
+    <strong>Email:
+        <input type="email" name="email" placeholder="Digite email aqui..." value="{{ email }}">
+        <br>
+        <strong>Senha:</strong>
+        <input type="password" name="password" placeholder="Digite senha aqui...">
+        <br>
+        <input type="checkbox" name="rememberme" id="rememberme">
+        <label for="rememberme">Lembrar de mim</label>
+        <br>
+        <input type="Submit" name="submit button" value="Entrar">
+</form>
+<br>
+<br>
+<br>
+<br>
+<br> {% if email %}
+<script>alert('Senha incorreta!');</script> {% endif %} {% endblock %}

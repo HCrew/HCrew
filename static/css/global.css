@@ -1,0 +1,175 @@
+*, body {
+    font-family: Arial, sans-serif;
+}
+
+.menu ul{
+	border-radius: 15px;
+}
+
+body {
+    background-color:#F5F5F5;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 200vh;
+}
+
+header, main, footer {
+    margin: 0 auto;
+    width: 80%;
+    background-color: whitesmoke;
+}
+
+.cursosImgHeader img{
+    width: 290px;
+    height:190px;
+    border-radius: 25px;
+    margin: 15px;
+    float: left;
+}
+
+header {
+    height: 130px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header li{
+  padding: 30px;
+  }
+
+
+header img{
+  width: 150px;
+  height: 100px;
+  float: left;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    margin-bottom: 0;
+    height: 35px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: inheritwhite;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover{
+    background-color: #111;
+}
+
+
+/*STYLES FOR FORM_NOVO_CURSO & FORM_NOVA_DISCIPLINA*/
+* {
+    box-sizing: border-box;
+}
+
+#goo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.responsive{
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: black;
+  border-width: thin;
+}
+
+h2{
+  text-align: center;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    border-color: black;
+    border-width: thin;
+    border-style: solid;
+    background-color:lightgrey;
+    color:black;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+.container {
+    border-color: black;
+    border-width: thin;
+    border-style: solid;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.col-25, .col-75, input[type=submit] {
+    float: left;
+    margin-top: 0;
+}
+/*END OF STYLES FOR FORM_NOVO_CURSO & FORM_NOVA_DISCIPLINA*/
+
+
+
+/*END OF STYLES FOR FORM_NOVO_CURSO*/
+.cursosImg img{
+    width: 430px;
+    height: 230px;
+    border-radius: 25px;
+    margin: 15px;
+}

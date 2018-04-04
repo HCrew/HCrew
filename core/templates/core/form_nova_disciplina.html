@@ -1,0 +1,69 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+
+      <body>
+				<img id="goo" class="responsive" src="{% static "images/novo_cursoo.jpeg" %}" alt="novo_curso">
+        <h2>Formulário para criaçao de Novas Disciplinas</h2>
+         <div class="container">
+				  <form>
+						<div class="row">
+				      <div class="col-25">
+				        <label for="tipo_curso">Tipo de Disciplina </label>
+				      </div>
+				      <div class="col-75">
+				        <select id="tipo_curso">
+				          <option>Presencial</option>
+									<option>EAD</option>
+				        </select>
+				      </div>
+				    </div>
+
+
+
+						<div class="row">
+				      <div class="col-25">
+				        <label for="nome_curso">Nome da Disciplina</label>
+				      </div>
+				      <div class="col-75">
+				        <input type="text" id="nome_curso"  placeholder="Nome da Disciplina..">
+				      </div>
+				    </div>
+				    <div class="row">
+				      <div class="col-25">
+				        <label for="nome_prof">Nome do Professor</label>
+				      </div>
+				      <div class="col-75">
+				        <input type="text" id="nome_prof"  placeholder="Nome do Professor..">
+				      </div>
+				    </div>
+				    <div class="row">
+				      <div class="col-25">
+				        <label for="carga">Carga Horária </label>
+				      </div>
+				      <div class="col-75">
+				        <select id="carga" >
+				          <option>40 Horas</option>
+				          <option>60 Horas</option>
+				          <option>80 Horas</option>
+				        </select>
+				      </div>
+				    </div>
+				    <div class="row">
+				      <div class="col-25">
+				        <label for="descript">Descrição da Disciplina</label>
+				      </div>
+				      <div class="col-75">
+				        <textarea id="descript"  placeholder="Descrição e detalhes do curso.." style="height:200px"></textarea>
+				      </div>
+				    </div>
+				    <div class="row">
+				      <input type="submit" value="Cadastrar">
+				    </div>
+				  </form>
+				</div>
+        </body>
+
+
+{% endblock %}
