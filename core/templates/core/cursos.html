@@ -10,50 +10,46 @@
   </head>
   <body>
         <h1>Cursos</h1>
-        <div class="Cursos">
-            <img src="{% static "images/analise-desenvolvimento-sistemas.jpg" %}" alt="Curso Analie e Desenvolvimento de Sistemas">
-        
-            <div class="frases">
-                <a href="{% url 'core:detalhesCurso' %}">Curso Análise e Desenvolvimento de Sistemas</a>
-            </div>
-        
-        
-            <img src="{% static "images/administracao.png" %}" alt="Curso administração">
-        
-            <div class="frases">
-                <a href="#" target="blank">Administração</a>
-            </div>
-        
-            <img src="{% static "images/banco-de-dados.png" %}" alt="Curso Banco de Dados">
-        
-            <div class="frases">
-                <a href="#" target="blank">Banco de dados</a>
-            </div>
-        
-        
-            <img src="{% static "images/gti.jpg" %}" alt="Curso Gestão de Tecnologia da Informação">
-        
-            <div class="frases">
-                <a href="#" target="blank">Gestão de Tecnologia da Informação</a>
-            </div>
-        
-        
-            <img src="{% static "images/jogos-digitais.jpg" %}" alt="Curso Jogos Digitais">
-        
-            <div class="frases">
-                <a href="#" target="blank">Jogos Digitais</a>
-            </div>
-        
-        
-            <img src="{% static "images/redes-computadores.jpg" %}" alt="Curso Redes de computadores">
-        
-            <div class="frases">
-                <a href="#" target="blank">Redes de computadores</a>
-            </div>
-        
-            <br>
-        
+        <div class="cursos">
+                <div class="cursosImg">
+                    <img src="{% static "images/analise-desenvolvimento-sistemas.jpg" %}" alt="Curso Analie e Desenvolvimento de Sistemas">
+                    
+                </div>
+                <a href="{% url 'core:detalhesCurso' %}">Analise e Desenvolvimento de Sistemas</a>
+                    
+                <div class="cursosImg">
+                    <img src="{% static "images/administracao.png" %}" alt="Curso administração">
+                </div>
+
+                <a href="{% url 'core:detalhesCurso' %}">Administração</a>
+    
+                <div class="cursosImg">
+                    <img src="{% static "images/banco-de-dados.png" %}" alt="Curso Banco de Dados">
+                </div>
+
+                <a href="{% url 'core:detalhesCurso' %}">Banco de dados</a>
+    
+                <div class="cursosImg">
+                    <img src="{% static "images/gti.jpg" %}" alt="Curso Gestão de Tecnologia da Informação">
+                </div>
+
+                <a href="{% url 'core:detalhesCurso' %}">Gestão de Tecnologia da Informação</a>
+                
+                <div class="cursosImg">
+                    <img src="{% static "images/jogos-digitais.jpg" %}" alt="Curso Jogos Digitais">
+                </div>
+
+                <a href="{% url 'core:detalhesCurso' %}">Jogos Digitais</a>
+    
+                <div class="cursosImg">
+                    <img src="{% static "images/redes-computadores.jpg" %}" alt="Curso Redes de computadores">
+                </div>
+
+                <a href="{% url 'core:detalhesCurso' %}">Redes de computadores</a>
+            
+                <br>
         </div>
+    </div>
   </body>
 </html>
 {% endblock %}
