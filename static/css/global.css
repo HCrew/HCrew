@@ -180,10 +180,9 @@ margin: 20px;
 }
 
 /*END OF STYLES FOR FORM_NOVO_CURSO*/
-.Cursos img{
+.cursosImg img{
     width: 430px;
     height: 230px;
     border-radius: 25px;
-    /*float: left;
-    padding: 15px;*/
+    margin: 15px;
 }
