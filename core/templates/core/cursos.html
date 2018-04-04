@@ -10,42 +10,39 @@
   </head>
   <body>
         <h1>Cursos</h1>
-        <div class="Cursos">
-            <img src="{% static "images/analise-desenvolvimento-sistemas.jpg" %}" alt="Curso Analie e Desenvolvimento de Sistemas">
+
+          <div class="Cursos">
+                <img src="{% static "images/analise-desenvolvimento-sistemas.jpg" %}" alt="Curso Analie e Desenvolvimento de Sistemas">
                 
-            <img src="{% static "images/administracao.png" %}" alt="Curso administração">
-
-            <div>
-                <a href="#">Análise e Desenvolvimento de Sistemas</a>
+          </div>
+          <a href="{% url 'core:detalhesCurso' %}">Analise e Desenvolvimento de Sistemas</a>
+                
+            <div class="Cursos">
+                <img src="{% static "images/administracao.png" %}" alt="Curso administração">
             </div>
+            <a href="#">Adminsitração</a>
 
-            <img src="{% static "images/banco-de-dados.png" %}" alt="Curso Banco de Dados">
-
-            <div>
-                <a href="#">Administração</a>
+            <div class="Cursos">
+                <img src="{% static "images/banco-de-dados.png" %}" alt="Curso Banco de Dados">
             </div>
-        
-            <img src="{% static "images/gti.jpg" %}" alt="Curso Gestão de Tecnologia da Informação">
+            <a href="#">Banco de Dados</a>
+
+            <div class="Cursos">
+                <img src="{% static "images/gti.jpg" %}" alt="Curso Gestão de Tecnologia da Informação">
+            </div>
+            <a href="#">Gestão de Tecnologia da Informação</a>
             
-            <div>
-                <a href="#">Banco de Dados</a>
-            </div>
         
-            <img src="{% static "images/jogos-digitais.jpg" %}" alt="Curso Jogos Digitais">
-
-            <div>
-                <a href="#">Gestão de Tecnologia da Informação</a>
+            <div class="Cursos">
+                <img src="{% static "images/jogos-digitais.jpg" %}" alt="Curso Jogos Digitais">
             </div>
+            <a href="#">Jogos Digitais</a>
+
         
-            <img src="{% static "images/redes-computadores.jpg" %}" alt="Curso Redes de computadores">
-
-            <div>
-                <a href="#">Jogos Digitais</a>
+            <div class="Cursos">
+                <img src="{% static "images/redes-computadores.jpg" %}" alt="Curso Redes de computadores">
             </div>
-
-            <div>
-                <a href="#">Redes de Computadores</a>
-            </div>
+            <a href="#">Redes de Computadores</a>
         
             <br>
         </div>
