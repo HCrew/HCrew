@@ -27,9 +27,11 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /*background-color: slateblue;
-    background-color: black*/
 }
+
+header li{
+  padding: 30px;
+  }
 
 
 header img{
