@@ -1,5 +1,5 @@
 {% extends "core/base.html" %} {% block content %}
-
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -14,17 +14,16 @@
   <div class="nossosCursos">
     <section>
       <h1>Conheça nossos Cursos</h1>
-      <button class="btn_curso1" id=b tn_cursoX type="button">
-        <strong></strong>
-      </button>
-      <button class="btn_curso2" id=b tn_cursoX type="button">
-        <strong></strong>
-      </button>
-      <button class="btn_curso3" id=b tn_cursoX type="button ">
-        <strong></strong>
-      </button>
+      <div class="cursosImgHeader">
+        <a href="{% url 'core:detalhesCurso' %}"><img src="{% static "images/analise-desenvolvimento-sistemas.jpg" %}"title="Curso Analie e Desenvolvimento de Sistemas" alt="Curso Analie e Desenvolvimento de Sistemas"></a>
+    </div>
+    <div class="cursosImgHeader">
+      <a href="{% url 'core:detalhesCurso' %}"><img src="{% static "images/administracao.png" %}"title="Curso administração" alt="Curso administração"></a>
+    </div>
+    <div class="cursosImgHeader">
+        <a href="{% url 'core:detalhesCurso' %}"><img src="{% static "images/banco-de-dados.png" %}" title="Curso Banco de Dados" alt="Curso Banco de Dados"></a>
+    </div>
       <br>
-      <a href="{% url 'core:cursos' %}">Ver mais</a>
   </div>
   <div class="smartClass">
     <h2>CONHEÇA O SISTEMA SMART CLASS</h2>
