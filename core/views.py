@@ -65,3 +65,7 @@ def disciplina_cursos(request):
 
 def aImpacta(request):
     return render(request, 'core/aImpacta.html')
+
+
+def subject_detail(request, subject_name):
+    return render(request, 'core/subject_detail.html', {'subject_name': subject_name})
