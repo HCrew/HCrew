@@ -13,3 +13,4 @@ urlpatterns = [
     #path('subjects/<subject_name>/', views.subject_detail, name='subject_detail'),
     path('detalhesCurso/', views.detalhesCurso, name='detalhesCurso'),
     path('form_nova_disciplina/', views.form_nova_disciplina, name='form_nova_disciplina')
+]
