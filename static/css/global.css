@@ -1,5 +1,5 @@
 *, body {
-    font-family: /*'Franklin Gothic Medium', 'Arial Narrow',*/ Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 .menu ul{
@@ -18,19 +18,19 @@ body {
 
 header, main, footer {
     margin: 0 auto;
-    width: 960px;
+    width: 80%;
     background-color: whitesmoke;
 }
 
 header {
     height: 130px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     /*background-color: slateblue;
     background-color: black*/
 }
 
-header li{
-  padding: 30px;
-}
 
 header img{
   width: 150px;
@@ -45,7 +45,6 @@ main {
 footer {
     margin-bottom: 0;
     height: 35px;
-    /*background-color: teal;*/
 }
 
 ul {
@@ -53,7 +52,6 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    /*background-color: #87CEEB;*/
 }
 
 li {
@@ -183,6 +181,9 @@ margin: 20px;
 
 /*END OF STYLES FOR FORM_NOVO_CURSO*/
 .Cursos img{
-    width: 450px;
-    height: 250px;
+    width: 430px;
+    height: 230px;
+    border-radius: 25px;
+    float: left;
+    padding: 15px;
 }
