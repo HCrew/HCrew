@@ -22,6 +22,14 @@ header, main, footer {
     background-color: whitesmoke;
 }
 
+.cursosImgHeader img{
+    width: 290px;
+    height:190px;
+    border-radius: 25px;
+    margin: 15px;
+    float: left;
+}
+
 header {
     height: 130px;
     display: flex;
@@ -151,7 +159,7 @@ input[type=submit] {
 }
 
 .col-25, .col-75, input[type=submit] {
-    width: 100%;
+    float: left;
     margin-top: 0;
 }
 /*END OF STYLES FOR FORM_NOVO_CURSO & FORM_NOVA_DISCIPLINA*/
@@ -164,5 +172,4 @@ input[type=submit] {
     height: 230px;
     border-radius: 25px;
     margin: 15px;
->>>>>>> 821881929603b0c03f74f53bac7519f9a50c6412
 }
