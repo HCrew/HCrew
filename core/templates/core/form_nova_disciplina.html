@@ -2,7 +2,10 @@
 {% load static %}
 
 {% block content %}
-
+<head>
+  <title>Formulário de Disciplina</title>
+  <meta charset="utf-8">
+</head>
       <body>
 				<img id="goo" class="responsive" src="{% static "images/novo_cursoo.jpeg" %}" alt="novo_curso">
         <h2>Formulário para criaçao de Novas Disciplinas</h2>
@@ -10,7 +13,7 @@
 				  <form>
 						<div class="row">
 				      <div class="col-25">
-				        <label for="tipo_curso">Tipo de Disciplina </label>
+				        <label for="tipo_curso">Tipo de Disciplina:</label>
 				      </div>
 				      <div class="col-75">
 				        <select id="tipo_curso">
@@ -24,7 +27,7 @@
 
 						<div class="row">
 				      <div class="col-25">
-				        <label for="nome_curso">Nome da Disciplina</label>
+				        <label for="nome_curso">Nome da Disciplina:</label>
 				      </div>
 				      <div class="col-75">
 				        <input type="text" id="nome_curso"  placeholder="Nome da Disciplina..">
@@ -32,7 +35,7 @@
 				    </div>
 				    <div class="row">
 				      <div class="col-25">
-				        <label for="nome_prof">Nome do Professor</label>
+				        <label for="nome_prof">Nome do Professor:</label>
 				      </div>
 				      <div class="col-75">
 				        <input type="text" id="nome_prof"  placeholder="Nome do Professor..">
@@ -40,7 +43,7 @@
 				    </div>
 				    <div class="row">
 				      <div class="col-25">
-				        <label for="carga">Carga Horária </label>
+				        <label for="carga">Carga Horária:</label>
 				      </div>
 				      <div class="col-75">
 				        <select id="carga" >
@@ -52,7 +55,7 @@
 				    </div>
 				    <div class="row">
 				      <div class="col-25">
-				        <label for="descript">Descrição da Disciplina</label>
+				        <label for="descript">Descrição da Disciplina:</label>
 				      </div>
 				      <div class="col-75">
 				        <textarea id="descript"  placeholder="Descrição e detalhes do curso.." style="height:200px"></textarea>

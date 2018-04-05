@@ -3,7 +3,10 @@
 
 
 {% block content %}
-
+<head>
+  <title>Formulário de Curso</title>
+  <meta charset="utf-8">
+</head>
 <body>
 	<img id="goo" class="responsive"  src="{% static "images/novo_cursoo.jpeg" %}" alt="novo_curso">
 	<form>
@@ -11,7 +14,7 @@
 			<div class="container">
 					<div class="row">
 				      <div class="col-25">
-				        <label for="nome_curso">Nome do Curso</label>
+				        <label for="nome_curso">Nome do Curso:</label>
 				      </div>
 				      <div class="col-75">
 				        <input type="text" id="nome_curso"  placeholder="Nome do Curso..">
@@ -20,7 +23,7 @@
 
 						<div class="row">
 				      <div class="col-25">
-				        <label for="tipo_curso">Tipo de Curso</label>
+				        <label for="tipo_curso">Tipo de Curso:</label>
 				      </div>
 				      <div class="col-75">
 				        <select id="tipo_curso">
@@ -34,7 +37,7 @@
 
               <div class="row">
 				      <div class="col-25">
-				        <label for="carga">Carga Horária </label>
+				        <label for="carga">Carga Horária:</label>
 				      </div>
 				      <div class="col-75">
 				        <select id="carga" >
@@ -47,7 +50,7 @@
 
 						<div class="row">
 							<div class="col-25">
-								<label for="carga">Número de Disciplinas </label>
+								<label for="carga">Número de Disciplinas:</label>
 							</div>
 							<div class="col-75">
 								<select id="carga" >
@@ -60,7 +63,7 @@
 
 						<div class="row">
 				      <div class="col-25">
-				        <label for="descript">Descrição do Curso</label>
+				        <label for="descript">Descrição do Curso:</label>
 				      </div>
 				      <div class="col-75">
 				        <textarea id="descript"  placeholder="Descrição e detalhes do curso.." style="height:200px"></textarea>
@@ -71,7 +74,7 @@
 				    </div>
 				  </form>
 				</div>
-	      
+
         </body>
 
 
