@@ -1,3 +1,7 @@
+body {
+    overflow-y: scroll;
+}
+
 .nossosCursos article ul {
     list-style: none;
 }
@@ -11,9 +15,10 @@
     text-decoration: none;
     text-transform: uppercase;
     border: none;
+    cursor: pointer;
 }
 
-#ads, #gti, #rc, #bd, #adm, #jd {
+.courses {
     display: none;
     margin-bottom: 1%;
     color: #fff;
