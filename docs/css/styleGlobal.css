@@ -109,3 +109,6 @@ button {
     font-family: sans-serif;
     text-transform: uppercase;
 }
+.submenu {
+    display: none;
+}
