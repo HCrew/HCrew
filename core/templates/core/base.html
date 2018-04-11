@@ -13,20 +13,42 @@
     <body>
         <header>
             <div class="menu">
-                    <ul>
-                    <a href="{% url 'core:index' %}"><img src="{% static "images/impactaLogo.png" %}"></a>
+
+                    <div>
+                        <a href="{% url 'core:index' %}"><img src="{% static "images/impactaLogo.png" %}"></a>
+                    </div>
                     {% if not logged_in %}
-                        <li><a href="{% url 'core:login' %}">Login</a></li>
-                        <li><a href="{% url 'core:cursos' %}">Cursos</a></li>
-                        <li><a href="{% url 'core:aImpacta' %}">A Impacta</a></li>
-                        <li><a href="{% url 'core:contato' %}">Contato</a></li>
+                    <div>
+                        <a class="dropbtn" href="{% url 'core:login' %}">Login</a>
+                    </div>
+                    <div class="dropdown">
+                        <a onclick="myFunction()" class="dropbtn">Cursos</a>
+                    <!--<a href="{% url 'core:cursos' %}">Cursos</a>-->
+                      <div id="myDropdown" class="dropdown-content">
+                        <a href="{% url 'core:detalhesCurso' %}">ADS</a>
+                        <a href="{% url 'core:cursos' %}">Todos</a>
+                      </div>
+                    </div>
+                    <div>
+                        <a class="dropbtn" href="{% url 'core:aImpacta' %}">A Impacta</a>
+                    </div>
+                    <div>
+                        <a class="dropbtn" href="{% url 'core:contato' %}">Contato</a>
+                    </div>
                     {% else %}
-                        <li><a href="{% url 'core:logout' %}">Logout</a></li>
-                        <li><a href="{% url 'core:form_novo_curso' %}">Novo Curso</a></li>
-                        <li><a href="{% url 'core:form_nova_disciplina' %}">Nova Disciplina</a></li>
+                    <div>
+                        <a class="dropbtn" href="{% url 'core:logout' %}">Logout</a>
+                    </div>
+                    <div>
+                        <a class="dropbtn" href="{% url 'core:form_novo_curso' %}">Novo Curso</a>
+                    </div>
+                    <div>
+                        <a class="dropbtn" href="{% url 'core:form_nova_disciplina' %}">Nova Disciplina</a>
+                    </div>
+
                     {% endif %}
 
-                </ul>
+
                 </div>
         </header>
         <main>
@@ -34,4 +56,5 @@
         </main>
         <footer id=goo2 >  <strong>11 3254-8300 - Impacta 2018 - Todos os Direitos Resevados</strong>  </footer>
     </body>
+    <script src="../../static/js/main.js"></script>
 </html>

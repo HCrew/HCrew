@@ -2,3 +2,6 @@
     width: 19%;
     height: 150px;
 }
+.submenu {
+    display: none;
+}
