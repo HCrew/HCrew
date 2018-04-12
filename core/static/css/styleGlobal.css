@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    font-size: 1em;
+    font-family: sans-serif;
+    background: rgba(88, 75, 79,0.2);
+}
+
+main {
+    width: 80%;
+    margin: 8% auto;
+}
+
+h2, h4 {
+    text-transform: uppercase;
+}
+
+p, ul {
+    width: 90%;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    background: rgb(87, 76, 79);
+    display:block;
+    position:fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+}
+
+nav {
+    width: 80%;
+    height: 85px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+.logo {
+    float: left;
+    margin-top: -1%;
+    margin-bottom: 0;
+    margin-right: 2%;
+}
+
+.logo h1 {
+    margin-bottom: 0;
+}
+
+.menu {
+    float: right;
+    width: 50%;
+}
+
+.menu ul {
+    list-style: none;
+    margin-top: 7%;
+}
+
+.menu ul li {
+    display: inline;
+    margin-left: 5%;
+}
+
+.menu ul li a {
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+footer {
+    width: 98%;
+    padding: 1%;
+    margin-top: 1%;
+    background: rgb(87, 76, 79);
+    display:block;
+    position:fixed;
+    width:100%;
+    bottom:0vh;
+    left:0;
+}
+
+footer p {
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+form ul {
+    list-style: none;
+}
+
+input {
+    width: 95%;
+    padding: 1.5%;
+    margin-bottom: 1%;
+    border: none;
+    font-size: 1em;
+}
+
+button {
+    padding: 1.5% 3%;
+    border: none;
+    color: #fff;
+    background-color: #279f43;
+    font-size: 1em;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}

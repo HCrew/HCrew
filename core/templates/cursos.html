@@ -1,0 +1,135 @@
+{% extends 'base.html' %} 
+
+{% block css %}
+    <link rel="stylesheet" href="../static/css/styleCursos.css"> 
+{% endblock %} 
+
+{% block js %}
+    <script src="../static/js/cursos.js" defer></script> 
+{% endblock %} 
+
+{% block conteudo %}
+<section class="nossosCursos">
+    <article>
+        <h2>Cursos</h2>
+        <ul>
+            <li>
+                <button onclick="mostrar('ads')">
+                    Análise e Desenvolvimento de Sistemas
+                </button>
+                <div id="ads">
+                    <p>
+                        <strong>Sobre o curso</strong>
+                    </p>
+                    <p>
+                        Entender as necessidades das empresas é fundamental para fazê-las crescer e gerar bons resultados. Desta maneira, um dos
+                        caminhos para alavancar os negócios e se destacar no mercado de trabalho é o da Tecnologia. Para
+                        isso, a Faculdade Impacta oferece a graduação em Análise e Desenvolvimento de Sistemas, que prepara
+                        você para atuar em todas as etapas de projetos de tecnologia da informação - concepção, gerência
+                        e manutenção, aplicação e mensuração de resultados.
+                    </p>
+
+                    <p>
+                        O curso é voltado para a criação de programas, softwares e sistemas para as empresas. As etapas do projeto de sistemas de
+                        software, como análise, projeto, teste, gestão, implantação e manutenção de sistemas de informação
+                        também estão entre os aprendizados da graduação.
+                    </p>
+                    <br>
+                    <p>
+                        <strong>Mercado de trabalho</strong>
+                    </p>
+                    <p>
+                        A área de Análise e Desenvolvimento de Sistemas está entre as que mais contratam no País. Empresas públicas ou privadas de
+                        TI, de telecomunicações, entre outros segmentos, são opções com oportunidades atraentes para este
+                        profissional.
+                    </p>
+
+                    <p>
+                        Você pode atuar como Analista de Requisitos, Analista de Desenvolvimento, Analista de Sistemas, Analista de Negócio e Analista
+                        de Teste ou ainda desenvolver aplicativos para celular ou jogos para computador.
+                    </p>
+                    <br>
+                    <p>
+                        <strong>Prêmios e reconhecimentos</strong>
+                    </p>
+                    <p>
+                        Os cursos da Faculdade Impacta são todos reconhecidos pelo MEC. A graduação de Análise e Desenvolvimento de Sistemas tem
+                        nota 4 em Conceito de Curso do ENADE (melhor nota de São Paulo).
+                    </p>
+                    <a href="">Acesse aqui a grade curricular do curso.</a>
+                </div>
+            </li>
+            <li>
+                <button onclick="mostrar('adm')">
+                    Administração
+                </button>
+                <div id="adm">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <button onclick="mostrar('gti')">
+                    Gestão de Tecnologia da Informação
+                </button>
+                <div id="gti">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <button onclick="mostrar('jd')">
+                    Jogos Digitais
+                </button>
+                <div id="jd">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <button href="" onclick="mostrar('rc')">
+                    Redes de Computadores
+                </button>
+                <div id="rc">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <button onclick="mostrar('bd')">
+                    <p>Banco de Dados</p>
+                </button>
+                <div id="bd">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </article>
+</section>
+{% endblock %}
