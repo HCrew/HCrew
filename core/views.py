@@ -1,73 +1,61 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 
-
-# Função para retornar view de index.html
 def index(request):
-    return render(request, 'core/index.html')
+    context = {
+        "titulo": "Faculdade Impacta de Tecnologia"
+    }
+    return render(request, 'index.html', context)
 
-
-# Função para retornar view de contato.html
-def contato(request):
-    if request.method == 'GET':
-        return render(request, 'core/contato.html')
-    elif request.method == 'POST':
-        print(('Nome completo: {0[Username]}\n'
-               'E-mail:        {0[email]}\n'
-               'Assunto:       {0[option]}\n'
-               'Mensagem:      {0[message]}').format(request.POST))
-        return redirect('/contato')
-
-
-# Função para retornar view de login.html
-def login(request):
-    if request.method == 'GET':
-        if not request.session.get('logged-in'):
-            return render(request, 'core/login.html')
-
-        else:
-            return redirect('core:index')
-
-    elif request.method == 'POST':
-        if request.POST.get('password') == 'teste123':
-            print('Usuário {} entrou com sucesso!'.format(request.POST.get('email')))
-            request.session.cycle_key()
-            request.session['logged-in'] = True
-            not request.POST.get('rememberme') and request.session.set_expiry(0)
-            return redirect('core:index')
-
-        else:
-            print('Usuário {} digitou senha incorreta!'.format(request.POST.get('email')))
-            return render(request, 'core/login.html', {'email': request.POST.get('email')})
-
-
-def logout(request):
-    request.session.flush()
-    return redirect('core:index')
-
+def sobre(request):
+    context = {
+        "titulo": "Sobre nós"
+    }
+    return render(request, 'sobre.html', context)
 
 def cursos(request):
-    return render(request, 'core/cursos.html')
+    context = {
+        "titulo": "Nossos cursos"
+    }
+    return render(request, 'cursos.html', context)
 
+def contato(request):
+    context = {
+        "titulo": "Contato"
+    }
+    return render(request, 'contato.html', context)
 
-def detalhesCurso(request):
-    return render(request, 'core/detalhes_curso.html')
+def login(request):
+    context = {
+        "titulo": "Área restrita"
+    }
+    return render(request, 'login.html', context)
 
+def disciplinaADS(request):
+    context = {
+        "titulo": "Análise e Desenvolvimento de Sistemas"
+    }
+    return render(request, 'disciplinaADS.html', context)
 
-def form_novo_curso(request):
-    return render(request, 'core/form_novo_curso.html')
+def novaDisciplina(request):
+    context = {
+        "titulo": "Nova disciplina"
+    }
+    return render(request, 'novaDisciplina.html', context)
 
+def novoAluno(request):
+    context = {
+        "titulo": "Novo aluno"
+    }
+    return render(request, 'novoAluno.html', context)
 
-def form_nova_disciplina(request):
-    return render(request, 'core/form_nova_disciplina.html')
+def novoCurso(request):
+    context = {
+        "titulo": "Novo curso"
+    }
+    return render(request, 'novoCurso.html', context)
 
-
-def disciplina_cursos(request):
-    return render(request, 'core/disciplina_cursos.html')
-
-
-def aImpacta(request):
-    return render(request, 'core/aImpacta.html')
-
-
-def subject_detail(request, subject_name):
-    return render(request, 'core/subject_detail.html', {'subject_name': subject_name})
+def matricula(request):
+    context = {
+        "titulo": "Matricula"
+    }
+    return render(request, 'matricula.html', context)

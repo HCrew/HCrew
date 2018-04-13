@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="../static/css/styleLogin.css">
+{% endblock %}
+
+{% block conteudo %}
+<section>
+    <article>
+        <form action="" method="POST" id="form_login" name="form_login">
+            <fieldset>
+                <legend>
+                    <h2>Login</h2>
+                </legend>
+                <ul>
+                    <li>
+                        <input type="email" id="email" name="email" placeholder="E-mail:">
+                    </li>
+                    <li>
+                        <input type="password" id="senha" name="senha" placeholder="Senha:">
+                    </li>
+                    <li>
+                        <button>Entrar</button>
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+    </article>
+</section>
+{% endblock %}

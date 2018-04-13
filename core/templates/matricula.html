@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="../static/css/styleMatricula.css">
+{% endblock %}
+
+{% block js %}
+    <script src="../static/js/matricula.js" defer></script>
+{% endblock %}
+
+{% block conteudo %}
+<section>
+    <article>
+        <h2>Tecnologias Web | 1º 2018 | Turma A</h2>
+        <form id="alunos">
+            <table>
+                <tr>
+                    <th>RA</th>
+                    <th>Aluno</th>
+                    <th>Confirmação</th>
+                </tr>
+            </table>
+            <button>Cadastrar</button>
+        </form>
+    </article>
+</section>
+{% endblock %}
