@@ -13,8 +13,7 @@
     border: none;
 }
 
-#ads, #gti, #rc, #bd, #adm, #jd {
-    display: none;
+div {
     margin-bottom: 1%;
     color: #fff;
     background: rgba(87, 76, 79, 0.7);

@@ -14,7 +14,10 @@ def sobre(request):
 
 def cursos(request):
     context = {
-        "titulo": "Nossos cursos"
+        "titulo": "Nossos cursos",
+        "cursos": ['Análise e Desenvolvimento de Sistemas', 'Administração', 'Gestão de Tecnologia da Informação', 'Jogos Digitais', 'Redes de Computadores', 'Banco de Dados'],
+        "siglas": ['ads', 'adm', 'gti', 'jd', 'rc', 'bd'],
+        "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     }
     return render(request, 'cursos.html', context)
 
