@@ -12,7 +12,9 @@
     text-transform: uppercase;
     border: none;
 }
-
+a{
+    color: white
+}
 div {
     margin-bottom: 1%;
     color: #fff;
