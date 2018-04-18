@@ -155,6 +155,120 @@ def disciplinaADS(request):
     }
     return render(request, 'disciplinaADS.html', context)
 
+
+
+def disciplinaBancoDeDados(request):
+    context = {
+        "titulo": "Banco de Dados",
+        "semestres":[
+            {
+                "semestre": "1º Semestre",
+                "disciplinas":[
+                    {
+                        "nome":"Fundamentos de banco de dados",
+                        "cargaHoraria" : "80"
+                    },
+                    {
+                        "nome":"Introdução a internet das coisas",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Linguagem de programação",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Matematica aplicada",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Logica de programação",
+                        "cargaHoraria" : "80"
+                    }
+                ]
+            },
+            {
+
+                "semestre": "2º Semestre",
+                "disciplinas":[
+                    {
+                        "nome":"Análise Exploratória de Dados",
+                        "cargaHoraria" : "80"
+                    },
+                    {
+                        "nome":"Ambiente de Desenvolvimento e Operação",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Desenvolvimento de Sistemas",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Engenharia de Software",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Linguagem SQL",
+                        "cargaHoraria" : "80"
+                    }
+                ]
+            },
+            {
+                "semestre": "3º Semestre",
+                "disciplinas":[
+                    {
+                        "nome":"Developing Database",
+                        "cargaHoraria" : "80"
+                    },
+                    {
+                        "nome":"Estrutura de Dados",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Business Intelligence",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Data Analytics",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"OPE1 - Oficina Projeto Empresa",
+                        "cargaHoraria" : "80"
+                    }
+                ]
+            },
+            {
+                "semestre": "4º Semestre",
+                "disciplinas":[
+                    {
+                        "nome":"Administração de Banco de Dados",
+                        "cargaHoraria" : "80"
+                    },
+                    {
+                        "nome":"Qualidade de Governança de Dados",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Segurança de Banco de Dados:",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Big Data",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Computação Cognitiva",
+                        "cargaHoraria" : "80"
+                    }
+                ]
+            }
+            
+        ]
+    }
+    return render(request, 'disciplinaADS.html', context)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def novaDisciplina(request):
     context = {
         "titulo": "Nova disciplina"
