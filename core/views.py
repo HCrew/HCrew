@@ -77,27 +77,27 @@ def disciplinaADS(request):
                     {
                         "nome": "Lógica de programação",
                         "cargaHoraria": "80",
-                        "url":"/ADS/logicaDeProgramacao"
+                        "url": "/ADS/logicaDeProgramacao"
                     },
                     {
                         "nome": "Matematica aplicada",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Modelagem de banco de dados",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Introdução a Internet das Coisas",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Linguagem de programação 1",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     }
                 ]
             },
@@ -108,27 +108,27 @@ def disciplinaADS(request):
                     {
                         "nome": "Ambiente Desenvolvimento e Operação",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Engenharia de Software",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Tecnologia Web",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Linguagem SQL",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Linguagem de programação 2",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     }
                 ]
             },
@@ -138,27 +138,27 @@ def disciplinaADS(request):
                     {
                         "nome": "Desenvolvimento de Aplicações Distribuidas",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Engenharia de requisitos",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Estrutura de dados",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Interface homem computador",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Oficina de Projeto de Empresa 1",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     }
                 ]
             },
@@ -168,27 +168,27 @@ def disciplinaADS(request):
                     {
                         "nome": "Arquitetura e projetos de sistemas",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Desenvolvimento de Aplicações Distribuídas",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Oficina de Projeto de Empresa 2",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Qualidade de Software",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Redes e Segurança de Sistemas de Informação",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     }
                 ]
             }
@@ -208,12 +208,12 @@ def disciplinaBancoDeDados(request):
                     {
                         "nome": "Fundamentos de banco de dados",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Introdução a internet das coisas",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Linguagem de programação",
@@ -223,12 +223,12 @@ def disciplinaBancoDeDados(request):
                     {
                         "nome": "Matematica aplicada",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Logica de programação",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     }
                 ]
             },
@@ -239,27 +239,27 @@ def disciplinaBancoDeDados(request):
                     {
                         "nome": "Análise Exploratória de Dados",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Ambiente de Desenvolvimento e Operação",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Desenvolvimento de Sistemas",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Engenharia de Software",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Linguagem SQL",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     }
                 ]
             },
@@ -269,27 +269,27 @@ def disciplinaBancoDeDados(request):
                     {
                         "nome": "Developing Database",
                         "cargaHoraria": "80",
-                        "url":""                        
+                        "url": ""
                     },
                     {
                         "nome": "Estrutura de Dados",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Business Intelligence",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Data Analytics",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "OPE1 - Oficina Projeto Empresa",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     }
                 ]
             },
@@ -299,27 +299,27 @@ def disciplinaBancoDeDados(request):
                     {
                         "nome": "Administração de Banco de Dados",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Qualidade de Governança de Dados",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Segurança de Banco de Dados: ",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Big Data",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     },
                     {
                         "nome": "Computação Cognitiva",
                         "cargaHoraria": "80",
-                        "url":""
+                        "url": ""
                     }
                 ]
             }
@@ -387,10 +387,13 @@ def adm(request):
     }
     return render(request, 'detalhesCurso.html', context)
 
+
 def logicaDeProgramacao(request):
     context = {
         "titulo": "Lógica de Programação",
-        "sobre": "Ensino e aprendizagem do “pensar” algorítmico e sistêmico fundamental para a modelagem,desenvolvimento e implementação de soluções computacionais. O conhecimento base deprogramação, contempla: visão geral da contribuição da computação, de seus componentes e",
+        "sobre": "Ensino e aprendizagem do “pensar” algorítmico e sistêmico fundamental para a modelagem, "
+                 "desenvolvimento e implementação de soluções computacionais. O conhecimento base deprogramação, "
+                 "contempla: visão geral da contribuição da computação, de seus componentes e",
         "cargaHoraria": 80
     }
     return render(request, 'detalhesDisciplina.html', context)
