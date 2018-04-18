@@ -115,4 +115,4 @@ venv.bak/
 # End of https://www.gitignore.io/api/python,django
 Pipfile
 Pipfile.lock
-.vscode/settings.json
+.vscode/
