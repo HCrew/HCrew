@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="../static/css/styleDetalhesCurso.css"> 
+{% endblock %} 
+
+{% block conteudo %}
+<section>
+    <article>
+        <h2>{{ titulo }}</h2>
+        <h3>Sobre o curso:</h3>
+        <p>{{ sobre }}</p>
+        <a href="http://localhost:8000/disciplinaADS/">Ver disciplinas</a>
+    </article>
+</section>
+{% endblock %}

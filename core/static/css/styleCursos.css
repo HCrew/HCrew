@@ -1,0 +1,23 @@
+.nossosCursos article ul {
+    list-style: none;
+}
+
+.nossosCursos article ul li button {
+    width: 100%;
+    background: rgb(87, 76, 79);
+    padding: 2%;
+    margin-bottom: 1%;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+}
+a{
+    color: white
+}
+div {
+    margin-bottom: 1%;
+    color: #fff;
+    background: rgba(87, 76, 79, 0.7);
+    padding: 1%;
+}

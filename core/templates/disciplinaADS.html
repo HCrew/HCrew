@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+
+{% block css %}
+    <link rel="stylesheet" href="../static/css/styleDisciplinasADS.css"> 
+{% endblock %} 
+
+{% block conteudo %}
+<section class="disciplinasADS">
+    <article>
+        <h2>{{titulo}}</h2>
+        {%for semestre in semestres%}
+        <h3>{{ semestre.semestre }}</h3>
+        <table>
+            <tr>
+                <th>Matéria</th>
+                <th>Carga Horária</th>
+            </tr>
+            {% for disciplina in semestre.disciplinas %}
+            <tr>
+                <td><a href="{{disciplina.url}}">{{ disciplina.nome }}</a> </td>
+                <td><a href="">{{ disciplina.cargaHoraria }}</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endfor %}
+
+    </article>
+</section>
+{% endblock %}

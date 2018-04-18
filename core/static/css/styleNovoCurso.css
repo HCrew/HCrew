@@ -1,0 +1,15 @@
+select, textarea {
+    width: 95%;
+    padding: 1.5%;
+    margin-bottom: 1%;
+    border: none;
+    font-size: 1em;
+}
+
+select {
+    width: 98%;
+}
+
+textarea {
+    height: 80px;
+}

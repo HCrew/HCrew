@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+
+{% block css %}
+    <link rel="stylesheet" href="../static/css/styleDisciplinasADS.css"> 
+{% endblock %} 
+
+{% block conteudo %}
+<section class = "detalhesDisciplina">
+    <article>
+            <h2>{{titulo}}</h2>
+            <p><strong>Ementa: </strong>{{sobre}}</p>
+            <br>
+            <p><strong>Carga Horária: </strong>{{cargaHoraria}}</p>
+    </article>
+</section>
+
+{% endblock %}

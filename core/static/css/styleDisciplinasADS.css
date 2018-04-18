@@ -1,0 +1,22 @@
+table {
+    width: 100%;
+}
+
+table tr th {
+    width: 50%;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgb(87, 76, 79);
+}
+
+table tr td {
+    width: 50%;
+    text-align: center;
+    color: #fff;
+    background: rgba(87, 76, 79, 0.5);
+}
+
+table tr td a {
+    color: #fff;
+    text-decoration: none;
+}

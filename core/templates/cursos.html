@@ -1,0 +1,28 @@
+{% extends 'base.html' %} 
+
+{% block css %}
+<link rel="stylesheet" href="../static/css/styleCursos.css"> 
+{% endblock %} 
+
+{% block conteudo %}
+<section class="nossosCursos">
+    <article>
+        <h2>Cursos</h2>
+        <ul>
+            {% for curso in cursos %}
+            <li>
+                <!-- ESTÁ SENDO UTILIZADA A TAG BUTTON POIS FUTURAMENTE SERÁ UTILIZADA PARA CRIAR UM EFEITO AO CLICAR -->
+                <button >
+                    <a href="{{curso.url}}">{{ curso.curso }}</a>
+                </button>
+                <div>
+                    <p>
+                        {{ descricao }}
+                    </p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </article>
+</section>
+{% endblock %}
