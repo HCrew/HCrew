@@ -8,7 +8,7 @@ class Professor:
         self.__disciplinas = []
 
     def getNome(self):
-        return self.__nome        
+        return self.__nome
 
     def setNome(self, nome):
         self.__nome = nome
@@ -22,7 +22,7 @@ class Professor:
     def getRA(self):
         return self.__ra
 
-    def setRA(self, cargaHoraria):
+    def setRA(self, ra):
         self.__ra = ra
 
     def getCelular(self):
@@ -48,4 +48,3 @@ class Professor:
         for i in self.__disciplinas:
             somaCarga += i.getCargaHoraria()/20
         return somaCarga
-    

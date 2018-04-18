@@ -1,5 +1,5 @@
 class Aluno:
-        
+
     def __init__(self, nome='', email='', ra='', celular='', desconto=0.0, disciplinas=[]):
         self.__nome = nome
         self.__email = email
@@ -9,7 +9,7 @@ class Aluno:
         self.__disciplinas = disciplinas
 
     def getNome(self):
-        return self.__nome        
+        return self.__nome
 
     def setNome(self, nome):
         self.__nome = nome

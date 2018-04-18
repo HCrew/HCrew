@@ -17,7 +17,7 @@ class Disciplina:
 
     def setCargaHoraria(self, cargaHoraria):
         self.__cargaHoraria = cargaHoraria
-    
+
     def getMensalidade(self):
         return self.__mensalidade
 
