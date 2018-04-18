@@ -17,8 +17,8 @@
             </tr>
             {% for disciplina in semestre.disciplinas %}
             <tr>
-                <td><a href="#">{{ disciplina.nome }}</a> </td>
-                <td><a href="#">{{ disciplina.cargaHoraria }}</a></td>
+                <td><a href="{{disciplina.url}}">{{ disciplina.nome }}</a> </td>
+                <td><a href="">{{ disciplina.cargaHoraria }}</a></td>
             </tr>
             {% endfor %}
         </table>
