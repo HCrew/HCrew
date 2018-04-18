@@ -7,212 +7,23 @@
 {% block conteudo %}
 <section class="disciplinasADS">
     <article>
-        <h2>Análise e Desenvolvimento de Sistemas</h2>
-        <h3>1º Semestre</h3>
+        <h2>{{titulo}}</h2>
+        {%for semestre in semestres%}
+        <h3>{{ semestre.semestre }}</h3>
         <table>
             <tr>
                 <th>Matéria</th>
-                <th>Carga horaria</th>
+                <th>Carga Horária</th>
             </tr>
+            {% for disciplina in semestre.disciplinas %}
             <tr>
-                <td>
-                    <a href="">Lógica de programação</a>
-                </td>
-                <td>80 horas</td>
+                <td><a href="#">{{ disciplina.nome }}</a> </td>
+                <td><a href="#">{{ disciplina.cargaHoraria }}</a></td>
             </tr>
-            <tr>
-                <td>
-                    <a href="">Matematica aplicada</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="">Modelagem de banco de dados</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="">Introdução a Internet das coisas</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="">Linguagem de programação I</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-
+            {% endfor %}
         </table>
+        {% endfor %}
 
-
-        <h3>2º Semestre</h3>
-        <table>
-            <tr>
-                <th>Matéria</th>
-                <th>Carga horaria</th>
-            </tr>
-            <tr>
-                <td>
-                    <a href="">Ambiente de Desenvolvimento e Operação</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="">Engenharia de Software</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="">Gestão de Projetos</a>
-                </td>
-                <td>40 horas</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="">Libras (Optativa)</a>
-                </td>
-                <td>40 horas</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="">Linguagem de programação II</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="">Linguagem SQL</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="">Sociedade e Sustentabilidade (Optativa)</a>
-                </td>
-                <td>40 horas</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="">Tecnologia Web</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-
-        </table>
-
-
-
-        <h3>3º Semestre</h3>
-        <table>
-            <tr>
-                <th>Matéria</th>
-                <th>Carga horaria</th>
-            </tr>
-            <tr>
-                <td>
-                    <a href="">Análise e Modelagem de Sistemas</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="">Desenvolvimento de Aplicações Distribuidas</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="">Engenharia de Requisitos</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="">Estrutura de Dados</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="">Interface Homem Computador</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="">Oficina de Projeto de Empresa 1</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-
-        </table>
-
-        <h3>4º Semestre</h3>
-        <table>
-            <tr>
-                <th>Matéria</th>
-                <th>Carga horaria</th>
-            </tr>
-            <tr>
-                <td>
-                    <a href="">Arquitetura e Projeto de Sistemas</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="">Desenvolvimento de Aplicações Distribuídas</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="">Gestão de Sistemas de Informação</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="">Oficina de Projeto de Empresa 2</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="">Qualidade de Software</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="">Redes e Segurança de Sistemas de Informação</a>
-                </td>
-                <td>80 horas</td>
-            </tr>
-
-        </table>
     </article>
 </section>
 {% endblock %}

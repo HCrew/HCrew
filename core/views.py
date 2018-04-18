@@ -35,7 +35,99 @@ def login(request):
 
 def disciplinaADS(request):
     context = {
-        "titulo": "Análise e Desenvolvimento de Sistemas"
+        "titulo": "Análise e Desenvolvimento de Sistemas",
+        "semestres":[
+            {
+                "semestre": "1º Semestre",
+                "disciplinas":[
+                    {
+                        "nome":"Lógica de programação",
+                        "cargaHoraria" : "80"
+                    },
+                    {
+                        "nome":"Matematica aplicada",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Modelagem de banco de dados",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Introdução a Internet das Coisas",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Linguagem de programação 1",
+                        "cargaHoraria" : "80"
+                    }
+                ]
+            },
+            {
+
+                "semestre": "2º Semestre",
+                "disciplinas":[
+                    {
+                        "nome":"Ambiente Desenvolvimento e Operação",
+                        "cargaHoraria" : "80"
+                    },
+                    {
+                        "nome":"Engenharia de Software",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Tecnologia Web",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Linguagem SQL",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Linguagem de programação 2",
+                        "cargaHoraria" : "80"
+                    }
+                ]
+            },
+            {
+                "semestre": "3º Semestre",
+                "disciplinas":[
+                    {
+                        "nome":"Desenvolvimento de Aplicações Distribuidas",
+                        "cargaHoraria" : "80"
+                    },
+                    {
+                        "nome":"Engenharia de requisitos",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Estrutura de dados",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Interface homem computador",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Oficina de Projeto de Empresa 1",
+                        "cargaHoraria" : "80"
+                    }
+                ]
+            },
+            {
+                "semestre": "4º Semestre",
+                "disciplinas":[
+                    {
+                        "nome":"Arquitetura e projetos de sistemas",
+                        "cargaHoraria" : "80"
+                    },
+                    {
+                        "nome":"Desenvolvimento de Aplicações Distribuídas",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Oficina de Projeto de Empresa 2",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Qualidade de Software",
+                        "cargaHoraria" : "80"
+                    },{
+                        "nome":"Redes e Segurança de Sistemas de Informação",
+                        "cargaHoraria" : "80"
+                    }
+                ]
+            }
+            
+        ]
     }
     return render(request, 'disciplinaADS.html', context)
 
