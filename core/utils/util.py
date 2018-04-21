@@ -1,4 +1,5 @@
 import difflib
+import datetime
 
 class Util:
 
@@ -16,11 +17,26 @@ class Util:
         return (ac60 + prova40)/10
     
     @staticmethod
-    def gerarNumeroRa(ultimoRa):
+    def gerarNumeroRA(ultimoRa):
         'o ra deve ter 7 digitos, no formato AAXXXXX'
         'AA: representa o ano'
         'xxxxx: proximo 5 digitos deve ser o proximo numero dos ultimos 5 digitos do parametro'
-        pass
+        today = datetime.date.today()
+        n = today.strftime('%y')
+        ultimo_ra = str(ultimoRa)
+        a = ultimo_ra[:2]
+        x = ultimo_ra.replace(a, n)
+        x = x[:2]
+        w = ultimo_ra[2:]
+        w = int(w) + 1
+        w = str(w)
+        if len(w) == 6:
+            w = '00000'
+            return x + w
+        elif len(w) <= 5:
+            while len(w) <= 5:
+                w = w.zfill(5)
+                return x + w
     
     @staticmethod
     def calculaMedia(listaNotas):
