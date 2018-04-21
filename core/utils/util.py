@@ -1,6 +1,7 @@
 import difflib
 import datetime
 
+
 class Util:
 
     @staticmethod
@@ -8,14 +9,14 @@ class Util:
         'retornar media ponderada entre ac prova'
         'media e dada por 60% e acs 40%'
         'caso algum paramentro seja negativo ou maior que 10'
-        if ac <0 or ac > 10:
+        if ac < 0 or ac > 10:
             return None
-        elif prova <0 or prova > 10:
+        elif prova < 0 or prova > 10:
             return None
         ac60 = ac*6
         prova40 = prova*4
         return (ac60 + prova40)/10
-    
+
     @staticmethod
     def gerarNumeroRA(ultimoRa):
         'o ra deve ter 7 digitos, no formato AAXXXXX'
@@ -37,7 +38,7 @@ class Util:
             while len(w) <= 5:
                 w = w.zfill(5)
                 return x + w
-    
+
     @staticmethod
     def calculaMedia(listaNotas):
         'retorna media aritimetica'
@@ -45,15 +46,15 @@ class Util:
         i = 0
         for nota in listaNotas:
             total += nota
-            i +=1
+            i += 1
         return total/i
-    
+
     @staticmethod
     def descontaNota(nota, porcentagem):
         'retorna nota calculada'
         valorDesconto = nota*porcentagem/100
         return nota - valorDesconto
-    
+
     @staticmethod
     def verificaCopia(texto1, texto2):
         'verificar se os texto sao parecidos'
@@ -61,8 +62,8 @@ class Util:
         'biblioteca difflib'
         seq = difflib.SequenceMatcher(None, texto1, texto2)
         qtd = seq.ratio()*100
-    
+
         if qtd >= 80:
             return True
-            
+
         return False
