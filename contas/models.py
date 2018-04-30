@@ -47,7 +47,7 @@ class Professor(models.Model):
 class Mensagem(models.Model):
     id_mensagem = models.AutoField(primary_key=True)
     id_aluno_mensagem = models.ForeignKey(Aluno, models.DO_NOTHING, db_column='id_aluno_mensagem')
-    id_professor_mensagem = models.ForeignKey('TblProfessor', models.DO_NOTHING, db_column='id_professor_mensagem')
+    id_professor_mensagem = models.ForeignKey(Professor, models.DO_NOTHING, db_column='id_professor_mensagem')
     assunto_mensagem = models.CharField(max_length=50)
     referencia_mensagem = models.CharField(max_length=50)
     conteudo_mensagem = models.CharField(max_length=60)

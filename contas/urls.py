@@ -5,8 +5,8 @@ from .views import (
 )
 
 urlpatterns = [
-    path('novoAluno/', novoAluno),
-    path('editarAluno/', editarAluno),
+    path('incluirAluno/', novoAluno),
+    path('editarAluno/<int:id>/', editarAluno),
     path('excluirAluno/', excluirAluno),
     path('pesquisarAluno/', pesquisarAluno)
 ]

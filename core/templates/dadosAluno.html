@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href=""> 
+{% endblock %} 
+
+{% block conteudo %}
+<h2>{{titulo}}</h2>
+{%if aluno.id_aluno%}
+
+{%else%}
+
+{%endif%}
+<form method="POST" action="/incluirAluno/">
+    <p>
+        Nome: <input name="nome" value="{{aluno.nome_aluno}}"/>
+        E-mail: <input name="email" value="{{aluno.email_aluno}}"/>
+        Celular: <input name="celular" value="{{aluno.celular_aluno}}"/>
+        <button>{{botao}}</button>
+    </p>
+</form>
+
+
+{%endblock%}

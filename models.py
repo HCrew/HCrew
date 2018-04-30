@@ -36,7 +36,7 @@ class Atividade(models.Model):
     conteudo_atividade = models.CharField(max_length=80)
     tipo_atividade = models.CharField(max_length=30)
     extras_atividade = models.CharField(max_length=30, blank=True, null=True)
-    id_professor_atividade = models.ForeignKey('TblProfessor', models.DO_NOTHING, db_column='id_professor_atividade')
+    id_professor_atividade = models.ForeignKey(Professor, models.DO_NOTHING, db_column='id_professor_atividade')
 
     class Meta:
         managed = False
@@ -46,7 +46,7 @@ class Atividade(models.Model):
 class AtividadeVinculada(models.Model):
     id_atividade_vinculada = models.AutoField(primary_key=True)
     id_atividade_atividade_vinculada = models.ForeignKey(Atividade, models.DO_NOTHING, db_column='id_atividade_atividade_vinculada')
-    id_professor_atividade_vinculada = models.ForeignKey('TblProfessor', models.DO_NOTHING, db_column='id_professor_atividade_vinculada')
+    id_professor_atividade_vinculada = models.ForeignKey(Professor, models.DO_NOTHING, db_column='id_professor_atividade_vinculada')
     id_disciplina_ofertada_atividade_vinculada = models.ForeignKey('TblDisciplinaOfertada', models.DO_NOTHING, db_column='id_disciplina_ofertada_atividade_vinculada')
     rotulo_atividade_vinculada = models.CharField(max_length=50)
     status_atividade_vinculada = models.CharField(max_length=30)

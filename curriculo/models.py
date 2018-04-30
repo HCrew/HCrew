@@ -1,5 +1,5 @@
 from django.db import models
-from contas.models import Coordenador
+from contas.models import Coordenador, Professor
 
 class Curso(models.Model):
     id_curso = models.AutoField(primary_key=True)
@@ -42,7 +42,7 @@ class DisciplinaOfertada(models.Model):
     ano_disciplina_ofertada = models.IntegerField()
     semestre_disciplina_ofertada = models.IntegerField()
     turma_disciplina_ofertada = models.CharField(max_length=10)
-    id_professor_disciplina_ofertada = models.ForeignKey('TblProfessor', models.DO_NOTHING, db_column='id_professor_disciplina_ofertada', blank=True, null=True)
+    id_professor_disciplina_ofertada = models.ForeignKey(Professor, models.DO_NOTHING, db_column='id_professor_disciplina_ofertada', blank=True, null=True)
     metodologia_disciplina_ofertada = models.CharField(max_length=50, blank=True, null=True)
     recursos_disciplina_ofertada = models.CharField(max_length=50, blank=True, null=True)
     criterio_avaliacao_disciplina_ofertada = models.CharField(max_length=50, blank=True, null=True)
