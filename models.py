@@ -7,6 +7,11 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
+'''
+   AS CLASSES DESSA MODEL JÁ FOREM DISTRIBUIDAS PARA OS MODELS DOS APP ONDE CADA UM DEVE FICAR
+   NO TRELLO TEM O QUE CADA APP POSSUI DE MODEL 
+'''
+
 
 class Aluno(models.Model):
     id_aluno = models.AutoField(primary_key=True)

@@ -1,3 +1,17 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+
+def novoAluno(request):
+    pass
+
+def editarAluno(request):
+    pass
+
+def excluirAluno(request):
+    pass
+
+def pesquisarAluno(request):
+    pass
+
+

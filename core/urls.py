@@ -17,7 +17,7 @@ from django.urls import path
 from .views import (
     index, sobre, cursos, contato, login, disciplinaADS,
     matricula, ads, adm, disciplinaBancoDeDados, logicaDeProgramacao,
-    novoAluno, novoCurso, novaDisciplina
+    novoCurso, novaDisciplina
 )
 
 urlpatterns = [
@@ -32,7 +32,6 @@ urlpatterns = [
     path('ADS/', ads),
     path('ADM/', adm),
     path('ADS/logicaDeProgramacao', logicaDeProgramacao),
-    path('novoAluno/', novoAluno),
     path('novoCurso/', novoCurso),
     path('novaDisciplina/', novaDisciplina)
 ]

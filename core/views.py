@@ -377,11 +377,6 @@ def logicaDeProgramacao(request):
     }
     return render(request, 'detalhesDisciplina.html', context)
 
-def novoAluno(request):
-    context = {
-        "titulo": "Novo aluno"
-    }
-    return render(request, 'novoAluno.html', context)
 
 def novoCurso(request):
     context = {
