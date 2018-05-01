@@ -9,7 +9,7 @@ class Aluno(models.Model):
     nome_aluno = models.CharField(max_length=100)
     email_aluno = models.CharField(unique=True, max_length=70)
     celular_aluno = models.IntegerField(unique=True)
-    dt_expiracao_aluno = models.DateField()
+    dt_expiracao_aluno = models.DateField(default='1900-01-01')
     ra_aluno = models.IntegerField(unique=True)
     foto_aluno = models.CharField(max_length=100, blank=True, null=True)
 
@@ -66,7 +66,7 @@ class Mensagem(models.Model):
     resposta_mensagem = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
-        return f'{self.id_aluno_mensagem} : {self.id_professor_mensagem}'
+        return '{self.id_aluno_mensagem} : {self.id_professor_mensagem}'
 
     class Meta:
         managed = False
