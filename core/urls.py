@@ -21,17 +21,17 @@ from .views import (
 )
 
 urlpatterns = [
-    path('', index),
-    path('sobre/', sobre),
-    path('cursos/', cursos),
-    path('contato/', contato),
-    path('login/', login),
-    path('disciplinaADS/', disciplinaADS),
-    path('disciplinaBancoDeDados/', disciplinaBancoDeDados),
-    path('matricula/', matricula),
-    path('ADS/', ads),
-    path('ADM/', adm),
-    path('ADS/logicaDeProgramacao', logicaDeProgramacao),
-    path('novoCurso/', novoCurso),
-    path('novaDisciplina/', novaDisciplina)
+    path('', index, name='index'),
+    path('sobre/', sobre, name='sobre'),
+    path('cursos/', cursos, name='cursos'),
+    path('contato/', contato, name='contato'),
+    path('login/', login, name='login'),
+    path('disciplinaADS/', disciplinaADS, name='disciplinaADS'),
+    path('disciplinaBancoDeDados/', disciplinaBancoDeDados, name='disciplinaBancoDeDados'),
+    path('matricula/', matricula, name='matricula'),
+    path('ADS/', ads, name='ads'),
+    path('ADM/', adm, name='adm'),
+    path('ADS/logicaDeProgramacao', logicaDeProgramacao, name='logicaDeProgramacao'),
+    path('novoCurso/', novoCurso, name='novoCurso'),
+    path('novaDisciplina/', novaDisciplina, name='novaDisciplina'),
 ]
