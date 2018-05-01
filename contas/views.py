@@ -1,5 +1,7 @@
-from django.shortcuts import render, redirect
-from contas.models import Aluno
+from django.urls import reverse
+from django.shortcuts import render, redirect, get_object_or_404
+
+from contas.models import Aluno, Professor, Mensagem
 
 def novoAluno(request):
     if request.POST:
@@ -42,3 +44,62 @@ def pesquisarAluno(request):
     return render(request, 'listaAlunos.html', context)
 
 
+def message_create(request):
+    if request.method == 'POST':
+        professor = request.POST.get('professor')
+        aluno = request.POST.get('aluno')
+        assunto = request.POST.get('assunto')
+        referencia = request.POST.get('referencia')
+        conteudo = request.POST.get('conteudo')
+
+        Mensagem.objects.create(id_professor_mensagem_id=professor,
+                                id_aluno_mensagem_id=aluno,
+                                assunto_mensagem=assunto,
+                                referencia_mensagem=referencia,
+                                conteudo_mensagem=conteudo,
+                                status_mensagem='')
+        return redirect(reverse('message_list'))
+
+    alunos = Aluno.objects.all()
+    professores = Professor.objects.all()
+    return render(request, 'contas/message_edit.html',
+                  {'professors': professores, 'students': alunos})
+
+
+def message_list(request):
+    ms = Mensagem.objects.all()
+    return render(request, 'contas/message_list.html', {'messages': ms})
+
+
+def message_edit(request, pk):
+    message = get_object_or_404(Mensagem, pk=pk)
+
+    if request.method == 'POST':
+        professor = request.POST.get('professor')
+        aluno = request.POST.get('aluno')
+        assunto = request.POST.get('assunto')
+        referencia = request.POST.get('referencia')
+        conteudo = request.POST.get('conteudo')
+
+        message.__dict__.update({'id_professor_mensagem_id': professor,
+                                 'id_aluno_mensagem_id': aluno,
+                                 'assunto_mensagem': assunto,
+                                 'referencia_mensagem': referencia,
+                                 'conteudo_mensagem': conteudo})
+        message.save()
+        return redirect(reverse('message_list'))
+
+    alunos = Aluno.objects.all()
+    professores = Professor.objects.all()
+    return render(
+        request, 'contas/message_edit.html',
+        {'message': message, 'professors': professores, 'students': alunos})
+
+
+def message_delete(request):
+    if request.method != 'POST':
+        return None
+
+    m = get_object_or_404(Mensagem, pk=request.POST.get('pk'))
+    m.delete()
+    return redirect(reverse('message_list'))
