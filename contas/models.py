@@ -13,9 +13,13 @@ class Aluno(models.Model):
     ra_aluno = models.IntegerField(unique=True)
     foto_aluno = models.CharField(max_length=100, blank=True, null=True)
 
+    def __str__(self):
+        return self.nome_aluno
+
     class Meta:
         managed = False
         db_table = 'tbl_aluno'
+
 
 class Coordenador(models.Model):
     id_coordenador = models.AutoField(primary_key=True)
@@ -41,10 +45,13 @@ class Professor(models.Model):
     dt_expiracao_professor = models.DateField()
     apelido_professor = models.CharField(max_length=70)
 
+    def __str__(self):
+        return self.nome_professor
+
     class Meta:
         managed = False
         db_table = 'tbl_professor'
-        
+
 
 class Mensagem(models.Model):
     id_mensagem = models.AutoField(primary_key=True)
