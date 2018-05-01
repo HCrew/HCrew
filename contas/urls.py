@@ -10,7 +10,7 @@ urlpatterns = [
     #Aluno
     path('incluirAluno/', novoAluno),
     path('editarAluno/<int:id>/', editarAluno),
-    path('excluirAluno/', excluirAluno),
+    path('excluirAluno/<int:id>/', excluirAluno),
     path('pesquisarAluno/', pesquisarAluno),
 
     # Mensagens

@@ -3,37 +3,66 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 from contas.models import Aluno, Professor, Mensagem
 
+
 def novoAluno(request):
     if request.POST:
         Aluno.objects.create(
+            login_aluno = request.POST.get('login'),
+            senha_aluno = request.POST.get('senha'),
             nome_aluno = request.POST.get('nome'),
             email_aluno = request.POST.get('email'),
-            celular_aluno = request.POST.get('celular')
+            celular_aluno = request.POST.get('celular'),
+            ra_aluno = request.POST.get('ra')
         )
         return redirect('/pesquisarAluno/')
     else:
         context = {
         "titulo": "Novo Aluno",
-        "botao":"Salvar"
+        "botao":"Salvar",
+        "action": "/incluirAluno/"
         }
-        return render(request, 'dadosAluno.html', context)
+        return render(request, 'contas/dadosAluno.html', context)
+
 
 def editarAluno(request, id):
-    aluno = Aluno.objects.get(id_aluno = id)
-    context = {
-        "titulo":"Editar Aluno",
-        "botao":"Atualizar",
-        "aluno":aluno
-    }
-    return render(request, 'dadosAluno.html', context)
+    if request.POST:
+        aluno = Aluno.objects.get(id_aluno = id)
+        
+        aluno.login_aluno = request.POST.get('login')
+        aluno.senha_aluno = request.POST.get('senha')
+        aluno.nome_aluno = request.POST.get('nome')
+        aluno.email_aluno = request.POST.get('email')
+        aluno.celular_aluno = request.POST.get('celular')
+        aluno.ra_aluno = request.POST.get('ra')
+        
+        aluno.save()
+        
+        return redirect('/pesquisarAluno/')
+    else:
+        aluno = Aluno.objects.get(id_aluno = id)
+        context = {
+            "titulo":"Editar Aluno",
+            "botao":"Atualizar",
+            "aluno":aluno,
+            "action": "/incluirAluno/"
+        }
+        return render(request, 'contas/dadosAluno.html', context)
 
 
-def excluirAluno(request):
-    context = {
-        "titulo":"Excluir Aluno",
-        "botao":"Excluir"
-    }
-    return render(request, 'dadosAluno.html', context)
+def excluirAluno(request, id):
+    if request.POST:
+        aluno = Aluno.objects.get(id_aluno = id)
+        aluno.delete()
+        return redirect('/pesquisarAluno/')
+    else:
+        aluno = Aluno.objects.get(id_aluno = id)
+        context = {
+            "titulo":"Excluir Aluno",
+            "botao":"Excluir",
+            "aluno": aluno,
+            "action": "/incluirAluno/"
+        }
+        return render(request, 'contas/dadosAluno.html', context)
 
 
 def pesquisarAluno(request):
@@ -41,7 +70,10 @@ def pesquisarAluno(request):
         "alunos": Aluno.objects.all(),
         "titulo" :"Alunos"
     }
-    return render(request, 'listaAlunos.html', context)
+    return render(request, 'contas/listaAlunos.html', context)
+
+
+
 
 
 def message_create(request):
