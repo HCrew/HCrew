@@ -65,6 +65,9 @@ class Mensagem(models.Model):
     dt_resposta_mensagem = models.DateField(blank=True, null=True)
     resposta_mensagem = models.CharField(max_length=50, blank=True, null=True)
 
+    def __str__(self):
+        return f'{self.id_aluno_mensagem} : {self.id_professor_mensagem}'
+
     class Meta:
         managed = False
         db_table = 'tbl_mensagem'
