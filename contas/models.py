@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils.timezone import now
+
 
 class Aluno(models.Model):
     id_aluno = models.AutoField(primary_key=True)
@@ -52,7 +54,7 @@ class Mensagem(models.Model):
     referencia_mensagem = models.CharField(max_length=50)
     conteudo_mensagem = models.CharField(max_length=60)
     status_mensagem = models.CharField(max_length=30)
-    dt_envio_mensagem = models.DateField()
+    dt_envio_mensagem = models.DateField(default=now)
     dt_resposta_mensagem = models.DateField(blank=True, null=True)
     resposta_mensagem = models.CharField(max_length=50, blank=True, null=True)
 
