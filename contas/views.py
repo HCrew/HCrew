@@ -103,3 +103,51 @@ def message_delete(request):
     m = get_object_or_404(Mensagem, pk=request.POST.get('pk'))
     m.delete()
     return redirect(reverse('message_list'))
+
+def novoProfessor (request):
+    if request.POST:
+        Professor.objects.create(
+            nome_professor = request.POST.get('nome'),
+            email_professor = request.POST.get('email'),
+            celular_professor = request.POST.get('celular')
+        )
+        return redirect ('/pesquisarProfessor/')
+    else:
+        context = {
+            "titulo": "Novo Professor"
+            "botao": "Salvar"
+        }    
+        return render(request, 'dadosProfessor.html', context)
+
+
+def editarProfessor (request):
+    professor = Professor.objects.get(id_professor = id)
+     context = {
+         "titulo": "Editar Professor"
+         "botao": "Atualizar"
+         "professor": professor
+     }
+     return render(request, 'dadosProfessor.html', context)
+
+
+def excluirProfessor (request):
+    context = {
+        "titulo": "Excluir Professor",
+        "botao": "Excluir"
+    }
+    return render(request, 'dadosProfessor.html', context)
+
+
+def pesquisarProfessor (request):
+    context = {
+        "professor": Professor.objects.all(),
+        "titulo": "Professor"
+    }
+    return render(request, 'listaProfessor.html', context)
+
+    
+    
+
+
+
+  
