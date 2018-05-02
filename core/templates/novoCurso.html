@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="../static/css/styleNovoCurso.css">
+{% endblock %}
+
+{% block conteudo %}
+<section>
+    <article>
+        <form action="" method="post" name="form_nova_disciplina">
+            <fieldset>
+                <legend>
+                    <h2>Novo Curso</h2>
+                </legend>
+                <ul>
+                    <li>
+                        <input type="text" id="nome_curso" name="curso" placeholder="Curso:" maxlength="100">
+                    </li>
+                    <li>
+                        <select>
+                            <option disabled selected>Tipo de curso:</option>
+                            <option id="graduacao" value="graduacao">Graduação</option>
+                            <option id="mba" value="mba">MBA</option>
+                            <option id="pos" value="pos">Pós Graduação</option>
+                            <option id="ead" value="ead">EAD</option>
+                            <option id="tecnico" value="tecnico">Técnico</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select>
+                            <option disabled selected>Carga horária:</option>
+                            <option id="40horas" value="40">40 horas</option>
+                            <option id="60horas" value="60">60 horas</option>
+                            <option id="80horas" value="80">80 horas</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select>
+                            <option disabled selected>Número de disciplinas:</option>
+                            <option id="4" value="4">4</option>
+                            <option id="6" value="6">6</option>
+                            <option id="8" value="8">8</option>
+                        </select>
+                    </li>
+                    <li>
+                        <textarea id="mensagem" placeholder="Descrição..."></textarea>
+                    </li>
+                    <li>
+                        <button>Cadastrar</button>
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+    </article>
+</section>
+{% endblock %}
