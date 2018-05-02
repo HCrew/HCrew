@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href=""> 
+{% endblock %} 
+
+{% block conteudo %}
+<h2>{{titulo}}</h2>
+
+<form method="POST" action="">
+    <p>
+        Id: <input name="Id" value="{{curso.id_curso}}" readonly="true"/>
+        Nome: <input name="nome" value="{{curso.nome_curso}}"/>
+        <button>{{botao}}</button>
+    </p>
+</form>
+
+
+{%endblock%}

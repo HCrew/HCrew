@@ -1,5 +1,12 @@
 from django.urls import path
 
-urlpatterns = [
+from .views import(
+    novoCurso, editarCurso, excluirCurso, pesquisarCurso
+)
 
+urlpatterns = [
+    path('incluirCurso/', novoCurso),
+    path('editarCurso/<int:id>/', editarCurso),
+    path('excluirCurso/<int:id>/', excluirCurso),
+    path('pesquisarCurso/', pesquisarCurso),
 ]
