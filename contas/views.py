@@ -16,10 +16,13 @@ def novoAluno(request):
         )
         return redirect('/pesquisarAluno/')
     else:
+        novoRa = 0 
         listRa =  Aluno.objects.values_list('ra_aluno', flat = True).order_by('ra_aluno')
         for ra in listRa:
             novoRa = ra
         novoRa += 1
+        if novoRa == 1:
+            novoRa = 1800000
         context = {
         "titulo": "Novo Aluno",
         "botao":"Salvar",
