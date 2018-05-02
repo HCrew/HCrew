@@ -22,7 +22,7 @@ urlpatterns = [
     #Professor
     path('incluirProfessor/', novoProfessor),
     path('editarProfessor/<int:id>/', editarProfessor),
-    path('excluirProfessor/', excluirProfessor),
+    path('excluirProfessor/<int:id>/', excluirProfessor),
     path('pesquisarProfessor/', pesquisarProfessor),
 
     #Mensagens

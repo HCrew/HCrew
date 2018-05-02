@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href=""> 
+{% endblock %} 
+
+{% block conteudo %}
+<section>
+    <article>
+        <h2>Professor</h2>
+        <a><a href="/incluirProfessor">Novo</a></a>
+            <table border="1" width="100%">
+                <tr>
+                    <th>Login</th>
+                    <th>Senha</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Celular</th>
+                    <th>Ações</th>
+                </tr>
+                {% for professor in professores %}
+                <tr>
+                    <td>{{professor.login_professor}}</td>
+                    <td>{{professor.senha_professor}}</td>
+                    <td>{{professor.nome_professor}}</td>
+                    <td>{{professor.email_professor}}</td>
+                    <td>{{professor.celular_professor}}</td>
+                    <td>
+                        <a href="/editarProfessor/{{professor.id_professor}}">Editar</a>
+                        <a href="/excluirProfessor/{{professor.id_professor}}">Excluir</a>
+                    </td>
+                </tr>
+                {%endfor%}
+            </table>
+    </article>
+</section>
+{% endblock %}
