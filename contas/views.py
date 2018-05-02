@@ -1,7 +1,12 @@
+
+from django.shortcuts import render, redirect
+from contas.models import Aluno, Coordenador
+
 from django.urls import reverse
 from django.shortcuts import render, redirect, get_object_or_404
 
 from contas.models import Aluno, Professor, Mensagem
+
 
 
 def novoAluno(request):
@@ -16,7 +21,7 @@ def novoAluno(request):
         )
         return redirect('/pesquisarAluno/')
     else:
-        novoRa = 0 
+        novoRa = 0
         listRa =  Aluno.objects.values_list('ra_aluno', flat = True).order_by('ra_aluno')
         for ra in listRa:
             novoRa = ra
@@ -34,16 +39,16 @@ def novoAluno(request):
 def editarAluno(request, id):
     if request.POST:
         aluno = Aluno.objects.get(id_aluno = id)
-        
+
         aluno.login_aluno = request.POST.get('login')
         aluno.senha_aluno = request.POST.get('senha')
         aluno.nome_aluno = request.POST.get('nome')
         aluno.email_aluno = request.POST.get('email')
         aluno.celular_aluno = request.POST.get('celular')
         aluno.ra_aluno = request.POST.get('ra')
-        
+
         aluno.save()
-        
+
         return redirect('/pesquisarAluno/')
     else:
         aluno = Aluno.objects.get(id_aluno = id)
@@ -162,6 +167,7 @@ def novoProfessor (request):
         context = {
             "titulo": "Novo Professor",
             "botao": "Salvar"
+
         }    
         return render(request, 'contas/dadosProfessor.html', context)
 
@@ -209,3 +215,56 @@ def pesquisarProfessor (request):
         "titulo": "Professor"
     }
     return render(request, 'contas/listaProfessor.html', context)
+
+
+    #-------COORDENADOR---------#
+
+def pesquisarCoordenador(request):
+    context = {
+    'coordenador': Coordenador.objects.all(),
+    'titulo': 'Coordenador'
+    }
+    return render(request, 'listaCoordenador.html', context)
+
+def novoCoordenador(request):
+    if request.POST:
+        login = request.POST.get('login')
+        senha = request.POST.get('senha')
+        nome = request.POST.get('nome')
+        email = request.POST.get('email')
+        celular = request.POST.get('celular')
+
+        Coordenador.objects.create(
+        login_coordenador = login,
+        senha_coordenador = senha,
+        nome_coordenador = nome,
+        email_coordenador = email,
+        celular_coordenador = celular
+        )
+        return redirect('/pesquisarCoordenador/')
+    else:
+        context = {
+        "titulo": "Novo Coordenador",
+        "botao":"Salvar"
+        }
+        return render(request, 'dadosCoordenador.html', context)
+
+
+def editarCoordenador(request, id):
+    coordenador = Coordenador.objects.get(id_coordenador = id)
+    if request.POST:
+        coordenador.login_coordenador = request.POST.get("login")
+        coordenador.senha_coordenador = request.POST.get("senha")
+        coordenador.nome_coordenador = request.POST.get("nome")
+        coordenador.email_coordenador = request.POST.get("email")
+        coordenador.celular_coordenador = request.POST.get("celular")
+        coordenador.dt_expiracao_coordenador = request.POST.get("data")
+        coordenador.save()
+        return redirect('/pesquisarCoordenador/')
+    else:
+        coordenador = Coordenador.objects.get(id_coordenador = id)
+        context = {
+        "coordenador": coordenador
+        }
+        return render(request, 'editar_dadosCoordenador.html', context)
+
