@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+
+{% block conteudo %}
+<section>
+    <article>
+        <h2>Coordenador</h2>
+        <a><a href="/novoCoordenador">Novo Coordenador</a></a>
+            <table border="1" width="100%">
+                <tr>
+                    <th>Login Coordenador</th>
+                    <th>Senha Coordenador</th>
+                    <th>Nome Coordenador</th>
+                    <th>Email Coordenador</th>
+                    <th>Celular Coordenador</th>
+                    <th>Data Exp. Coordenador</th>
+                    <th>Ações</th>
+                </tr>
+                {% for coordenador in coordenador %}
+                <tr>
+                    <td>{{coordenador.login_coordenador}}</td>
+                    <td>{{coordenador.senha_coordenador}}</td>
+                    <td>{{coordenador.nome_coordenador}}</td>
+                    <td>{{coordenador.email_coordenador}}</td>
+                    <td>{{coordenador.celular_coordenador}}</td>
+                    <td>{{coordenador.dt_expiracao_coordenador}}</td>
+                    <td>
+                        <a href="/editarCoordenador/{{coordenador.id_coordenador}}">Editar</a>
+                        <a href="/excluirCoordenador">Excluir</a>
+                    </td>
+                </tr>
+                {%endfor%}
+            </table>
+    </article>
+</section>
+{% endblock %}
