@@ -9,12 +9,12 @@
 
 <form method="POST" action="">
     <p>
+        RA: <input name="ra" value="{{ra}}" readonly="true"/>
+        Nome: <input name="nome" value="{{aluno.nome_aluno}}"/>
+        E-mail: <input name="email" value="{{aluno.email_aluno}}" type="email"/>
+        Celular: <input name="celular" value="{{aluno.celular_aluno}}"/>
         Login: <input name="login" value="{{aluno.login_aluno}}"/>
         Senha: <input name="senha" value="{{aluno.senha_aluno}}"/>
-        Nome: <input name="nome" value="{{aluno.nome_aluno}}"/>
-        E-mail: <input name="email" value="{{aluno.email_aluno}}"/>
-        Celular: <input name="celular" value="{{aluno.celular_aluno}}"/>
-        RA: <input name="ra" value="{{aluno.ra_aluno}}"/>
         <button>{{botao}}</button>
     </p>
 </form>

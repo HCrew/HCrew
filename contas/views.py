@@ -16,10 +16,14 @@ def novoAluno(request):
         )
         return redirect('/pesquisarAluno/')
     else:
+        listRa =  Aluno.objects.values_list('ra_aluno', flat = True).order_by('ra_aluno')
+        for ra in listRa:
+            novoRa = ra
+        novoRa += 1
         context = {
         "titulo": "Novo Aluno",
         "botao":"Salvar",
-        "action": "/incluirAluno/"
+        "ra": novoRa
         }
         return render(request, 'contas/dadosAluno.html', context)
 
@@ -44,7 +48,7 @@ def editarAluno(request, id):
             "titulo":"Editar Aluno",
             "botao":"Atualizar",
             "aluno":aluno,
-            "action": "/incluirAluno/"
+            "ra": aluno.ra_aluno
         }
         return render(request, 'contas/dadosAluno.html', context)
 
@@ -60,7 +64,7 @@ def excluirAluno(request, id):
             "titulo":"Excluir Aluno",
             "botao":"Excluir",
             "aluno": aluno,
-            "action": "/incluirAluno/"
+            "ra": aluno.ra_aluno
         }
         return render(request, 'contas/dadosAluno.html', context)
 
@@ -146,7 +150,7 @@ def novoProfessor (request):
         return redirect ('/pesquisarProfessor/')
     else:
         context = {
-            "titulo": "Novo Professor"
+            "titulo": "Novo Professor",
             "botao": "Salvar"
         }    
         return render(request, 'dadosProfessor.html', context)
@@ -154,12 +158,12 @@ def novoProfessor (request):
 
 def editarProfessor (request):
     professor = Professor.objects.get(id_professor = id)
-     context = {
-         "titulo": "Editar Professor"
-         "botao": "Atualizar"
-         "professor": professor
-     }
-     return render(request, 'dadosProfessor.html', context)
+    context = {
+        "titulo": "Editar Professor",
+        "botao": "Atualizar",
+        "professor": professor
+    }
+    return render(request, 'dadosProfessor.html', context)
 
 
 def excluirProfessor (request):
