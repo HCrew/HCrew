@@ -1,13 +1,13 @@
 
 from django.shortcuts import render, redirect
 from contas.models import Aluno, Coordenador
-=======
+
 from django.urls import reverse
 from django.shortcuts import render, redirect, get_object_or_404
 
 from contas.models import Aluno, Professor, Mensagem
 
->>>>>>> e79821e6a5b123a4d8d422f142ebcba59fbdeb18
+
 
 def novoAluno(request):
     if request.POST:
