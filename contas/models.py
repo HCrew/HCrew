@@ -46,7 +46,7 @@ class Professor(models.Model):
     nome_professor = models.CharField(max_length=100)
     email_professor = models.CharField(unique=True, max_length=70)
     celular_professor = models.IntegerField(unique=True)
-    dt_expiracao_professor = models.DateField()
+    dt_expiracao_professor = models.DateField(default='1900-01-01')
     apelido_professor = models.CharField(max_length=70)
 
     def __str__(self):

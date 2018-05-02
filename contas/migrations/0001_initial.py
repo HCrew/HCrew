@@ -61,7 +61,7 @@ class Migration(migrations.Migration):
                 ('conteudo_mensagem', models.CharField(max_length=60)),
                 ('status_mensagem', models.CharField(max_length=30)),
 
-                ('dt_envio_mensagem', models.DateField()),
+            
 
                 ('dt_envio_mensagem', models.DateField(default=django.utils.timezone.now)),
 

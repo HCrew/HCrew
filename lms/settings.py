@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'lms.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'lmsimpacta',
+        'NAME': 'lmsImpacta',
         'USER': 'postgres',
         'PASSWORD': 'esqueci59',
         'HOST': 'localhost',

@@ -148,46 +148,73 @@ def message_delete(request):
     m.delete()
     return redirect(reverse('message_list'))
 
+
+
+
+
 def novoProfessor (request):
     if request.POST:
         Professor.objects.create(
             nome_professor = request.POST.get('nome'),
             email_professor = request.POST.get('email'),
-            celular_professor = request.POST.get('celular')
+            celular_professor = request.POST.get('celular'),
+            login_professor = request.POST.get('login'),
+            senha_professor = request.POST.get('senha'),
+            apelido_professor = request.POST.get('apelido')
         )
         return redirect ('/pesquisarProfessor/')
     else:
         context = {
             "titulo": "Novo Professor",
             "botao": "Salvar"
+
+        }    
+        return render(request, 'contas/dadosProfessor.html', context)
+
+
+def editarProfessor (request, id):
+    if request.POST:
+        professor = Professor.objects.get(id_professor = id)
+
+        professor.login_professor = request.POST.get('login')
+        professor.senha_professor = request.POST.get('senha')
+        professor.nome_professor = request.POST.get('nome')
+        professor.email_professor = request.POST.get('email')
+        professor.celular_professor = request.POST.get('celular')
+
+        professor.save()
+
+        return redirect('/pesquisarProfessor/')
+    else:    
+        professor = Professor.objects.get(id_professor = id)
+        context = {
+            "titulo": "Editar Professor",
+            "botao": "Atualizar",
+            "professor": professor
         }
-        return render(request, 'dadosProfessor.html', context)
+        return render(request, 'contas/dadosProfessor.html', context)
 
 
-def editarProfessor (request):
+def excluirProfessor (request, id):
     professor = Professor.objects.get(id_professor = id)
-    context = {
-        "titulo": "Editar Professor",
-        "botao": "Atualizar",
-        "professor": professor
-    }
-    return render(request, 'dadosProfessor.html', context)
-
-
-def excluirProfessor (request):
-    context = {
-        "titulo": "Excluir Professor",
-        "botao": "Excluir"
-    }
-    return render(request, 'dadosProfessor.html', context)
+    if request.POST:
+        professor.delete()
+        return redirect('/pesquisarAluno/')
+    else:
+        context = {
+            "titulo": "Excluir Professor",
+            "botao": "Excluir",
+            "professor": professor
+        }
+        return render(request, 'contas/dadosProfessor.html', context)
 
 
 def pesquisarProfessor (request):
     context = {
-        "professor": Professor.objects.all(),
+        "professores": Professor.objects.all(),
         "titulo": "Professor"
     }
-    return render(request, 'listaProfessor.html', context)
+    return render(request, 'contas/listaProfessor.html', context)
 
 
     #-------COORDENADOR---------#
@@ -206,15 +233,14 @@ def novoCoordenador(request):
         nome = request.POST.get('nome')
         email = request.POST.get('email')
         celular = request.POST.get('celular')
-        data = request.POST.get('data')
 
         Coordenador.objects.create(
         login_coordenador = login,
         senha_coordenador = senha,
         nome_coordenador = nome,
         email_coordenador = email,
-        celular_coordenador = celular,
-        dt_expiracao_coordenador = data)
+        celular_coordenador = celular
+        )
         return redirect('/pesquisarCoordenador/')
     else:
         context = {
@@ -241,3 +267,4 @@ def editarCoordenador(request, id):
         "coordenador": coordenador
         }
         return render(request, 'editar_dadosCoordenador.html', context)
+
