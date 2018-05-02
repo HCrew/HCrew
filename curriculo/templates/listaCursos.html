@@ -1,0 +1,30 @@
+{% extends 'base.html' %} 
+
+{% block css %}
+<link rel="stylesheet" href=""> 
+{% endblock %} 
+
+{% block conteudo %}
+<section>
+    <article>
+        <h2>Cursos</h2>
+        <a><a href="/incluirCurso">Novo</a></a>
+            <table border="1" width="100%">
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                </tr>
+                {% for Curso in Cursos %}
+                <tr>
+                    <td>{{Curso.Id_Curso}}</td>
+                    <td>{{Curso.nome_Curso}}</td>
+                    <td>
+                        <a href="/editarCurso/{{curso.Id_curso}}">Editar</a>
+                        <a href="/excluirCurso/{{curso.Id_curso}}">Excluir</a>
+                    </td>
+                </tr>
+                {%endfor%}
+            </table>
+    </article>
+</section>
+{% endblock %}
