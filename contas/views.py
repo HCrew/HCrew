@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 from django.shortcuts import render, redirect
 from contas.models import Aluno, Coordenador
 =======
@@ -241,5 +241,3 @@ def editarCoordenador(request, id):
         "coordenador": coordenador
         }
         return render(request, 'editar_dadosCoordenador.html', context)
-
-    

@@ -11,6 +11,6 @@ urlpatterns = [
     path('excluirAluno/', excluirAluno),
     path('pesquisarAluno/', pesquisarAluno),
     path('pesquisarCoordenador/', pesquisarCoordenador),
-    path('novoCoordenador/', novoCoordenador),
+    path('novoCoordenador/', novoCoordenador),  
     path('editarCoordenador/<int:id>/', editarCoordenador)
     ]
