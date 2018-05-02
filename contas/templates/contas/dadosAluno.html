@@ -6,16 +6,15 @@
 
 {% block conteudo %}
 <h2>{{titulo}}</h2>
-{%if aluno.id_aluno%}
 
-{%else%}
-
-{%endif%}
-<form method="POST" action="/incluirAluno/">
+<form method="POST" action="">
     <p>
+        RA: <input name="ra" value="{{ra}}" readonly="true"/>
         Nome: <input name="nome" value="{{aluno.nome_aluno}}"/>
-        E-mail: <input name="email" value="{{aluno.email_aluno}}"/>
+        E-mail: <input name="email" value="{{aluno.email_aluno}}" type="email"/>
         Celular: <input name="celular" value="{{aluno.celular_aluno}}"/>
+        Login: <input name="login" value="{{aluno.login_aluno}}"/>
+        Senha: <input name="senha" value="{{aluno.senha_aluno}}"/>
         <button>{{botao}}</button>
     </p>
 </form>

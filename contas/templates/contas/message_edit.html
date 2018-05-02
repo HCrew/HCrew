@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Professor:</td>
+                <td>
+                    <select name="professor" required>
+                        <option value="">Selecione...</option>
+                        {% for p in professors %}
+                            <option value="{{ p.pk }}" {% if p == message.id_professor_mensagem %}selected{% endif %}>{{ p }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Aluno:</td>
+                <td>
+                    <select name="aluno" required>
+                        <option value="">Selecione...</option>
+                        {% for s in students %}
+                            <option value="{{ s.pk }}" {% if s == message.id_aluno_mensagem %}selected{% endif %}>{{ s }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Assunto:</td>
+                <td><input type="text" name="assunto" maxlength="50" required value="{{ message.assunto_mensagem }}"></td>
+            </tr>
+            <tr>
+                <td>Referência:</td>
+                <td><input type="text" name="referencia" maxlength="50" required value="{{ message.referencia_mensagem }}"></td>
+            </tr>
+            <tr>
+                <td>Conteúdo:</td>
+                <td>
+                    <textarea id="conteudo" name="conteudo" maxlength="60" required>{{ message.conteudo_mensagem }}</textarea><br>
+                    <span id="conteudo-length">60</span> caractere(s) restantes.
+                </td>
+            </tr>
+        </table>
+        <input type="submit">
+    </form>
+{% endblock %}
+
+{% block css %}
+<style>
+    table td input,
+    table td select,
+    table td textarea {
+        width: 100%;
+    }
+</style>
+{% endblock %}
+
+
+{% block js %}
+<script>
+(function() {
+
+var conteudo = document.querySelector('#conteudo'),
+    conteudoLength = document.querySelector('#conteudo-length');
+
+function checkRemainingCharacters(e) {
+    var maxLength = this.maxLength,
+        length = this.value.length;
+
+    conteudoLength.innerText = maxLength - length;
+}
+
+conteudo.addEventListener('keyup', checkRemainingCharacters);
+
+checkRemainingCharacters.call(conteudo);
+})();
+</script>
+{% endblock %}

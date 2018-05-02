@@ -12,6 +12,8 @@
             <table border="1" width="100%">
                 <tr>
                     <th>RA</th>
+                    <th>Login</th>
+                    <th>Senha</th>
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Celular</th>
@@ -20,6 +22,8 @@
                 {% for aluno in alunos %}
                 <tr>
                     <td>{{aluno.ra_aluno}}</td>
+                    <td>{{aluno.login_aluno}}</td>
+                    <td>{{aluno.senha_aluno}}</td>
                     <td>{{aluno.nome_aluno}}</td>
                     <td>{{aluno.email_aluno}}</td>
                     <td>{{aluno.celular_aluno}}</td>
