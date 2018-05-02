@@ -1,0 +1,39 @@
+{% extends 'base.html' %} 
+
+{% block css %}
+<link rel="stylesheet" href=""> 
+{% endblock %} 
+
+{% block conteudo %}
+<section>
+    <article>
+        <h2>Aluno</h2>
+        <a><a href="/incluirAluno">Novo</a></a>
+            <table border="1" width="100%">
+                <tr>
+                    <th>RA</th>
+                    <th>Login</th>
+                    <th>Senha</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Celular</th>
+                    <th>Ações</th>
+                </tr>
+                {% for aluno in alunos %}
+                <tr>
+                    <td>{{aluno.ra_aluno}}</td>
+                    <td>{{aluno.login_aluno}}</td>
+                    <td>{{aluno.senha_aluno}}</td>
+                    <td>{{aluno.nome_aluno}}</td>
+                    <td>{{aluno.email_aluno}}</td>
+                    <td>{{aluno.celular_aluno}}</td>
+                    <td>
+                        <a href="/editarAluno/{{aluno.id_aluno}}">Editar</a>
+                        <a href="/excluirAluno/{{aluno.id_aluno}}">Excluir</a>
+                    </td>
+                </tr>
+                {%endfor%}
+            </table>
+    </article>
+</section>
+{% endblock %}

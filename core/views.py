@@ -329,27 +329,6 @@ def disciplinaBancoDeDados(request):
     return render(request, 'disciplinaADS.html', context)
 
 
-def novaDisciplina(request):
-    context = {
-        "titulo": "Nova disciplina"
-    }
-    return render(request, 'novaDisciplina.html', context)
-
-
-def novoAluno(request):
-    context = {
-        "titulo": "Novo aluno"
-    }
-    return render(request, 'novoAluno.html', context)
-
-
-def novoCurso(request):
-    context = {
-        "titulo": "Novo curso"
-    }
-    return render(request, 'novoCurso.html', context)
-
-
 def matricula(request):
     context = {
         "titulo": "Matricula"
@@ -397,3 +376,16 @@ def logicaDeProgramacao(request):
         "cargaHoraria": 80
     }
     return render(request, 'detalhesDisciplina.html', context)
+
+
+def novoCurso(request):
+    context = {
+        "titulo": "Novo curso"
+    }
+    return render(request, 'novoCurso.html', context)
+
+def novaDisciplina(request):
+    context = {
+        "titulo": "Nova disciplina"
+    }
+    return render(request, 'novaDisciplina.html', context)
