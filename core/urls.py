@@ -16,22 +16,23 @@ Including another URLconf
 from django.urls import path
 from .views import (
     index, sobre, cursos, contato, login, disciplinaADS,
-    matricula, ads, adm, disciplinaBancoDeDados, logicaDeProgramacao,
-    novoCurso, novaDisciplina
+    novaDisciplina, novoAluno, novoCurso, matricula, ads, adm,
+    disciplinaBancoDeDados, logicaDeProgramacao
 )
 
 urlpatterns = [
-    path('', index, name='index'),
-    path('sobre/', sobre, name='sobre'),
-    path('cursos/', cursos, name='cursos'),
-    path('contato/', contato, name='contato'),
-    path('login/', login, name='login'),
-    path('disciplinaADS/', disciplinaADS, name='disciplinaADS'),
-    path('disciplinaBancoDeDados/', disciplinaBancoDeDados, name='disciplinaBancoDeDados'),
-    path('matricula/', matricula, name='matricula'),
-    path('ADS/', ads, name='ads'),
-    path('ADM/', adm, name='adm'),
-    path('ADS/logicaDeProgramacao', logicaDeProgramacao, name='logicaDeProgramacao'),
-    path('novoCurso/', novoCurso, name='novoCurso'),
-    path('novaDisciplina/', novaDisciplina, name='novaDisciplina'),
+    path('', index),
+    path('sobre/', sobre),
+    path('cursos/', cursos),
+    path('contato/', contato),
+    path('login/', login),
+    path('disciplinaADS/', disciplinaADS),
+    path('disciplinaBancoDeDados/', disciplinaBancoDeDados),
+    path('novaDisciplina/', novaDisciplina),
+    path('novoAluno/', novoAluno),
+    path('novoCurso/', novoCurso),
+    path('matricula/', matricula),
+    path('ADS/', ads),
+    path('ADM/', adm),
+    path('ADS/logicaDeProgramacao', logicaDeProgramacao)
 ]
