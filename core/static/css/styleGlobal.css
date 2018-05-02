@@ -47,26 +47,105 @@ nav {
     margin-bottom: 0;
 }
 
-.menu {
+.menudrop {
     float: right;
-    width: 50%;
+    width: 70%;
+    margin-top: 1.6%;
 }
 
-.menu ul {
+.menudrop ul {
     list-style: none;
     margin-top: 7%;
 }
 
-.menu ul li {
+.menudrop ul li {
     display: inline;
-    margin-left: 5%;
 }
 
-.menu ul li a {
+.menudrop ul li a {
     color: #fff;
     font-weight: 500;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+ul.menu,
+.menu li,
+.menu a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+ul.menu ul {
+    position: absolute;
+    display: none;
+    box-shadow: 3px 3px 2px #333;
+}
+
+ul.menu {
+    float: left;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 15px;
+    padding: 0 5px;
+}
+
+.menu li {
+    float: left;
+    width: auto;
+    position: relative;
+}
+
+.menu li a {
+    display: block;
+    padding: 0 20px;
+    line-height: 55px;
+    height: 100%;
+    float: left;
+    transition: all 0.1s linear;
+}
+
+.menu li:hover>ul.submenu-1 {
+    display: block;
+    top: 45px;
+    left: 0;
+    padding: 5px;
+    width: 200px;
+    border-radius: 0 0 5px 5px;
+}
+
+.menu ul.submenu-1 a {
+    width: 160px;
+    padding: 0 20px;
+    border-radius: 5px;
+}
+
+.menu {
+    background: rgb(87, 76, 79);
+    width: 100%;
+}
+
+.menu a {
+    color: #fff;
+}
+
+.menu li:hover>a {
+    background: #999;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.submenu-1 {
+    background: #999;
+}
+
+.submenu-1 a {
+    color: #fff;
+}
+
+.submenu-1 li:hover>a {
+    background: #666;
 }
 
 footer {
