@@ -1,4 +1,4 @@
-from contas.models import Coordenador
+from contas.models.coordenadores import Coordenador
 
 class Disciplina(models.Model):
     id_disciplina = models.AutoField(primary_key=True)

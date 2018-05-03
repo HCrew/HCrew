@@ -1,4 +1,4 @@
-from contas.models import Professor
+from contas.models.professores import Professor
 
 class DisciplinaOfertada(models.Model):
     id_disciplina_ofertada = models.AutoField(primary_key=True)
