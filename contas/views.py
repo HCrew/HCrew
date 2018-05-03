@@ -1,11 +1,7 @@
-
-from django.shortcuts import render, redirect
-from contas.models import Aluno, Coordenador
-
 from django.urls import reverse
 from django.shortcuts import render, redirect, get_object_or_404
 
-from contas.models import Aluno, Professor, Mensagem
+from contas.models import Aluno, Professor, Mensagem, Coordenador
 
 
 
@@ -168,7 +164,7 @@ def novoProfessor (request):
             "titulo": "Novo Professor",
             "botao": "Salvar"
 
-        }    
+        }
         return render(request, 'contas/dadosProfessor.html', context)
 
 
@@ -185,7 +181,7 @@ def editarProfessor (request, id):
         professor.save()
 
         return redirect('/pesquisarProfessor/')
-    else:    
+    else:
         professor = Professor.objects.get(id_professor = id)
         context = {
             "titulo": "Editar Professor",
@@ -224,7 +220,7 @@ def pesquisarCoordenador(request):
     'coordenador': Coordenador.objects.all(),
     'titulo': 'Coordenador'
     }
-    return render(request, 'listaCoordenador.html', context)
+    return render(request, 'contas/listaCoordenador.html', context)
 
 def novoCoordenador(request):
     if request.POST:
@@ -247,7 +243,7 @@ def novoCoordenador(request):
         "titulo": "Novo Coordenador",
         "botao":"Salvar"
         }
-        return render(request, 'dadosCoordenador.html', context)
+        return render(request, 'contas/dadosCoordenador.html', context)
 
 
 def editarCoordenador(request, id):
@@ -264,7 +260,23 @@ def editarCoordenador(request, id):
     else:
         coordenador = Coordenador.objects.get(id_coordenador = id)
         context = {
+        "titulo": "Editar Coordenador",
+        "botao": "Editar",
         "coordenador": coordenador
         }
-        return render(request, 'editar_dadosCoordenador.html', context)
+        return render(request, 'contas/dadosCoordenador.html', context)
 
+
+
+def excluirCoordenador (request, id):
+    coordenador = Coordenador.objects.get(id_coordenador = id)
+    if request.POST:
+        coordenador.delete()
+        return redirect('/pesquisarCoordenador/')
+    else:
+        context = {
+            "titulo": "Excluir Coordenador",
+            "botao": "Excluir",
+            "coordenador": coordenador
+            }
+        return render(request, 'contas/dadosCoordenador.html', context)
