@@ -1,4 +1,4 @@
-from django.db import models
+'''from django.db import models
 from django.utils.timezone import now
 
 
@@ -75,3 +75,4 @@ class Mensagem(models.Model):
     class Meta:
         managed = False
         db_table = 'tbl_mensagem'
+'''
