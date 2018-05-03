@@ -1,4 +1,6 @@
-from contas.models.professores import Professor
+from django.db import models
+from contas.models.professor import Professor
+from contas.models.coordenador import Coordenador
 
 class DisciplinaOfertada(models.Model):
     id_disciplina_ofertada = models.AutoField(primary_key=True)

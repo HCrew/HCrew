@@ -1,6 +1,7 @@
+from django.utils.timezone import now
 from django.db import models
-from .alunos import Aluno
-from .professores import Professor
+from .aluno import Aluno
+from .professor import Professor
 
 class Mensagem(models.Model):
     id_mensagem = models.AutoField(primary_key=True)

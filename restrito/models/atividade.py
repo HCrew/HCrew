@@ -1,5 +1,5 @@
 from django.db import models
-from contas.models.professores import Professor
+from contas.models.professor import Professor
 
 class Atividade(models.Model):
     id_atividade = models.AutoField(primary_key=True)

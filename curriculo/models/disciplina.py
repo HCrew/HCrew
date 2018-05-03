@@ -1,4 +1,5 @@
-from contas.models.coordenadores import Coordenador
+from django.db import models
+from contas.models.coordenador import Coordenador
 
 class Disciplina(models.Model):
     id_disciplina = models.AutoField(primary_key=True)

@@ -1,6 +1,7 @@
 from django.db import models
-from contas.models.professores import Professor
+from contas.models.professor import Professor
 from .atividade import Atividade
+from curriculo.models.disciplinaOfertada import DisciplinaOfertada
 
 class AtividadeVinculada(models.Model):
     id_atividade_vinculada = models.AutoField(primary_key=True)
