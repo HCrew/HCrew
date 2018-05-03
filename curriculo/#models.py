@@ -1,4 +1,4 @@
-from django.db import models
+'''from django.db import models
 from contas.models import Coordenador, Professor
 
 class Curso(models.Model):
@@ -53,3 +53,4 @@ class DisciplinaOfertada(models.Model):
         db_table = 'tbl_disciplina_ofertada'
         unique_together = (('id_disciplina_disciplina_ofertada', 'id_curso_disciplina_ofertada', 'ano_disciplina_ofertada', 'semestre_disciplina_ofertada', 'turma_disciplina_ofertada'),)
 
+'''

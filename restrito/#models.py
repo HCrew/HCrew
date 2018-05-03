@@ -2,6 +2,11 @@ from django.db import models
 from contas.models import Aluno, Professor
 from curriculo.models import DisciplinaOfertada
 
+"""
+    USAR MODELS QUE ESTÃO NA PASTA MODELS
+"""
+
+
 class Atividade(models.Model):
     id_atividade = models.AutoField(primary_key=True)
     titulo_atividade = models.CharField(unique=True, max_length=70)
