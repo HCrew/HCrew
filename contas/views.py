@@ -1,11 +1,7 @@
-
-from django.shortcuts import render, redirect
-from contas.models import Aluno, Coordenador
-
 from django.urls import reverse
 from django.shortcuts import render, redirect, get_object_or_404
 
-from contas.models import Aluno, Professor, Mensagem
+from contas.models import Aluno, Professor, Mensagem, Coordenador
 
 
 
@@ -168,7 +164,7 @@ def novoProfessor (request):
             "titulo": "Novo Professor",
             "botao": "Salvar"
 
-        }    
+        }
         return render(request, 'contas/dadosProfessor.html', context)
 
 
@@ -185,7 +181,7 @@ def editarProfessor (request, id):
         professor.save()
 
         return redirect('/pesquisarProfessor/')
-    else:    
+    else:
         professor = Professor.objects.get(id_professor = id)
         context = {
             "titulo": "Editar Professor",
@@ -267,4 +263,3 @@ def editarCoordenador(request, id):
         "coordenador": coordenador
         }
         return render(request, 'editar_dadosCoordenador.html', context)
-
