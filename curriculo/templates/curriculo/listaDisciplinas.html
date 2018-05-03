@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+
+
+{% block conteudo %}
+<section>
+    <article>
+        <h2>Disciplinas</h2>
+        <a><a href="/novaDisciplina">Nova Disciplina</a></a>
+            <table border="1" width="100%">
+                <tr>
+                    <th>Nome Disciplina</th>
+                    <th>Data Disciplina</th>
+                    <th>Status Disciplina</th>
+                    <th>Plano Disciplina</th>
+                    <th>Carga Horaria Disciplina</th>
+                    <th>Competencias Disciplina</th>
+                    <th>Habilidades Disciplina</th>
+                    <th>Ementa Disciplina</th>
+                    <th>Conteudo Programatico Disciplina</th>
+                    <th>Bibliografia Basica Disciplina</th>
+                    <th>Bibliografia Complementar Disciplina</th>
+                    <th>Percentual Pratico</th>
+                    <th>Percentual Teorico</th>
+                    <th>Coordenador Disciplina</th>
+                    <th>Ações</th>
+                </tr>
+                {% for disciplina in disciplina %}
+                <tr>
+                    <td>{{disciplina.nome_disciplina}}</td>
+                    <td>{{disciplina.data_disciplina}}</td>
+                    <td>{{disciplina.status_disciplina}}</td>
+                    <td>{{disciplina.plano_ensino_disciplina}}</td>
+                    <td>{{disciplina.carga_horaria_disciplina}}</td>
+                    <td>{{disciplina.competencias_disciplina}}</td>
+                    <td>{{disciplina.habilidades_disciplina}}</td>
+                    <td>{{disciplina.ementa_disciplina}}</td>
+                    <td>{{disciplina.conteudo_programatico_disciplina}}</td>
+                    <td>{{disciplina.bibliografia_basica_disciplina}}</td>
+                    <td>{{disciplina.bibliografia_complementar_disciplina}}</td>
+                    <td>{{disciplina.percentual_pratico}}</td>
+                    <td>{{disciplina.percentual_teorico}}</td>
+                    <td>
+                        <a href="/editarDiscplina/{{disciplina.id_disciplina}}">Editar</a>
+                        <a href="/excluirDiscplina/{{disciplina.id_disciplina}}">Excluir</a>
+                    </td>
+                </tr>
+                {%endfor%}
+            </table>
+    </article>
+</section>
+{% endblock %}

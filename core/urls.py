@@ -33,5 +33,5 @@ urlpatterns = [
     path('ADM/', adm, name='adm'),
     path('ADS/logicaDeProgramacao', logicaDeProgramacao, name='logicaDeProgramacao'),
     path('novoCurso/', novoCurso, name='novoCurso'),
-    path('novaDisciplina/', novaDisciplina, name='novaDisciplina'),
+    #path('novaDisciplina/', novaDisciplina, name='novaDisciplina'),
 ]

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="">
+{% endblock %}
+
+{% block conteudo %}
+<h2>{{titulo}}</h2>
+
+<form method="POST" action="">
+    <p>
+      Nome Disciplina: <input name="nome" value="{{disciplina.nome_disciplina}}"/>
+      Data Disciplina:  <input name="data" value="{{disciplina.data_disciplina}}"/>
+      Status Disciplina: <input name="status" value="{{disciplina.status_disciplina}}"/>
+      Plano Disciplina: <input name="plano" value="{{disciplina.plano_ensino_disciplina}}"/>
+      Carga Horaria Disciplina:<input name="carga" value="{{disciplina.carga_horaria_disciplina}}"/>
+      Competencias Disciplina:<input name="competencias" value="{{disciplina.competencias_disciplina}}"/>
+      Habilidades Disciplina:<input name="habilidades" value="{{disciplina.habilidades_disciplina}}"/>
+      Ementa Disciplina:<input name="ementa" value="{{disciplina.ementa_disciplina}}"/>
+      Conteudo Programatico Disciplina:<input name="conteudo" value="{{disciplina.conteudo_programatico_disciplina}}"/>
+      Bibliografia Basica Disciplina:<input name="bibliografia_basica" value="{{disciplina.bibliografia_basica_disciplina}}"/>
+      Bibliografia Complementar Disciplina:<input name="bibliografia_complementar" value="{{disciplina.bibliografia_complementar_disciplina}}"/>
+      Percentual Pratico:<input name="percentual_pratico" value="{{disciplina.percentual_pratico}}"/>
+      Percentual Teorico:<input name="percentual_teorico" value="{{disciplina.percentual_teorico}}"/>
+      <button>{{botao}}</button>
+    </p>
+</form>
+
+
+{%endblock%}
