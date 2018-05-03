@@ -2,7 +2,7 @@
 from django.urls import path
 from .views import (
     novoAluno, editarAluno, excluirAluno, pesquisarAluno,
-    pesquisarCoordenador, novoCoordenador, editarCoordenador,
+    pesquisarCoordenador, novoCoordenador, editarCoordenador, excluirCoordenador,
     message_list, message_create, message_edit, message_delete,
     novoProfessor,editarProfessor, excluirProfessor, pesquisarProfessor
 )
@@ -28,7 +28,7 @@ urlpatterns = [
 
     #Coordenador
     path('pesquisarCoordenador/', pesquisarCoordenador),
-    path('novoCoordenador/', novoCoordenador),  
-    path('editarCoordenador/<int:id>/', editarCoordenador)
+    path('novoCoordenador/', novoCoordenador),
+    path('editarCoordenador/<int:id>/', editarCoordenador),
+    path('excluirCoordenador/<int:id>/', excluirCoordenador)
     ]
-
