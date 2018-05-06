@@ -18,6 +18,10 @@ class Disciplina(models.Model):
     percentual_teorico = models.IntegerField()
     id_coordenador_disciplina = models.ForeignKey(Coordenador, models.DO_NOTHING, db_column='id_coordenador_disciplina')
 
+
+    def __str__(self):
+        return self.nome_disciplina
+
     class Meta:
         managed = False
         db_table = 'tbl_disciplina'
