@@ -10,6 +10,9 @@ class Atividade(models.Model):
     extras_atividade = models.CharField(max_length=30, blank=True, null=True)
     id_professor_atividade = models.ForeignKey(Professor, models.DO_NOTHING, db_column='id_professor_atividade')
 
+    def __str__(self):
+        return self.titulo_atividade
+
     class Meta:
         managed = False
         db_table = 'tbl_atividade'
