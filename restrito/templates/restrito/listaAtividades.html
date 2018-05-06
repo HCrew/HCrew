@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="">
+{% endblock %}
+
+{% block conteudo %}
+<section>
+    <article>
+        <h2>Atividade</h2>
+        <a><a href="/novaAtividade">Nova Atividade</a></a>
+            <table border="1" width="100%">
+                <tr>
+                    <th>Titúlo Atividade</th>
+                    <th>Descrição</th>
+                    <th>Conteúdo</th>
+                    <th>Tipo</th>
+                    <th>Extras</th>
+                    <th>Professor</th>
+                    <th>Ações</th>
+
+                </tr>
+                {% for atividade in atividades %}
+                <tr>
+                    <td>{{atividade.titulo_atividade}}</td>
+                    <td>{{atividade.descricao_atividade}}</td>
+                    <td>{{atividade.conteudo_atividade}}</td>
+                    <td>{{atividade.tipo_atividade}}</td>
+                    <td>{{atividade.extras_atividade}}</td>
+                    <td>{{atividade.id_professor_atividade}}</td>
+
+                    <td>
+                        <a href="/editarAtividade/{{atividade.id_atividade}}">Editar</a>
+                        <a href="/excluirAtividade/{{atividade.id_atividade}}">Excluir</a>
+                    </td>
+                </tr>
+                {%endfor%}
+            </table>
+    </article>
+</section>
+{% endblock %}

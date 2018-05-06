@@ -1,1 +1,23 @@
+{% extends 'base.html' %}
 
+{% block css %}
+<link rel="stylesheet" href="">
+{% endblock %}
+
+{% block conteudo %}
+<h2>{{titulo}}</h2>
+
+<form method="POST" action="">
+    <p>
+        Título: <input name="titulo" value="{{atividade.titulo_atividade}}"/>
+        Descrição: <input name="descricao" value="{{atividade.descricao_atividade}}"/>
+        Conteúdo: <input name="conteudo" value="{{atividade.conteudo_atividade}}"/>
+        Tipo: <input name="tipo" value="{{atividade.tipo_atividade}}"/>
+        Extras: <input name="extras" value="{{atividade.extras_atividade}}"/>
+        Professor: <input name="professor" value="{{atividade.id_professor_atividade}}"/>
+        <button>{{botao}}</button>
+    </p>
+</form>
+
+
+{%endblock%}
