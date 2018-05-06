@@ -22,7 +22,15 @@
       Bibliografia Complementar Disciplina:<input name="bibliografia_complementar" value="{{disciplina.bibliografia_complementar_disciplina}}"/>
       Percentual Pratico:<input name="percentual_pratico" value="{{disciplina.percentual_pratico}}"/>
       Percentual Teorico:<input name="percentual_teorico" value="{{disciplina.percentual_teorico}}"/>
-      <button>{{botao}}</button>
+      Coordenador:
+
+      <select>
+      {% for coordenador in coordenadores %}
+      <option value="">Selecione coordenador</option>
+      <option value="{{x}}" name="id" >{{coordenador.id_plus}} {{coordenador.nome_coordenador}}</option>
+      {% endfor %}
+    </select>
+    <button>{{botao}}</button>
     </p>
 </form>
 

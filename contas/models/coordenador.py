@@ -12,6 +12,9 @@ class Coordenador(models.Model):
     def __str__(self):
         return self.nome_coordenador
 
+    def id_coord(self):
+        return self.id_coordenador
+
 
     class Meta:
         managed = False

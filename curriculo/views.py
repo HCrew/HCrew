@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
 
 from curriculo.models import Disciplina
+from contas.models import Coordenador
 from .models import Curso
 
 # Create your views here.
+
+#---START DISCIPLINA---#
 
 def pesquisarDisciplinas(request):
     context = {
@@ -15,45 +18,85 @@ def pesquisarDisciplinas(request):
 
 def novaDisciplina(request):
     if request.POST:
-        nome = request.POST.get('nome')
-        data = request.POST.get('data')
-        status = request.POST.get('status')
-        plano = request.POST.get('plano')
-        carga = request.POST.get('carga')
-        competencias = request.POST.get('competencias')
-        habilidades = request.POST.get('habilidades')
-        ementa = request.POST.get('ementa')
-        conteudo = request.POST.get('conteudo')
-        bibliografia_basica = request.POST.get('bibliografia_basica')
-        bibliografia_complementar = request.POST.get('bibliografia_complementar')
-        percentual_pratico = request.POST.get('percentual_pratico')
-        percentual_teorico= request.POST.get('percentual_teorico')
-
         Disciplina.objects.create(
-        nome_disciplina = nome,
-        data_disciplina = data,
-        status_disciplina = status,
-        plano_ensino_disciplina = plano,
-        carga_horaria_disciplina = carga,
-        competencias_disciplina = competencias,
-        habilidades_disciplina = habilidades,
-        ementa_disciplina = ementa,
-        conteudo_programatico_disciplina = conteudo,
-        bibliografia_basica_disciplina = bibliografia_basica,
-        bibliografia_complementar_disciplina =bibliografia_complementar,
-        percentual_pratico = percentual_pratico,
-        percentual_teorico = percentual_teorico
+        nome_disciplina = request.POST.get('nome'),
+        data_disciplina = request.POST.get('data'),
+        status_disciplina = request.POST.get('status'),
+        plano_ensino_disciplina = request.POST.get('plano'),
+        carga_horaria_disciplina = request.POST.get('carga'),
+        competencias_disciplina = request.POST.get('competencias'),
+        habilidades_disciplina = request.POST.get('habilidades'),
+        ementa_disciplina = request.POST.get('ementa'),
+        conteudo_programatico_disciplina = request.POST.get('conteudo'),
+        bibliografia_basica_disciplina = request.POST.get('bibliografia_basica'),
+        bibliografia_complementar_disciplina = request.POST.get('bibliografia_complementar'),
+        percentual_pratico = request.POST.get('percentual_pratico'),
+        percentual_teorico = request.POST.get('percentual_teorico'),
+        id_coordenador_disciplina = request.POST.get('id')
         )
-        return redirect('/pesquisarDisciplinas/')
+        return render(request,'/pesquisarDisciplinas/', context)
+
     else:
+        coordenadores = Coordenador.objects.all()
         context = {
         "titulo": "Nova Disciplina",
-        "botao": "Salvar"
+        "botao": "Salvar",
+        "coordenadores": coordenadores
         }
         return render(request, 'curriculo/dadosDisciplina.html', context)
 
 
 
+def editarDisciplina(request, id):
+    if request.POST:
+        disciplina = Disciplina.objects.get(id_disciplina = id)
+        disciplina.nome_disciplina = request.POST.get('nome')
+        disciplina.data_disciplina = request.POST.get('data')
+        disciplina.status_disciplina = request.POST.get('status')
+        disciplina.plano_ensino_disciplina = request.POST.get('plano')
+        disciplina.carga_horaria_disciplina = request.POST.get('carga')
+        disciplina.competencias_disciplina = request.POST.get('competencias')
+        disciplina.habilidades_disciplina = request.POST.get('habilidades')
+        disciplina.ementa_disciplina = request.POST.get('ementa')
+        disciplina.conteudo_programatico_disciplina = request.POST.get('conteudo')
+        disciplina.bibliografia_basica_disciplina = request.POST.get('bibliografia_basica')
+        disciplina.bibliografia_complementar_disciplina = request.POST.get('bibliografia_complementar')
+        disciplina.percentual_pratico = request.POST.get('percentual_pratico')
+        disciplina.percentual_teorico = request.POST.get('percentual_teorico')
+        disciplina.id_coordenador_disciplina = request.POST.get('id')
+        disciplina.save()
+
+        return redirect('/pesquisarDisciplinas/')
+    else:
+        disciplina = Disciplina.objects.get(id_disciplina = id)
+        coordenadores = Coordenador.objects.all()
+        context = {
+            "titulo":"Editar Disciplina",
+            "botao":"Atualizar",
+            "disciplina":disciplina,
+            "coordenadores": coordenadores
+            }
+        return render(request, 'curriculo/dadosDisciplina.html', context)
+
+
+
+def excluirDisciplina(request, id):
+    if request.POST:
+        disciplina = Disciplina.objects.get(id_disciplina = id)
+        disciplina.delete()
+        return redirect('/pesquisarDisciplinas/')
+    else:
+        disciplina = Disciplina.objects.get(id_disciplina = id)
+        coordenadores = Coordenador.objects.all()
+        context = {
+            "titulo":"Excluir Disciplina",
+            "botao":"Excluir",
+            "disciplina": disciplina,
+            "coordenadores": coordenadores
+        }
+        return render(request, 'curriculo/dadosDisciplina.html', context)
+
+#----END DISCIPLINA----#
 
 
 def novoCurso(request):
