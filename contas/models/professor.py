@@ -6,7 +6,7 @@ class Professor(Pessoa):
 
 
     def __str__(self):
-        return self.nome_professor
+        return self.nome
 
     def retorna_carga_horaria(self):
         return 'Metodo não implementado' #IMPLEMENTAR ESTE METODO
