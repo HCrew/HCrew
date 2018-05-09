@@ -27,7 +27,11 @@
             <div class="menudrop">
                 <ul class="menu">
                     <li>
-                        <a href="{% url 'login' %}">Área do aluno</a>
+                        {% if not logged_in %}
+                            <a href="{% url 'login' %}">Área do aluno</a>
+                        {% else %}
+                            <a href="{% url 'logout' %}">Fazer logout</a>
+                        {% endif %}
                     </li>
                     <li>
                         <a href="{% url 'cursos' %}">Cursos</a>
