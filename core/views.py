@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.urls import reverse
+from django.db import connection
+from django.shortcuts import render, redirect
 
 
 def index(request):
@@ -64,6 +66,29 @@ def login(request):
     context = {
         "titulo": "Área restrita"
     }
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        remember = request.POST.get('remember')
+
+        with connection.cursor() as c:
+            c.execute(  # login_aluno e senha_aluno não estão presentes no model.
+                'SELECT id_aluno FROM tbl_aluno WHERE '
+                'login_aluno = %s AND senha_aluno = %s',
+                [username, password])
+            student = c.fetchone()
+
+        if student is not None:
+            request.session.cycle_key()
+            request.session['user'] = student[0]
+
+            if not remember:
+                request.session.set_expiry(0)
+
+            return redirect(reverse('index'))
+
+        context['username'] = username
     return render(request, 'login.html', context)
 
 
