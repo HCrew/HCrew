@@ -14,10 +14,14 @@
                 </legend>
                 <ul>
                     <li>
-                        <input type="email" id="email" name="email" placeholder="E-mail:">
+                        <input type="text" id="username" name="username" placeholder="Nome de usuário:" value="{{ username }}">
                     </li>
                     <li>
-                        <input type="password" id="senha" name="senha" placeholder="Senha:">
+                        <input type="password" id="password" name="password" placeholder="Senha:">
+                    </li>
+                    <li>
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Lembrar de mim</label>
                     </li>
                     <li>
                         <button>Entrar</button>
