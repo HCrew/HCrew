@@ -94,6 +94,11 @@ def login(request):
     return render(request, 'login.html', context)
 
 
+def logout(request):
+    request.session.flush()
+    return redirect(reverse('index'))
+
+
 def disciplinaADS(request):
     context = {
         "titulo": "Análise e Desenvolvimento de Sistemas",

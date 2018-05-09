@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import path
 from .views import (
-    index, sobre, cursos, contato, login, disciplinaADS,
+    index, sobre, cursos, contato, login, logout, disciplinaADS,
     matricula, ads, adm, disciplinaBancoDeDados, logicaDeProgramacao,
     novoCurso, novaDisciplina
 )
@@ -26,6 +26,7 @@ urlpatterns = [
     path('cursos/', cursos, name='cursos'),
     path('contato/', contato, name='contato'),
     path('login/', login, name='login'),
+    path('logout/', logout, name='logout'),
     path('disciplinaADS/', disciplinaADS, name='disciplinaADS'),
     path('disciplinaBancoDeDados/', disciplinaBancoDeDados, name='disciplinaBancoDeDados'),
     path('matricula/', matricula, name='matricula'),
