@@ -89,6 +89,8 @@ def login(request):
             return redirect(reverse('index'))
 
         context['username'] = username
+        context['error_message'] = 'Nome de usuário ou senha inválida. Por favor tente novamente.'
+
     return render(request, 'login.html', context)
 
 

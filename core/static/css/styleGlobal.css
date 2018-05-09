@@ -188,3 +188,12 @@ button {
     font-family: sans-serif;
     text-transform: uppercase;
 }
+
+.error-message {
+    height: 30px;
+    line-height: 30px;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    background: #ff000091;
+}
