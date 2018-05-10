@@ -1,34 +1,30 @@
 
 from django.urls import path
 from .views import (
-    novoAluno, editarAluno, excluirAluno, pesquisarAluno,
-    pesquisarCoordenador, novoCoordenador, editarCoordenador, excluirCoordenador,
+    novo_aluno, editar_aluno, excluir_aluno, pesquisar_aluno,
+    pesquisar_coordenador, novo_coordenador, editar_coordenador, excluir_coordenador,
     message_list, message_create, message_edit, message_delete,
-    novoProfessor,editarProfessor, excluirProfessor, pesquisarProfessor
+    novo_professor, editar_professor, excluir_professor, pesquisar_professor
 )
 
 urlpatterns = [
-    path('incluirAluno/', novoAluno),
-    path('editarAluno/<int:id>/', editarAluno),
-    path('excluirAluno/', excluirAluno),
-    path('pesquisarAluno/', pesquisarAluno),
+    path('incluirAluno/', novo_aluno),
+    path('editarAluno/<int:id>/', editar_aluno),
+    path('excluirAluno/', excluir_aluno),
+    path('pesquisarAluno/', pesquisar_aluno),
 
-
-    # Mensagens
     path('mensagens/', message_list, name='message_list'),
     path('mensagens/nova/', message_create, name='message_create'),
     path('mensagens/<int:pk>/editar', message_edit, name='message_edit'),
     path('mensagens/remover', message_delete, name='message_delete'),
 
-    #Professor
-    path('incluirProfessor/', novoProfessor),
-    path('editarProfessor/<int:id>/', editarProfessor),
-    path('excluirProfessor/<int:id>/', excluirProfessor),
-    path('pesquisarProfessor/', pesquisarProfessor),
+    path('incluirProfessor/', novo_professor),
+    path('editarProfessor/<int:id>/', editar_professor),
+    path('excluirProfessor/<int:id>/', excluir_professor),
+    path('pesquisarProfessor/', pesquisar_professor),
 
-    #Coordenador
-    path('pesquisarCoordenador/', pesquisarCoordenador),
-    path('novoCoordenador/', novoCoordenador),
-    path('editarCoordenador/<int:id>/', editarCoordenador),
-    path('excluirCoordenador/<int:id>/', excluirCoordenador)
+    path('pesquisarCoordenador/', pesquisar_coordenador),
+    path('novoCoordenador/', novo_coordenador),
+    path('editarCoordenador/<int:id>/', editar_coordenador),
+    path('excluirCoordenador/<int:id>/', excluir_coordenador)
     ]

@@ -1,6 +1,7 @@
 from django.db import models
 from contas.models.professor import Professor
 
+
 class Atividade(models.Model):
     id_atividade = models.AutoField(primary_key=True)
     titulo_atividade = models.CharField(unique=True, max_length=70)

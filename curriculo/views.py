@@ -4,52 +4,48 @@ from curriculo.models import Disciplina
 from contas.models import Coordenador
 from .models import Curso
 
-# Create your views here.
 
-#---START DISCIPLINA---#
-
-def pesquisarDisciplinas(request):
+def pesquisar_disciplinas(request):
     context = {
-        "disciplina" : Disciplina.objects.all(),
+        "disciplina": Disciplina.objects.all(),
         "titulo": "Lista de Disciplinas"
         }
-    return render(request, 'curriculo/listaDisciplinas.html', context)
+    return render(request, 'listaDisciplinas.html', context)
 
 
-def novaDisciplina(request):
+def nova_disciplina(request):
     if request.POST:
         Disciplina.objects.create(
-        nome_disciplina = request.POST.get('nome'),
-        data_disciplina = request.POST.get('data'),
-        status_disciplina = request.POST.get('status'),
-        plano_ensino_disciplina = request.POST.get('plano'),
-        carga_horaria_disciplina = request.POST.get('carga'),
-        competencias_disciplina = request.POST.get('competencias'),
-        habilidades_disciplina = request.POST.get('habilidades'),
-        ementa_disciplina = request.POST.get('ementa'),
-        conteudo_programatico_disciplina = request.POST.get('conteudo'),
-        bibliografia_basica_disciplina = request.POST.get('bibliografia_basica'),
-        bibliografia_complementar_disciplina = request.POST.get('bibliografia_complementar'),
-        percentual_pratico = request.POST.get('percentual_pratico'),
-        percentual_teorico = request.POST.get('percentual_teorico'),
-        id_coordenador_disciplina = request.POST.get('id')
+            nome_disciplina=request.POST.get('nome'),
+            data_disciplina=request.POST.get('data'),
+            status_disciplina=request.POST.get('status'),
+            plano_ensino_disciplina=request.POST.get('plano'),
+            carga_horaria_disciplina=request.POST.get('carga'),
+            competencias_disciplina=request.POST.get('competencias'),
+            habilidades_disciplina=request.POST.get('habilidades'),
+            ementa_disciplina=request.POST.get('ementa'),
+            conteudo_programatico_disciplina=request.POST.get('conteudo'),
+            bibliografia_basica_disciplina=request.POST.get('bibliografia_basica'),
+            bibliografia_complementar_disciplina=request.POST.get('bibliografia_complementar'),
+            percentual_pratico=request.POST.get('percentual_pratico'),
+            percentual_teorico=request.POST.get('percentual_teorico'),
+            id_coordenador_disciplina=request.POST.get('id')
         )
-        return render(request,'/pesquisarDisciplinas/', context)
+        return render(request, '/pesquisarDisciplinas/')
 
     else:
         coordenadores = Coordenador.objects.all()
         context = {
-        "titulo": "Nova Disciplina",
-        "botao": "Salvar",
-        "coordenadores": coordenadores
+            "titulo": "Nova Disciplina",
+            "botao": "Salvar",
+            "coordenadores": coordenadores
         }
-        return render(request, 'curriculo/dadosDisciplina.html', context)
+        return render(request, 'dadosDisciplina.html', context)
 
 
-
-def editarDisciplina(request, id):
+def editar_disciplina(request, id):
     if request.POST:
-        disciplina = Disciplina.objects.get(id_disciplina = id)
+        disciplina = Disciplina.objects.get(id_disciplina=id)
         disciplina.nome_disciplina = request.POST.get('nome')
         disciplina.data_disciplina = request.POST.get('data')
         disciplina.status_disciplina = request.POST.get('status')
@@ -68,56 +64,51 @@ def editarDisciplina(request, id):
 
         return redirect('/pesquisarDisciplinas/')
     else:
-        disciplina = Disciplina.objects.get(id_disciplina = id)
+        disciplina = Disciplina.objects.get(id_disciplina=id)
         coordenadores = Coordenador.objects.all()
         context = {
-            "titulo":"Editar Disciplina",
-            "botao":"Atualizar",
-            "disciplina":disciplina,
+            "titulo": "Editar Disciplina",
+            "botao": "Atualizar",
+            "disciplina": disciplina,
             "coordenadores": coordenadores
             }
-        return render(request, 'curriculo/dadosDisciplina.html', context)
+        return render(request, 'dadosDisciplina.html', context)
 
 
-
-def excluirDisciplina(request, id):
+def excluir_disciplina(request, id):
     if request.POST:
-        disciplina = Disciplina.objects.get(id_disciplina = id)
+        disciplina = Disciplina.objects.get(id_disciplina=id)
         disciplina.delete()
         return redirect('/pesquisarDisciplinas/')
     else:
-        disciplina = Disciplina.objects.get(id_disciplina = id)
+        disciplina = Disciplina.objects.get(id_disciplina=id)
         coordenadores = Coordenador.objects.all()
         context = {
-            "titulo":"Excluir Disciplina",
-            "botao":"Excluir",
+            "titulo": "Excluir Disciplina",
+            "botao": "Excluir",
             "disciplina": disciplina,
             "coordenadores": coordenadores
         }
-        return render(request, 'curriculo/dadosDisciplina.html', context)
-
-#----END DISCIPLINA----#
+        return render(request, 'dadosDisciplina.html', context)
 
 
-def novoCurso(request):
+def novo_curso(request):
     if request.POST:
         Curso.objects.create(
-            nome_curso = request.POST.get('nome')
+            nome_curso=request.POST.get('nome')
         )
         return redirect('/pesquisarCurso/')
     else:
-        ############################
         context = {
-        "titulo": "Novo Curso",
-        "botao":"Salvar"
+            "titulo": "Novo Curso",
+            "botao": "Salvar"
         }
         return render(request, 'dadosCurso.html', context)
-    ####################################
 
 
-def editarCurso(request, id):
+def editar_curso(request, id):
     if request.POST:
-        curso = Curso.objects.get(id_curso = id)
+        curso = Curso.objects.get(id_curso=id)
 
         curso.id_curso = request.POST.get('Id')
         curso.nome_curso = request.POST.get('nome')
@@ -126,36 +117,34 @@ def editarCurso(request, id):
 
         return redirect('/pesquisarCurso/')
     else:
-
-        #######################
-        curso = Curso.objects.get(id_curso = id)
+        curso = Curso.objects.get(id_curso=id)
         context = {
-            "titulo":"Editar Curso",
-            "botao":"Atualizar",
-            "Curso":Curso,
+            "titulo": "Editar Curso",
+            "botao": "Atualizar",
+            "Curso": Curso,
             "curso": curso
         }
         return render(request, 'dadosCurso.html', context)
-        ###########################
 
-def excluirCurso(request, id):
+
+def excluir_curso(request, id):
     if request.POST:
-        curso = Curso.objects.get(id_curso = id)
+        curso = Curso.objects.get(id_curso=id)
         curso.delete()
         return redirect('/pesquisarCurso/')
     else:
-        curso = Curso.objects.get(id_curso = id)
+        curso = Curso.objects.get(id_curso=id)
         context = {
-            "titulo":"Excluir Curso",
-            "botao":"Excluir",
+            "titulo": "Excluir Curso",
+            "botao": "Excluir",
             "curso": curso,
         }
         return render(request, 'dadosCurso.html', context)
 
 
-def pesquisarCurso(request):
+def pesquisar_curso(request):
     context = {
         "Cursos": Curso.objects.all(),
-        "titulo" :"Cursos"
+        "titulo": "Cursos"
     }
     return render(request, 'listaCursos.html', context)

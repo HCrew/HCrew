@@ -3,6 +3,7 @@ from django.db import models
 from .aluno import Aluno
 from .professor import Professor
 
+
 class Mensagem(models.Model):
     id_mensagem = models.AutoField(primary_key=True)
     id_aluno_mensagem = models.ForeignKey(Aluno, models.DO_NOTHING, db_column='id_aluno_mensagem')

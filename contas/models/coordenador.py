@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Coordenador(models.Model):
     id_coordenador = models.AutoField(primary_key=True)
     login_coordenador = models.CharField(unique=True, max_length=50)
@@ -14,7 +15,6 @@ class Coordenador(models.Model):
 
     def id_coord(self):
         return self.id_coordenador
-
 
     class Meta:
         managed = False

@@ -1,6 +1,7 @@
 from django.db import models
 from .pessoa import Pessoa
-#from .solicitacaoMatricula import SolicitacaoMatricula
+# from .solicitacaoMatricula import SolicitacaoMatricula
+
 
 class Aluno(Pessoa):
     ra_aluno = models.IntegerField(unique=True)
@@ -12,13 +13,12 @@ class Aluno(Pessoa):
     def retorna_carga_horaria(self):
         carga_horaria_total = 0
 
-        return carga_horaria_total #IMPLEMENTAR ESTE METODO
+        return carga_horaria_total  # IMPLEMENTAR ESTE METODO
 
     def retorna_matricula(self):
         """ Encontrando a matrícula do aluno"""
-        #SolicitacaoMatricula.object.get()
+        # SolicitacaoMatricula.object.get()
         pass
-
 
     class Meta:
         managed = False

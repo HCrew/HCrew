@@ -5,14 +5,14 @@
 #   * Make sure each ForeignKey has `on_delete` set to the desired behavior.
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
-from django.db import models
+# from django.db import models
 
 '''
    AS CLASSES DESSA MODEL JÁ FOREM DISTRIBUIDAS PARA OS MODELS DOS APP ONDE CADA UM DEVE FICAR
    NO TRELLO TEM O QUE CADA APP POSSUI DE MODEL 
 '''
 
-
+"""
 class Aluno(models.Model):
     id_aluno = models.AutoField(primary_key=True)
     login_aluno = models.CharField(unique=True, max_length=50)
@@ -187,3 +187,4 @@ class SolicitacaoMatricula(models.Model):
     class Meta:
         managed = False
         db_table = 'tbl_solicitacao_matricula'
+"""
