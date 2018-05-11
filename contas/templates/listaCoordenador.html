@@ -14,20 +14,18 @@
                     <th>Nome Coordenador</th>
                     <th>Email Coordenador</th>
                     <th>Celular Coordenador</th>
-                    <th>Data Exp. Coordenador</th>
                     <th>Ações</th>
                 </tr>
                 {% for coordenador in coordenador %}
                 <tr>
-                    <td>{{coordenador.login_coordenador}}</td>
-                    <td>{{coordenador.senha_coordenador}}</td>
-                    <td>{{coordenador.nome_coordenador}}</td>
-                    <td>{{coordenador.email_coordenador}}</td>
-                    <td>{{coordenador.celular_coordenador}}</td>
-                    <td>{{coordenador.dt_expiracao_coordenador}}</td>
+                    <td>{{coordenador.login}}</td>
+                    <td>{{coordenador.senha}}</td>
+                    <td>{{coordenador.nome}}</td>
+                    <td>{{coordenador.email}}</td>
+                    <td>{{coordenador.celular}}</td>
                     <td>
-                        <a href="/editarCoordenador/{{coordenador.id_coordenador}}">Editar</a>
-                        <a href="/excluirCoordenador/{{coordenador.id_coordenador}}">Excluir</a>
+                        <a href="/editarCoordenador/{{coordenador.id}}">Editar</a>
+                        <a href="/excluirCoordenador/{{coordenador.id}}">Excluir</a>
                     </td>
                 </tr>
                 {%endfor%}

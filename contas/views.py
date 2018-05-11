@@ -235,18 +235,15 @@ def pesquisar_coordenador(request):
 
 def novo_coordenador(request):
     if request.POST:
-        login = request.POST.get('login')
-        senha = request.POST.get('senha')
-        nome = request.POST.get('nome')
-        email = request.POST.get('email')
-        celular = request.POST.get('celular')
-
+        Login.objects.create(
+            login=request.POST.get('login'),
+            senha=request.POST.get('senha')
+        )
         Coordenador.objects.create(
-            login_coordenador=login,
-            senha_coordenador=senha,
-            nome_coordenador=nome,
-            email_coordenador=email,
-            celular_coordenador=celular
+            nome=request.POST.get('nome'),
+            email=request.POST.get('email'),
+            celular=request.POST.get('celular'),
+            id_login=Login.objects.get(login=request.POST.get('login'))
         )
         return redirect('/pesquisarCoordenador/')
     else:
