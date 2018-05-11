@@ -4,10 +4,10 @@ from .pessoa import Pessoa
 class Coordenador(Pessoa):
 
     def __str__(self):
-        return self.nome_coordenador
+        return self.nome
 
     def id_coord(self):
-        return self.id_coordenador
+        return self.id
 
     class Meta:
         managed = False

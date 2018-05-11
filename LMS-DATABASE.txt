@@ -16,12 +16,12 @@ CREATE TABLE public.tbl_login
 
 CREATE TABLE public.tbl_coordenador
 (
-   id_coordenador serial, 
+   id serial, 
    id_login integer NOT NULL, 
-   nome_coordenador character varying(100) NOT NULL, 
-   email_coordenador character varying(70) NOT NULL, 
-   celular_coordenador integer NOT NULL, 
-   dt_expiracao_coordenador date NOT NULL DEFAULT '01/01/1900', 
+   nome character varying(100) NOT NULL, 
+   email character varying(70) NOT NULL, 
+   celular integer NOT NULL, 
+   dt_expiracao date NOT NULL DEFAULT '01/01/1900', 
    CONSTRAINT pk_id_coordenador PRIMARY KEY (id_coordenador), 
    CONSTRAINT unique_column_email_coordenador UNIQUE (email_coordenador),
    CONSTRAINT unique_column_celular_coordenador UNIQUE (celular_coordenador),
@@ -31,12 +31,12 @@ CREATE TABLE public.tbl_coordenador
 
 CREATE TABLE public.tbl_aluno
 (
-   id_aluno serial, 
+   id serial, 
    id_login integer NOT NULL, 
-   nome_aluno character varying(100) NOT NULL, 
-   email_aluno character varying(70) NOT NULL, 
-   celular_aluno integer NOT NULL, 
-   dt_expiracao_aluno date NOT NULL DEFAULT '01/01/1900', 
+   nome character varying(100) NOT NULL, 
+   email character varying(70) NOT NULL, 
+   celular integer NOT NULL, 
+   dt_expiracao date NOT NULL DEFAULT '01/01/1900', 
    ra_aluno integer NOT NULL, 
    foto_aluno character varying(100), 
    CONSTRAINT pk_id_aluno PRIMARY KEY (id_aluno), 
@@ -49,12 +49,12 @@ CREATE TABLE public.tbl_aluno
 
 CREATE TABLE public.tbl_professor
 (
-   id_professor serial, 
+   id serial, 
    id_login integer NOT NULL, 
-   nome_professor character varying(100) NOT NULL, 
-   email_professor character varying(70) NOT NULL, 
-   celular_professor integer NOT NULL, 
-   dt_expiracao_professor date NOT NULL DEFAULT '01/01/1900', 
+   nome character varying(100) NOT NULL, 
+   email character varying(70) NOT NULL, 
+   celular integer NOT NULL, 
+   dt_expiracao date NOT NULL DEFAULT '01/01/1900', 
    apelido_professor character varying(70) NOT NULL, 
    CONSTRAINT pk_id_professor PRIMARY KEY (id_professor), 
    CONSTRAINT unique_column_email_professor UNIQUE (email_professor),
