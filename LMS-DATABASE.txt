@@ -3,27 +3,36 @@
 ****************************************************************
 
 
-CREATE TABLE public.tbl_cordenador
+
+CREATE TABLE public.tbl_login
+(
+   id serial, 
+   login character varying(50), 
+   senha character varying(50), 
+   CONSTRAINT pk_id_login PRIMARY KEY (id),
+   CONSTRAINT unique_login UNIQUE (login)
+);
+
+
+CREATE TABLE public.tbl_coordenador
 (
    id_coordenador serial, 
-   login_coordenador character varying(50) NOT NULL, 
-   senha_coordenador character varying(50) NOT NULL, 
+   id_login integer NOT NULL, 
    nome_coordenador character varying(100) NOT NULL, 
    email_coordenador character varying(70) NOT NULL, 
    celular_coordenador integer NOT NULL, 
    dt_expiracao_coordenador date NOT NULL DEFAULT '01/01/1900', 
    CONSTRAINT pk_id_coordenador PRIMARY KEY (id_coordenador), 
-   CONSTRAINT unique_column_login_coordenador UNIQUE (login_coordenador),
    CONSTRAINT unique_column_email_coordenador UNIQUE (email_coordenador),
-   CONSTRAINT unique_column_celular_coordenador UNIQUE (celular_coordenador)
+   CONSTRAINT unique_column_celular_coordenador UNIQUE (celular_coordenador),
+   CONSTRAINT fk_login_coordenador FOREIGN KEY (id_login) REFERENCES tbl_login (id)
 );
 
 
 CREATE TABLE public.tbl_aluno
 (
    id_aluno serial, 
-   login_aluno character varying(50) NOT NULL, 
-   senha_aluno character varying(70) NOT NULL, 
+   id_login integer NOT NULL, 
    nome_aluno character varying(100) NOT NULL, 
    email_aluno character varying(70) NOT NULL, 
    celular_aluno integer NOT NULL, 
@@ -31,27 +40,26 @@ CREATE TABLE public.tbl_aluno
    ra_aluno integer NOT NULL, 
    foto_aluno character varying(100), 
    CONSTRAINT pk_id_aluno PRIMARY KEY (id_aluno), 
-   CONSTRAINT unique_column_login_aluno UNIQUE (login_aluno),
    CONSTRAINT unique_column_email_aluno UNIQUE (email_aluno),
    CONSTRAINT unique_column_celular_aluno UNIQUE (celular_aluno),
-   CONSTRAINT unique_column_ra_aluno UNIQUE (ra_aluno)
+   CONSTRAINT unique_column_ra_aluno UNIQUE (ra_aluno),
+   CONSTRAINT fk_login_aluno FOREIGN KEY (id_login) REFERENCES tbl_login (id)
 );
 
 
 CREATE TABLE public.tbl_professor
 (
    id_professor serial, 
-   login_professor character varying(50) NOT NULL, 
-   senha_professor character varying(50) NOT NULL, 
+   id_login integer NOT NULL, 
    nome_professor character varying(100) NOT NULL, 
    email_professor character varying(70) NOT NULL, 
    celular_professor integer NOT NULL, 
    dt_expiracao_professor date NOT NULL DEFAULT '01/01/1900', 
    apelido_professor character varying(70) NOT NULL, 
    CONSTRAINT pk_id_professor PRIMARY KEY (id_professor), 
-   CONSTRAINT unique_column_login_professor UNIQUE (login_professor),
    CONSTRAINT unique_column_email_professor UNIQUE (email_professor),
-   CONSTRAINT unique_column_celular_professor UNIQUE (celular_professor)
+   CONSTRAINT unique_column_celular_professor UNIQUE (celular_professor),
+   CONSTRAINT fk_login_professor FOREIGN KEY (id_login) REFERENCES tbl_login (id)
 );
 
 
@@ -74,7 +82,7 @@ CREATE TABLE public.tbl_disciplina
    id_coordenador_disciplina integer NOT NULL, 
    CONSTRAINT pk_id_disciplina PRIMARY KEY (id_disciplina), 
    CONSTRAINT unique_column_nome_disciplina UNIQUE (nome_disciplina),
-   CONSTRAINT fk_id_coordenador FOREIGN KEY (id_coordenador_disciplina) REFERENCES tbl_cordenador (id_coordenador)
+   CONSTRAINT fk_id_coordenador FOREIGN KEY (id_coordenador_disciplina) REFERENCES tbl_coordenador (id_coordenador)
 );
 
 
@@ -105,7 +113,7 @@ CREATE TABLE public.tbl_disciplina_ofertada
    plano_aula_disciplina_ofertada character varying(50), 
    CONSTRAINT pk_id_disciplina_ofertada PRIMARY KEY (id_disciplina_ofertada), 
    CONSTRAINT unique_columns_disciplina_ofertada UNIQUE (id_disciplina_disciplina_ofertada, id_curso_disciplina_ofertada, ano_disciplina_ofertada, semestre_disciplina_ofertada, turma_disciplina_ofertada),
-   CONSTRAINT fk_id_coordenador FOREIGN KEY (id_coordenador_disciplina_ofertada) REFERENCES tbl_cordenador (id_coordenador),
+   CONSTRAINT fk_id_coordenador FOREIGN KEY (id_coordenador_disciplina_ofertada) REFERENCES tbl_coordenador (id_coordenador),
    CONSTRAINT fk_id_professor FOREIGN KEY (id_professor_disciplina_ofertada) REFERENCES tbl_professor (id_professor)
 );
 
@@ -119,7 +127,7 @@ CREATE TABLE public.tbl_solicitacao_matricula
    id_coordenador_solicitacao_matricula integer, 
    status_solicitacao_matricula character varying(20) DEFAULT 'Solicitada',
    CONSTRAINT pk_id_solicitacao_matricula PRIMARY KEY (id_solicitacao_matricula), 
-   CONSTRAINT fk_id_coordenador_solicitacao_matricula FOREIGN KEY (id_coordenador_solicitacao_matricula) REFERENCES tbl_cordenador (id_coordenador),
+   CONSTRAINT fk_id_coordenador_solicitacao_matricula FOREIGN KEY (id_coordenador_solicitacao_matricula) REFERENCES tbl_coordenador (id_coordenador),
    CONSTRAINT fk_id_aluno_solicitacao_matricula FOREIGN KEY (id_aluno_solicitacao_matricula) REFERENCES tbl_aluno (id_aluno)
 );
 

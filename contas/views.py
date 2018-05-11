@@ -1,17 +1,20 @@
 from django.urls import reverse
 from django.shortcuts import render, redirect, get_object_or_404
 
-from contas.models import Aluno, Professor, Mensagem, Coordenador
+from contas.models import Aluno, Professor, Mensagem, Coordenador, Login
 
 
 def novo_aluno(request):
     if request.POST:
+        Login.objects.create(
+            login=request.POST.get('login'),
+            senha=request.POST.get('senha')
+        )
         Aluno.objects.create(
-            login_aluno=request.POST.get('login'),
-            senha_aluno=request.POST.get('senha'),
-            nome_aluno=request.POST.get('nome'),
-            email_aluno=request.POST.get('email'),
-            celular_aluno=request.POST.get('celular'),
+            nome=request.POST.get('nome'),
+            id_login=Login.objects.get(login=request.POST.get('login')),
+            email=request.POST.get('email'),
+            celular=request.POST.get('celular'),
             ra_aluno=request.POST.get('ra')
         )
         return redirect('/pesquisarAluno/')
@@ -35,15 +38,18 @@ def editar_aluno(request, id):
     if request.POST:
         aluno = Aluno.objects.get(id=id)
 
-        aluno.login_aluno = request.POST.get('login')
-        aluno.senha_aluno = request.POST.get('senha')
-        aluno.nome_aluno = request.POST.get('nome')
-        aluno.email_aluno = request.POST.get('email')
-        aluno.celular_aluno = request.POST.get('celular')
+        aluno.nome = request.POST.get('nome')
+        aluno.email = request.POST.get('email')
+        aluno.celular = request.POST.get('celular')
         aluno.ra_aluno = request.POST.get('ra')
 
-        aluno.save()
+        login = Login.objects.get(id=aluno.id_login.id)
 
+        login.login = request.POST.get('login')
+        login.senha = request.POST.get('senha')
+
+        login.save()
+        aluno.save()
         return redirect('/pesquisarAluno/')
     else:
         aluno = Aluno.objects.get(id=id)
@@ -59,7 +65,9 @@ def editar_aluno(request, id):
 def excluir_aluno(request, id):
     if request.POST:
         aluno = Aluno.objects.get(id=id)
+        login = Login.objects.get(id=aluno.id_login.id)
         aluno.delete()
+        login.delete()
         return redirect('/pesquisarAluno/')
     else:
         aluno = Aluno.objects.get(id=id)
@@ -75,7 +83,8 @@ def excluir_aluno(request, id):
 def pesquisar_aluno(request):
     context = {
         "alunos": Aluno.objects.all(),
-        "titulo": "Alunos"
+        "titulo": "Alunos",
+        "login": Login.objects.all()
     }
     return render(request, 'listaAlunos.html', context)
 
@@ -143,12 +152,15 @@ def message_delete(request):
 
 def novo_professor(request):
     if request.POST:
+        Login.objects.create(
+            login=request.POST.get('login'),
+            senha=request.POST.get('senha')
+        )
         Professor.objects.create(
-            nome_professor=request.POST.get('nome'),
-            email_professor=request.POST.get('email'),
-            celular_professor=request.POST.get('celular'),
-            login_professor=request.POST.get('login'),
-            senha_professor=request.POST.get('senha'),
+            nome=request.POST.get('nome'),
+            email=request.POST.get('email'),
+            celular=request.POST.get('celular'),
+            id_login=Login.objects.get(login=request.POST.get('login')),
             apelido_professor=request.POST.get('apelido')
         )
         return redirect('/pesquisarProfessor/')
@@ -163,19 +175,24 @@ def novo_professor(request):
 
 def editar_professor(request, id):
     if request.POST:
-        professor = Professor.objects.get(id_professor=id)
+        professor = Professor.objects.get(id=id)
 
-        professor.login_professor = request.POST.get('login')
-        professor.senha_professor = request.POST.get('senha')
-        professor.nome_professor = request.POST.get('nome')
-        professor.email_professor = request.POST.get('email')
-        professor.celular_professor = request.POST.get('celular')
+        professor.nome = request.POST.get('nome')
+        professor.email = request.POST.get('email')
+        professor.celular = request.POST.get('celular')
+
+        login = Login.objects.get(id=professor.id_login.id)
+
+        login.login = request.POST.get('login')
+        login.senha = request.POST.get('senha')
+
+        login.save()
 
         professor.save()
 
         return redirect('/pesquisarProfessor/')
     else:
-        professor = Professor.objects.get(id_professor=id)
+        professor = Professor.objects.get(id=id)
         context = {
             "titulo": "Editar Professor",
             "botao": "Atualizar",
@@ -185,10 +202,12 @@ def editar_professor(request, id):
 
 
 def excluir_professor(request, id):
-    professor = Professor.objects.get(id_professor=id)
+    professor = Professor.objects.get(id=id)
     if request.POST:
+        login = Login.objects.get(id=professor.id_login.id)
         professor.delete()
-        return redirect('/pesquisarAluno/')
+        login.delete()
+        return redirect('/pesquisarProfessor/')
     else:
         context = {
             "titulo": "Excluir Professor",

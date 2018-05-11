@@ -1,5 +1,6 @@
 from django.db import models
 from .pessoa import Pessoa
+# from .login import Login
 # from .solicitacaoMatricula import SolicitacaoMatricula
 
 

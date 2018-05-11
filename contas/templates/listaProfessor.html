@@ -22,12 +22,12 @@
                 <tr>
                     <td>{{professor.login_professor}}</td>
                     <td>{{professor.senha_professor}}</td>
-                    <td>{{professor.nome_professor}}</td>
-                    <td>{{professor.email_professor}}</td>
-                    <td>{{professor.celular_professor}}</td>
+                    <td>{{professor.nome}}</td>
+                    <td>{{professor.email}}</td>
+                    <td>{{professor.celular}}</td>
                     <td>
-                        <a href="/editarProfessor/{{professor.id_professor}}">Editar</a>
-                        <a href="/excluirProfessor/{{professor.id_professor}}">Excluir</a>
+                        <a href="/editarProfessor/{{professor.id}}">Editar</a>
+                        <a href="/excluirProfessor/{{professor.id}}">Excluir</a>
                     </td>
                 </tr>
                 {%endfor%}

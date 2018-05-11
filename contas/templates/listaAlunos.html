@@ -13,7 +13,6 @@
                 <tr>
                     <th>RA</th>
                     <th>Login</th>
-                    <th>Senha</th>
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Celular</th>
@@ -22,11 +21,10 @@
                 {% for aluno in alunos %}
                 <tr>
                     <td>{{aluno.ra_aluno}}</td>
-                    <td>{{aluno.login_aluno}}</td>
-                    <td>{{aluno.senha_aluno}}</td>
-                    <td>{{aluno.nome_aluno}}</td>
-                    <td>{{aluno.email_aluno}}</td>
-                    <td>{{aluno.celular_aluno}}</td>
+                    <td>{{aluno.login}}</td>
+                    <td>{{aluno.nome}}</td>
+                    <td>{{aluno.email}}</td>
+                    <td>{{aluno.celular}}</td>
                     <td>
                         <a href="/editarAluno/{{aluno.id}}">Editar</a>
                         <a href="/excluirAluno/{{aluno.id}}">Excluir</a>
