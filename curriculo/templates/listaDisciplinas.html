@@ -14,14 +14,6 @@
                     <th>Status Disciplina</th>
                     <th>Plano Disciplina</th>
                     <th>Carga Horaria Disciplina</th>
-                    <th>Competencias Disciplina</th>
-                    <th>Habilidades Disciplina</th>
-                    <th>Ementa Disciplina</th>
-                    <th>Conteudo Programatico Disciplina</th>
-                    <th>Bibliografia Basica Disciplina</th>
-                    <th>Bibliografia Complementar Disciplina</th>
-                    <th>Percentual Pratico</th>
-                    <th>Percentual Teorico</th>
                     <th>Coordenador Disciplina</th>
                     <th>Ações</th>
                 </tr>
@@ -32,17 +24,10 @@
                     <td>{{disciplina.status_disciplina}}</td>
                     <td>{{disciplina.plano_ensino_disciplina}}</td>
                     <td>{{disciplina.carga_horaria_disciplina}}</td>
-                    <td>{{disciplina.competencias_disciplina}}</td>
-                    <td>{{disciplina.habilidades_disciplina}}</td>
-                    <td>{{disciplina.ementa_disciplina}}</td>
-                    <td>{{disciplina.conteudo_programatico_disciplina}}</td>
-                    <td>{{disciplina.bibliografia_basica_disciplina}}</td>
-                    <td>{{disciplina.bibliografia_complementar_disciplina}}</td>
-                    <td>{{disciplina.percentual_pratico}}</td>
-                    <td>{{disciplina.percentual_teorico}}</td>
-                    <td>{{disciplina.id_coordenador_disciplina}}</td>
+                    <td>{{disciplina.id_coordenador}}</td>
                     <td>
-                        <a href="/editarDisciplina/{{disciplina.id_disciplina}}">Editar</a>
+                        <a href="/vizualizarDisciplina/{{disciplina.id_disciplina}}">Visualizar</a>
+                        <a href="/excluirDisciplina/{{disciplina.id_disciplina}}">Editar</a>
                         <a href="/excluirDisciplina/{{disciplina.id_disciplina}}">Excluir</a>
                     </td>
                 </tr>

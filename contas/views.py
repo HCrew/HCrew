@@ -103,7 +103,7 @@ def message_create(request):
                                 referencia_mensagem=referencia,
                                 conteudo_mensagem=conteudo,
                                 status_mensagem='')
-        return redirect(reverse('messageList'))
+        return redirect(reverse('message_list'))
 
     alunos = Aluno.objects.all()
     professores = Professor.objects.all()
@@ -132,7 +132,7 @@ def message_edit(request, pk):
                                  'referencia_mensagem': referencia,
                                  'conteudo_mensagem': conteudo})
         message.save()
-        return redirect(reverse('messageList'))
+        return redirect(reverse('message_list'))
 
     alunos = Aluno.objects.all()
     professores = Professor.objects.all()
@@ -147,7 +147,7 @@ def message_delete(request):
 
     m = get_object_or_404(Mensagem, pk=request.POST.get('pk'))
     m.delete()
-    return redirect(reverse('messageList'))
+    return redirect(reverse('message_list'))
 
 
 def novo_professor(request):

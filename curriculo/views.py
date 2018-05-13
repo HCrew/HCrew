@@ -13,6 +13,20 @@ def pesquisar_disciplinas(request):
     return render(request, 'listaDisciplinas.html', context)
 
 
+def visualizar_disciplina(request, id):
+    if request.POST:
+        print('post')
+        return redirect('/pesquisarDisciplinas/')
+    else:
+        disciplina = Disciplina.objects.get(id_disciplina=id)
+        context = {
+            "titulo": "Vizualizar Disciplina",
+            "botao": "Voltar",
+            "disciplina": disciplina
+        }
+        return render(request, 'dadosDisciplina.html', context)
+
+
 def nova_disciplina(request):
     if request.POST:
         Disciplina.objects.create(
@@ -110,7 +124,6 @@ def editar_curso(request, id):
     if request.POST:
         curso = Curso.objects.get(id_curso=id)
 
-        curso.id_curso = request.POST.get('Id')
         curso.nome_curso = request.POST.get('nome')
 
         curso.save()
