@@ -10,16 +10,14 @@
             <table border="1" width="100%">
                 <tr>
                     <th>Login Coordenador</th>
-                    <th>Senha Coordenador</th>
                     <th>Nome Coordenador</th>
                     <th>Email Coordenador</th>
                     <th>Celular Coordenador</th>
                     <th>Ações</th>
                 </tr>
-                {% for coordenador in coordenador %}
+                {% for coordenador in coordenadores %}
                 <tr>
-                    <td>{{coordenador.login}}</td>
-                    <td>{{coordenador.senha}}</td>
+                    <td>{{coordenador.id_login.login}}</td>
                     <td>{{coordenador.nome}}</td>
                     <td>{{coordenador.email}}</td>
                     <td>{{coordenador.celular}}</td>

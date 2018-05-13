@@ -227,7 +227,7 @@ def pesquisar_professor(request):
 
 def pesquisar_coordenador(request):
     context = {
-        'coordenador': Coordenador.objects.all(),
+        'coordenadores': Coordenador.objects.all(),
         'titulo': 'Coordenador'
     }
     return render(request, 'listaCoordenador.html', context)
@@ -255,18 +255,21 @@ def novo_coordenador(request):
 
 
 def editar_coordenador(request, id):
-    coordenador = Coordenador.objects.get(id_coordenador=id)
+    coordenador = Coordenador.objects.get(id=id)
     if request.POST:
-        coordenador.login_coordenador = request.POST.get("login")
-        coordenador.senha_coordenador = request.POST.get("senha")
-        coordenador.nome_coordenador = request.POST.get("nome")
-        coordenador.email_coordenador = request.POST.get("email")
-        coordenador.celular_coordenador = request.POST.get("celular")
-        coordenador.dt_expiracao_coordenador = request.POST.get("data")
+        coordenador.nome = request.POST.get("nome")
+        coordenador.email = request.POST.get("email")
+        coordenador.celular = request.POST.get("celular")
+
+        login = Login.objects.get(id=coordenador.id_login.id)
+
+        login.login = request.POST.get('login')
+        login.senha = request.POST.get('senha')
+
         coordenador.save()
         return redirect('/pesquisarCoordenador/')
     else:
-        coordenador = Coordenador.objects.get(id_coordenador=id)
+        coordenador = Coordenador.objects.get(id=id)
         context = {
             "titulo": "Editar Coordenador",
             "botao": "Editar",
@@ -276,9 +279,11 @@ def editar_coordenador(request, id):
 
 
 def excluir_coordenador(request, id):
-    coordenador = Coordenador.objects.get(id_coordenador=id)
+    coordenador = Coordenador.objects.get(id=id)
     if request.POST:
+        login = Login.objects.get(id=coordenador.id_login.id)
         coordenador.delete()
+        login.delete()
         return redirect('/pesquisarCoordenador/')
     else:
         context = {

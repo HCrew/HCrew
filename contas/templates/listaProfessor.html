@@ -12,7 +12,6 @@
             <table border="1" width="100%">
                 <tr>
                     <th>Login</th>
-                    <th>Senha</th>
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Celular</th>
@@ -20,8 +19,7 @@
                 </tr>
                 {% for professor in professores %}
                 <tr>
-                    <td>{{professor.login_professor}}</td>
-                    <td>{{professor.senha_professor}}</td>
+                    <td>{{professor.id_login.login}}</td>
                     <td>{{professor.nome}}</td>
                     <td>{{professor.email}}</td>
                     <td>{{professor.celular}}</td>
