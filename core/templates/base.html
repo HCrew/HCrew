@@ -28,9 +28,9 @@
                 <ul class="menu">
                     <li>
                         {% if not logged_in %}
-                            <a href="{% url 'login' %}">Área do aluno</a>
+                            <a href="{% url 'login' %}">Fazer Login</a>
                         {% else %}
-                            <a href="{% url 'logout' %}">Fazer logout</a>
+                            <a href="{% url 'logout' %}">Fazer Logout</a>
                         {% endif %}
                     </li>
                     <li>
@@ -43,16 +43,38 @@
                         <a href="{% url 'contato' %}">Contato</a>
                     </li>
                     <li>
-                        <a href="#">Menu 2</a>
+                        <a href="">Acesso</a>
                         <ul class="submenu-1">
                             <li>
-                                <a href="#">Submenu 1</a>
+                                <a href="/pesquisarAluno">Aluno</a>
                             </li>
                             <li>
-                                <a href="#">Submenu 2</a>
+                                <a href="/pesquisarCoordenador">Coordenador</a>
                             </li>
                             <li>
-                                <a href="#">Submenu 3</a>
+                                <a href="/pesquisarProfessor">Professor</a>
+                            </li>
+                            <!--<li>
+                                <a href="#">Solicitar matricula</a>
+                            </li>-->
+                            <li>
+                                <a href="/mensagens">Mensagem</a>
+                            </li>
+                            <li>
+                                <a href="/pesquisarDisciplinas">Disciplinas</a>
+                            </li>
+                            <!--<li>
+                                <a href="#">Disciplina ofertada</a>
+                            </li>-->
+                            <li>
+                                <a href="/pesquisarAtividades">Atividades</a>
+                            </li>
+                           <!-- <li>
+                                <a href="#">Atividade vinculada</a>
+                            </li>
+                            <li>
+                                <a href="#">Entregas</a>
+                            </li>-->
                         </ul>
                     </li>
                 </ul>
