@@ -14,7 +14,12 @@
         Conteúdo: <input name="conteudo" value="{{atividade.conteudo_atividade}}"/>
         Tipo: <input name="tipo" value="{{atividade.tipo_atividade}}"/>
         Extras: <input name="extras" value="{{atividade.extras_atividade}}"/>
-        Professor: <input name="professor" value="{{atividade.id_professor_atividade}}"/>
+
+        <select name="id_professor">
+            {% for professor in professores %}
+            <option value="{{professor.id}}" name="" >{{professor.nome}}</option>
+            {% endfor %}
+        </select>
         <button>{{botao}}</button>
     </p>
 </form>
