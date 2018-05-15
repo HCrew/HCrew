@@ -11,4 +11,4 @@ class Coordenador(Pessoa):
 
     class Meta:
         managed = False
-        db_table = 'tbl_cordenador'
+        db_table = 'tbl_coordenador'

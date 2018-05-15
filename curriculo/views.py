@@ -18,6 +18,7 @@ def visualizar_disciplina(request, id):
         print('post')
         return redirect('/pesquisarDisciplinas/')
     else:
+        disciplina = Disciplina.objects.get(id_disciplina=id)
         context = {
             "titulo": "Vizualizar Disciplina",
             "botao": "Voltar",
