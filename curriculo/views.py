@@ -18,7 +18,6 @@ def visualizar_disciplina(request, id):
         print('post')
         return redirect('/pesquisarDisciplinas/')
     else:
-        disciplina = Disciplina.objects.get(id_disciplina=id)
         context = {
             "titulo": "Vizualizar Disciplina",
             "botao": "Voltar",
@@ -31,7 +30,6 @@ def nova_disciplina(request):
     if request.POST:
         Disciplina.objects.create(
             nome_disciplina=request.POST.get('nome'),
-            data_disciplina=request.POST.get('data'),
             status_disciplina=request.POST.get('status'),
             plano_ensino_disciplina=request.POST.get('plano'),
             carga_horaria_disciplina=request.POST.get('carga'),
@@ -43,9 +41,10 @@ def nova_disciplina(request):
             bibliografia_complementar_disciplina=request.POST.get('bibliografia_complementar'),
             percentual_pratico=request.POST.get('percentual_pratico'),
             percentual_teorico=request.POST.get('percentual_teorico'),
-            id_coordenador_disciplina=request.POST.get('id')
+            id_coordenador_disciplina=request.POST.get('id_coord')
+
         )
-        return render(request, '/pesquisarDisciplinas/')
+        return redirect('/pesquisarDisciplinas')
 
     else:
         coordenadores = Coordenador.objects.all()
@@ -61,7 +60,6 @@ def editar_disciplina(request, id):
     if request.POST:
         disciplina = Disciplina.objects.get(id_disciplina=id)
         disciplina.nome_disciplina = request.POST.get('nome')
-        disciplina.data_disciplina = request.POST.get('data')
         disciplina.status_disciplina = request.POST.get('status')
         disciplina.plano_ensino_disciplina = request.POST.get('plano')
         disciplina.carga_horaria_disciplina = request.POST.get('carga')
@@ -73,7 +71,7 @@ def editar_disciplina(request, id):
         disciplina.bibliografia_complementar_disciplina = request.POST.get('bibliografia_complementar')
         disciplina.percentual_pratico = request.POST.get('percentual_pratico')
         disciplina.percentual_teorico = request.POST.get('percentual_teorico')
-        disciplina.id_coordenador_disciplina = request.POST.get('id')
+        disciplina.id_coordenador_disciplina = request.POST.get('id_coord')
         disciplina.save()
 
         return redirect('/pesquisarDisciplinas/')

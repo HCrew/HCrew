@@ -5,7 +5,7 @@ from contas.models.coordenador import Coordenador
 class Disciplina(models.Model):
     id_disciplina = models.AutoField(primary_key=True)
     nome_disciplina = models.CharField(unique=True, max_length=100)
-    data_disciplina = models.DateField()
+    data_disciplina = models.DateField(default='2018-05-12')
     status_disciplina = models.CharField(max_length=15)
     plano_ensino_disciplina = models.CharField(max_length=50)
     carga_horaria_disciplina = models.IntegerField()
@@ -17,9 +17,8 @@ class Disciplina(models.Model):
     bibliografia_complementar_disciplina = models.CharField(max_length=100)
     percentual_pratico = models.IntegerField()
     percentual_teorico = models.IntegerField()
-    id_coordenador_disciplina = models.ForeignKey(
-        Coordenador, models.DO_NOTHING, db_column='id_coordenador_disciplina'
-    )
+    id_coordenador_disciplina = models.IntegerField()
+
 
     def __str__(self):
         return self.nome_disciplina
@@ -27,4 +26,3 @@ class Disciplina(models.Model):
     class Meta:
         managed = False
         db_table = 'tbl_disciplina'
-

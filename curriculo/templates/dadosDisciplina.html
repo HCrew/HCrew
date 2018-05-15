@@ -10,7 +10,7 @@
 <form method="POST" action="">
     <p>
       Nome Disciplina: <input name="nome" value="{{disciplina.nome_disciplina}}"/>
-      Data Disciplina:  <input name="data" value="{{disciplina.data_disciplina}}"/>
+      <!--Data Disciplina:  <input name="data" value="{{disciplina.data_disciplina}}"/>-->
       Status Disciplina: <input name="status" value="{{disciplina.status_disciplina}}"/>
       Plano Disciplina: <input name="plano" value="{{disciplina.plano_ensino_disciplina}}"/>
       Carga Horaria Disciplina:<input name="carga" value="{{disciplina.carga_horaria_disciplina}}"/>
@@ -22,12 +22,11 @@
       Bibliografia Complementar Disciplina:<input name="bibliografia_complementar" value="{{disciplina.bibliografia_complementar_disciplina}}"/>
       Percentual Pratico:<input name="percentual_pratico" value="{{disciplina.percentual_pratico}}"/>
       Percentual Teorico:<input name="percentual_teorico" value="{{disciplina.percentual_teorico}}"/>
-      Coordenador:
+      Coordenador: <!--<input  name="id_coord" value="{{Coordenador.id}}"> -->
 
-      <select>
+    <select name="id_coord">
       {% for coordenador in coordenadores %}
-      <option value="">Selecione coordenador</option>
-      <option value="{{x}}" name="id" >{{coordenador.id_plus}} {{coordenador.nome}}</option>
+      <option value="{{coordenador.id}}" name="" >{{coordenador.nome}}</option>
       {% endfor %}
     </select>
     <button>{{botao}}</button>
