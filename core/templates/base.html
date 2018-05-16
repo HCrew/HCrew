@@ -60,9 +60,11 @@
                             <li>
                                 <a href="/pesquisarDisciplinas">Disciplinas</a>
                             </li>
+                            {% if user_type == 'coordenador' %}
                             <li>
                                 <a href="/pesquisarCurso">Cursos</a>
                             </li>
+                            {% endif %}
                             <!--<li>
                                 <a href="#">Disciplina ofertada</a>
                             </li>-->

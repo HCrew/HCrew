@@ -67,6 +67,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'contas.context_processors.logged_in',
+                'contas.context_processors.user_type',
             ],
         },
     },

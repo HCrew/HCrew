@@ -32,8 +32,6 @@ def login(request):
     context = {
         "titulo": "Área restrita"
     }
-    print(request.session['user'])
-    print(request.session['user_type'])
 
     if request.method == 'POST':
         username = request.POST.get('username')
