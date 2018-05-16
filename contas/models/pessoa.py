@@ -11,6 +11,8 @@ class Pessoa(models.Model):
     celular = models.IntegerField(unique=True)
     dt_expiracao = models.DateField(default='1900-01-01')
 
+    objects = models.Manager()
+
     def retorna_sobrenome(self):
         return self.nome.split(' ')[-1]
 
