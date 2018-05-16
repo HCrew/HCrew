@@ -2,6 +2,10 @@
 -- ******CRIAR UMA BANCO DE DADOS COM O NOME "lmsImpacta"******
 -- ****************************************************************
 
+DROP DATABASE IF EXISTS lmsImpacta;
+CREATE DATABASE lmsImpacta;
+
+\c lmsImpacta;
 
 CREATE TABLE IF NOT EXISTS public.tbl_login
 (
