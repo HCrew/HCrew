@@ -4,6 +4,7 @@
     <form method="post">
         {% csrf_token %}
         <table>
+            {% if user_type == 'aluno' %}
             <tr>
                 <td>Professor:</td>
                 <td>
@@ -15,6 +16,8 @@
                     </select>
                 </td>
             </tr>
+            <input type="hidden" name="aluno" value="{{ user_id }}">
+            {% else %}
             <tr>
                 <td>Aluno:</td>
                 <td>
@@ -26,6 +29,8 @@
                     </select>
                 </td>
             </tr>
+            <input type="hidden" name="professor" value="{{ user_id }}">
+            {% endif %}
             <tr>
                 <td>Assunto:</td>
                 <td><input type="text" name="assunto" maxlength="50" required value="{{ message.assunto_mensagem }}"></td>

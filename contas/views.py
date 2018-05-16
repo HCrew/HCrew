@@ -105,10 +105,18 @@ def message_create(request):
                                 status_mensagem='')
         return redirect(reverse('message_list'))
 
-    alunos = Aluno.objects.all()
-    professores = Professor.objects.all()
+    user_id = request.session.get('user', '')
+    user_type = request.session.get('user_type')
+    alunos = professores = None
+
+    if user_type == 'aluno':
+        professores = Professor.objects.all()
+
+    elif user_type == 'professor':
+        alunos = Aluno.objects.all()
+
     return render(request, 'messageEdit.html',
-                  {'professors': professores, 'students': alunos})
+                  {'professors': professores, 'students': alunos, 'user_id': user_id})
 
 
 def message_list(request):
