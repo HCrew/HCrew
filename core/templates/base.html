@@ -34,51 +34,68 @@
                         {% endif %}
                     </li>
                     <li>
+                        <a href="/vizualizarCursos">Cursos</a>
+                    </li>
+                    <li>
                         <a href="{% url 'sobre' %}">Sobre nós</a>
                     </li>
                     <li>
                         <a href="{% url 'contato' %}">Contato</a>
                     </li>
+                    {%if user_type == 'aluno' or user_type == 'professor' or user_type == 'coordenador'%}
                     <li>
                         <a href="">Acesso</a>
                         <ul class="submenu-1">
-                            <li>
-                                <a href="/pesquisarAluno">Aluno</a>
+
+                        {% if user_type == 'aluno' %}
+                        <li>
+                                <a href="/mensagens">Mensagem</a>
                             </li>
+
+                        {% endif %}
+
+                        {%if user_type == 'professor'%}
+                            <li>
+                                <a href="/mensagens">Mensagem</a>
+                            </li>
+                            <li>
+                                <a href="/pesquisarAtividades">Atividades</a>
+                            </li>
+                           <li>
+                                <a href="#">Atividade vinculada</a>
+                            </li>
+                            <li>
+                                <a href="#">Entregas</a>
+                            </li>
+                        {% endif %}
+
+                            {% if user_type == 'coordenador' %}
                             <li>
                                 <a href="/pesquisarCoordenador">Coordenador</a>
                             </li>
                             <li>
                                 <a href="/pesquisarProfessor">Professor</a>
                             </li>
-                            <!--<li>
-                                <a href="#">Solicitar matricula</a>
-                            </li>-->
                             <li>
-                                <a href="/mensagens">Mensagem</a>
+                                <a href="/pesquisarAluno">Aluno</a>
+                            </li>
+                            <li>
+                                <a href="/pesquisarCurso">Cursos</a>
                             </li>
                             <li>
                                 <a href="/pesquisarDisciplinas">Disciplinas</a>
                             </li>
-                            {% if user_type == 'coordenador' %}
                             <li>
-                                <a href="/pesquisarCurso">Cursos</a>
+                                <a href="#">Disciplina ofertada</a>
+                            </li>
+                            <li>
+                                <a href="#">Solicitar matricula</a>
                             </li>
                             {% endif %}
-                            <!--<li>
-                                <a href="#">Disciplina ofertada</a>
-                            </li>-->
-                            <li>
-                                <a href="/pesquisarAtividades">Atividades</a>
-                            </li>
-                           <!-- <li>
-                                <a href="#">Atividade vinculada</a>
-                            </li>
-                            <li>
-                                <a href="#">Entregas</a>
-                            </li>-->
+
                         </ul>
                     </li>
+                    {%endif%}
                 </ul>
             </div>
         </nav>

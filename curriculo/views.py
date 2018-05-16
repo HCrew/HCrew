@@ -160,3 +160,11 @@ def pesquisar_curso(request):
         "titulo": "Cursos"
     }
     return render(request, 'listaCursos.html', context)
+
+
+def vizualizar_curso(request):
+    context = {
+        "Cursos": Curso.objects.all(),
+        "titulo": "Cursos"
+    }
+    return render(request, 'vizualizarCursos.html', context)
