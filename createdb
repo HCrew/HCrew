@@ -1,0 +1,4 @@
+#!/bin/sh -xe
+
+psql -U postgres < LMS-DATABASE.sql
+python manage.py migrate

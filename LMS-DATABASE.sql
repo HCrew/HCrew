@@ -2,10 +2,10 @@
 -- ******CRIAR UMA BANCO DE DADOS COM O NOME "lmsImpacta"******
 -- ****************************************************************
 
-DROP DATABASE IF EXISTS lmsImpacta;
-CREATE DATABASE lmsImpacta;
+DROP DATABASE IF EXISTS lmsimpacta;
+CREATE DATABASE lmsimpacta;
 
-\c lmsImpacta;
+\c lmsimpacta;
 
 CREATE TABLE IF NOT EXISTS public.tbl_login
 (
@@ -205,3 +205,17 @@ CREATE TABLE IF NOT EXISTS public.tbl_mensagem
    CONSTRAINT fk_id_aluno_mensagem FOREIGN KEY (id_aluno_mensagem) REFERENCES tbl_aluno (id),
    CONSTRAINT fk_id_professor FOREIGN KEY (id_professor_mensagem) REFERENCES tbl_professor (id)
 );
+
+INSERT INTO tbl_login(login, senha) VALUES
+('aluno', 'aluno'),
+('professor', 'professor'),
+('coordenador', 'coordenador');
+
+INSERT INTO tbl_coordenador(id_login, nome, email, celular) VALUES
+(3, 'Coordenador João', 'coordenador@impacta.com.br', 123456789);
+
+INSERT INTO tbl_aluno(id_login, nome, email, celular, ra_aluno, foto_aluno) VALUES
+(1, 'Aluno Jack', 'aluno@impacta.com.br', 987654321, 1800123, '');
+
+INSERT INTO tbl_professor(id_login, nome, email, celular, apelido_professor) VALUES
+(2, 'Professor Cazé', 'professor@impacta.com.br', 567891234, 'Chupa-cabra');
