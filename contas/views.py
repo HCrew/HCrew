@@ -188,6 +188,7 @@ def editar_professor(request, id):
         professor.nome = request.POST.get('nome')
         professor.email = request.POST.get('email')
         professor.celular = request.POST.get('celular')
+        professor.apelido_professor = request.POST.get('apelido')
 
         login = Login.objects.get(id=professor.id_login.id)
 

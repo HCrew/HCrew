@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 
 {% block css %}
-<link rel="stylesheet" href=""> 
-{% endblock %} 
+<link rel="stylesheet" href="">
+{% endblock %}
 
 {% block conteudo %}
 <h2>{{titulo}}</h2>
 
 <form method="POST" action="">
     <p>
-        Nome: <input name="nome" value="{{professor.nome}}"/>
-        E-mail: <input name="email" value="{{professor.email}}" type="email"/>
-        Celular: <input name="celular" value="{{professor.celular}}"/>
-        Login: <input name="login" value="{{professor.id_login.login}}"/>
-        Senha: <input name="senha" value="{{professor.id_login.senha}}"/>
-        Apelido: <input name="apelido" value="{{professor.apelido_professor}}"/>
+        Nome: <input name="nome" required value="{{professor.nome}}"/>
+        E-mail: <input name="email" required value="{{professor.email}}" type="email"/>
+        Celular: <input name="celular" required value="{{professor.celular}}"/>
+        Login: <input name="login" required value="{{professor.id_login.login}}"/>
+        Senha: <input name="senha" required value="{{professor.id_login.senha}}"/>
+        Apelido: <input name="apelido" required value="{{professor.apelido_professor}}"/>
         <button>{{botao}}</button>
     </p>
 </form>

@@ -1,8 +1,8 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block css %}
-<link rel="stylesheet" href=""> 
-{% endblock %} 
+<link rel="stylesheet" href="">
+{% endblock %}
 
 {% block conteudo %}
 <section>
@@ -16,7 +16,7 @@
                 </tr>
                 {% for Curso in Cursos %}
                 <tr>
-                    <td>{{Curso.nome_curso}}</td>
+                    <td><a href="#">{{Curso.nome_curso}}</a></td>
                     <td>
                         <a href="/editarCurso/{{Curso.id_curso}}">Editar</a>
                         <a href="/excluirCurso/{{Curso.id_curso}}">Excluir</a>

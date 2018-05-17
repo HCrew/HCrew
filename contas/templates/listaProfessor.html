@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block css %}
-<link rel="stylesheet" href=""> 
-{% endblock %} 
+<link rel="stylesheet" href="">
+{% endblock %}
 
 {% block conteudo %}
 <section>
@@ -15,6 +15,7 @@
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Celular</th>
+                    <th>Apelido</th>
                     <th>Ações</th>
                 </tr>
                 {% for professor in professores %}
@@ -23,6 +24,7 @@
                     <td>{{professor.nome}}</td>
                     <td>{{professor.email}}</td>
                     <td>{{professor.celular}}</td>
+                    <td>{{ professor.apelido_professor }}</td>
                     <td>
                         <a href="/editarProfessor/{{professor.id}}">Editar</a>
                         <a href="/excluirProfessor/{{professor.id}}">Excluir</a>
